@@ -1,5 +1,0 @@
-#HEADER#
-About - Skills - Portfolio - Work Experience - Contacts
-
-#Hero#
-
