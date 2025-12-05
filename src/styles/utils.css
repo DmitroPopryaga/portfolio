@@ -18,26 +18,14 @@
   overflow: hidden !important;
 }
 
-/*.visible-tablet {*/
-/*  @include tablet-above {*/
-/*    display: none !important;*/
-/*  }*/
-/*}*/
+.hidden-tablet {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
 
-/*.hidden-tablet {*/
-/*  @include tablet {*/
-/*    display: none !important;*/
-/*  }*/
-/*}*/
-
-/*.visible-mobile {*/
-/*  @include mobile-above {*/
-/*    display: none !important;*/
-/*  }*/
-/*}*/
-
-/*.hidden-mobile {*/
-/*  @include mobile {*/
-/*    display: none !important;*/
-/*  }*/
-/*}*/
+.hidden-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}

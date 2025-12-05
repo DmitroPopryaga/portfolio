@@ -1,3 +1,41 @@
 .header {
+}
 
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  column-gap: 1rem;
+}
+
+.header__list {
+  display: inline-flex;
+  column-gap: 1rem;
+  padding-block: 1rem;
+}
+
+.header__item {
+  position: relative;
+}
+
+.header__link {
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition-duration: var(--transition-duration);
+  }
 }

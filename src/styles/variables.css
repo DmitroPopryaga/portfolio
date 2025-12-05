@@ -2,8 +2,10 @@
   --color-light: #FFF8EA;
   --color-dark: #594545;
 
-  --color-accent: #9E7676;
+  --color-primary: #9E7676;
   --color-secondary: #815B5B;
+
+  --color-accent: #FBDB93;
 
   --font-main: 'Science Gothic';
   --font-accent: 'Artifika';
