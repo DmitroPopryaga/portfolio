@@ -8,6 +8,16 @@
   background-color: transparent;
   border: 2px solid var(--color-light);
   border-radius: 6px;
+
+  @media (any-hover: none) {
+    &:active {
+      border-color: var(--color-accent);
+
+      .burger-button__line {
+        stroke: var(--color-accent);
+      }
+    }
+  }
 }
 
 .burger-button.is-active .burger-button__line {

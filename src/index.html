@@ -22,8 +22,8 @@
     type="image/x-icon"
   >
 </head>
-<body>
-  <header class="header">
+<body data-js-body>
+  <header class="header" data-js-header>
     <div class="header__container container">
       <a
         class="header__logo logo"
@@ -36,7 +36,7 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z" fill="white"></path>
         </svg>
       </a>
-      <nav class="header__menu hidden-mobile">
+      <nav class="header__menu" data-js-header-menu>
         <ul class="header__list h5">
           <li class="header__item">
             <a
@@ -80,25 +80,88 @@
           </li>
         </ul>
       </nav>
-      <button
-        class="header__burger-button burger-button hidden-tablet"
-        type="button"
-        aria-label="Open menu"
-        title="Open menu"
-      >
-        <svg class="burger-button__svg" width="30" height="30" viewBox="0 0 100 100">
-          <path class="burger-button__line burger-button__line--1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
-          <path class="burger-button__line burger-button__line--2" d="M 20,50 H 80"/>
-          <path class="burger-button__line burger-button__line--3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
-        </svg>
-      </button>
+      <div class="header__buttons">
+        <div class="header__theme theme">
+          <button
+            class="theme__button"
+            type="button"
+            data-js-theme-button>
+            <svg class="theme__icon theme__sun" width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
+            </svg>
+            <svg class="theme__icon theme__moon" width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
+            </svg>
+          </button>
+        </div>
+        <button
+          class="header__burger-button burger-button hidden-tablet"
+          type="button"
+          aria-label="Open menu"
+          title="Open menu"
+          data-js-header-burger-button
+        >
+          <svg
+            class="burger-button__svg"
+            width="30"
+            height="30"
+            viewBox="0 0 100 100"
+          >
+            <path
+              class="burger-button__line burger-button__line--1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            />
+            <path
+              class="burger-button__line burger-button__line--2"
+              d="M 20,50 H 80"
+            />
+            <path
+              class="burger-button__line burger-button__line--3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="main">
     <section class="hero">
-      <div class="hero__container">
+      <div class="hero__container container">
+        <div class="hero__data">
+          <h1 class="hero__title h3">
+            Hello! I'm <br>
+            <span class="h1">Dmitro Poprjaga</span>
+          </h1>
+          <p class="hero__profession h3">
+            Creative <br>
+            <span class="h1">Frontend Developer</span>
+          </p>
+          <a
+            class="hero__button h5"
+            href="/"
+          >
+            Resume
+          </a>
+        </div>
+        <div class="hero__content">
+          <picture class="hero__picture">
+            <img
+              class="hero__image"
+              src="./images/home-perfil.png"
+              alt=""
+              width=""
+              height=""
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      </div>
+    </section>
 
+    <section class="">
+      <div class="container">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque commodi consectetur consequatur enim ipsam, labore numquam praesentium quia ratione repellat totam, ut vero! Deleniti itaque modi quasi sapiente. Blanditiis, in, iusto. Dignissimos, ipsum nobis? Aliquid cum, eum nam nesciunt nostrum quo repellat vero. Et nihil quos reprehenderit similique veniam voluptatem! A ab accusamus aliquid amet assumenda, at cum deserunt dignissimos, ducimus, hic iste labore maiores molestiae nesciunt nobis odio odit omnis repellat sint tempore? Accusantium assumenda cumque et libero minus molestiae quas sunt voluptate. Alias aliquid esse eum, laudantium officiis quisquam sequi. Amet animi aspernatur assumenda atque autem beatae cumque deleniti dicta enim id in, inventore labore minima nesciunt nihil non possimus recusandae repellendus temporibus tenetur, totam veritatis voluptates voluptatibus! Aliquam aperiam architecto atque autem corporis culpa cum, cumque eveniet explicabo illum iusto minima placeat quia quos sit vitae, voluptatibus? A aliquid architecto at cum in iure labore natus necessitatibus, nemo qui quia quo sit sunt temporibus, voluptates. Architecto assumenda, consequatur dicta dolor esse eum fugit in ipsam numquam, praesentium similique velit vitae. A adipisci alias cum eligendi exercitationem facere inventore iusto perspiciatis. Ad adipisci aliquam assumenda autem beatae commodi dignissimos dolorem error esse est exercitationem facilis fuga fugiat fugit in inventore ipsa itaque laboriosam libero minus nam natus, nemo perferendis placeat quas quo quos recusandae repellat repellendus rerum saepe sequi suscipit tempore temporibus, veritatis voluptatem voluptates! Aperiam architecto asperiores, eveniet expedita incidunt ipsam laboriosam magnam maxime minima modi molestias nemo, nobis omnis quam quas qui quis quisquam ratione reiciendis saepe sapiente tempora vel velit, veniam veritatis voluptates voluptatibus. A corporis eveniet, facere labore laboriosam nemo quae quia quo quos sapiente sit ut voluptatem. Aliquid dolore dolores eligendi et labore nesciunt repellendus tempora. Ab consequuntur culpa dolor, dolorem doloremque eos facere fugit in officiis perferendis praesentium rerum ullam vitae. A ab accusamus aliquid asperiores, aspernatur blanditiis consectetur corporis, delectus distinctio ea eos eveniet exercitationem fuga fugiat ipsum maxime porro possimus provident quidem quisquam quod rerum sunt vel velit voluptates. A accusantium alias aliquam aliquid amet asperiores autem corporis dolore dolores est expedita fugit impedit maxime modi optio pariatur, placeat praesentium quae quibusdam quidem quo, sequi soluta tempore tenetur ut veniam voluptatum! Commodi fugit nostrum quibusdam repellendus. Consequatur consequuntur ducimus enim eum expedita facilis ipsam maxime mollitia, nemo quaerat, quis sunt. Aperiam dicta esse est odit, optio praesentium quibusdam ratione velit voluptatem? Aliquid blanditiis cum, eius impedit ipsum molestiae nam omnis quis repellat, saepe, sequi suscipit. Consequatur eaque est explicabo fugiat harum inventore odit quia repellendus veniam voluptatem! Deserunt labore magni maiores porro quasi quia repellendus reprehenderit saepe, sequi velit? A atque blanditiis consequuntur cumque dicta dignissimos doloribus, fugiat libero officiis sunt? Ab cupiditate itaque nemo officia quidem quisquam quod repudiandae sunt ut voluptas. Accusantium animi, blanditiis corporis dolor ducimus, expedita facere, fugit harum inventore laborum laudantium libero magnam natus nisi nobis odit provident quae quaerat reprehenderit sed sequi suscipit voluptas voluptate. Aperiam, beatae blanditiis cupiditate, debitis dicta eius fuga hic impedit, ipsam iure laboriosam natus officia quas quisquam suscipit veniam?
       </div>
     </section>
   </main>

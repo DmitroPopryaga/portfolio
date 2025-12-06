@@ -1,4 +1,6 @@
-html {}
+html {
+
+}
 
 body {
   display: flex;
@@ -65,8 +67,16 @@ svg * {
 a {
   color: inherit;
 
-  &:hover {
-    color: var(--color-accent);
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  @media (any-hover: none) {
+    &:active {
+      color: var(--color-accent);
+    }
   }
 
   &[class] {

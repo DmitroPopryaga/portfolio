@@ -5,7 +5,7 @@
   --color-primary: #9E7676;
   --color-secondary: #815B5B;
 
-  --color-accent: #FBDB93;
+  --color-accent: #D97D55;
 
   --font-main: 'Science Gothic';
   --font-accent: 'Artifika';
@@ -15,8 +15,40 @@
   --container-width: 1600px;
   --container-padding-x: 16px;
 
-  --section-padding-y: clamp(50px, 5vh, 75px);
+  --section-padding-y: clamp(50px, 5vw, 75px);
+
+  --shadow:
+    0 10px 20px rgba(0,0,0,0.19),
+    0 6px 6px rgba(0,0,0,0.23);
+  --shadow-mirror:
+    0 -10px 20px rgba(0,0,0,0.19),
+    0 -6px 6px rgba(0,0,0,0.23);
+
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 16px;
 
   --transition-duration: 0.2s;
   --transition-duration-longer: 0.4s;
+
+  --negative-z-index: -1;
+  --z-index-90: 90;
+  --z-index-100: 100;
+}
+
+.light-theme {
+  --color-light: #594545;
+  --color-dark: #FFF8EA;
+
+  .theme__button {
+    .theme__sun {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .theme__moon {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
 }

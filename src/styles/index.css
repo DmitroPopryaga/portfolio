@@ -5,4 +5,6 @@
 @import "globals.css";
 
 @import "components/header.css";
+@import "components/theme.css";
 @import "components/burger-button.css";
+@import "components/hero.css";
