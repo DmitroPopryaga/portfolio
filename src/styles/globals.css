@@ -1,5 +1,5 @@
-html {
-
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -13,6 +13,10 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+section {
+  padding-block: var(--section-padding-y);
 }
 
 h1, .h1,

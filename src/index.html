@@ -15,7 +15,10 @@
     rel="stylesheet"
     href="./styles/index.css"
   />
-  <script src="./scripts/index.js" type="module"></script>
+  <script
+    src="./scripts/index.js"
+    type="module"
+  ></script>
   <link
     rel="shortcut icon"
     href="icons/favicon.svg"
@@ -23,148 +26,549 @@
   >
 </head>
 <body data-js-body>
-  <header class="header" data-js-header>
-    <div class="header__container container">
-      <a
-        class="header__logo logo"
-        href="#"
+<header
+  class="header"
+  data-js-header
+>
+  <div class="header__container container">
+    <a
+      class="header__logo logo"
+      href="#"
+      title="Home"
+    >
+      <svg
+        class="logo__svg"
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg class="logo__svg" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M45.6001 34.7586C45.6001 33.6157 44.5258 32.6896 43.2001 32.6896H20.8C19.4743 32.6896 18.4 33.6157 18.4 34.7586V51.3103C18.4 51.6909 18.7586 52 19.2 52H44.8001C45.2415 52 45.6001 51.6909 45.6001 51.3103V34.7586ZM32.8412 37.9889L29.6412 46.2647C29.5019 46.6256 29.7283 47.0166 30.1476 47.1372C30.5662 47.2573 31.0198 47.0621 31.1597 46.7007L34.3597 38.4248C34.499 38.064 34.2726 37.6729 33.8533 37.5523C33.4347 37.4322 32.9812 37.6274 32.8412 37.9889ZM27.8658 46.1L24.9619 42.3447L27.8658 38.5895C28.1105 38.2723 28.0115 37.8441 27.6444 37.6328C27.2765 37.4219 26.7797 37.5072 26.5347 37.8237L23.3347 41.9617C23.1554 42.1935 23.1554 42.4955 23.3347 42.7271L26.5347 46.865C26.7794 47.1815 27.2761 47.2671 27.6444 47.0559C28.0115 46.845 28.1108 46.4167 27.8658 46.0993V46.1ZM37.4658 46.8654L40.6658 42.7275C40.8451 42.4956 40.8451 42.1936 40.6658 41.9621L37.4658 37.8241C37.2212 37.5076 36.7244 37.422 36.3562 37.6333C35.989 37.8442 35.8897 38.2724 36.1347 38.5899L39.0387 42.3451L36.1347 46.1004C35.8901 46.4175 35.989 46.8458 36.3562 47.057C36.724 47.2679 37.2208 47.1826 37.4658 46.8661V46.8654Z" fill="white"></path>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M43.2 21.6552C43.2 26.9877 38.1857 31.3103 32 31.3103C25.8143 31.3103 20.8 26.9877 20.8 21.6552C20.8 16.3227 25.8143 12 32 12C38.1857 12 43.2 16.3227 43.2 21.6552Z" fill="white"></path>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8 39.2126C13.8104 42.4657 12 46.692 12 51.3103C12 51.6909 12.3586 52 12.8 52H16.9368C16.8478 51.7842 16.8 51.5523 16.8 51.3103L16.8 39.2126Z" fill="white"></path>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z" fill="white"></path>
-        </svg>
-      </a>
-      <nav class="header__menu" data-js-header-menu>
-        <ul class="header__list h5">
-          <li class="header__item">
-            <a
-              class="header__link"
-              href="/"
-            >
-              About
-            </a>
-          </li>
-          <li class="header__item">
-            <a
-              class="header__link"
-              href="/"
-            >
-              Skills
-            </a>
-          </li>
-          <li class="header__item">
-            <a
-              class="header__link"
-              href="/"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li class="header__item">
-            <a
-              class="header__link"
-              href="/"
-            >
-              Work Experience
-            </a>
-          </li>
-          <li class="header__item">
-            <a
-              class="header__link"
-              href="/"
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header__buttons">
-        <div class="header__theme theme">
-          <button
-            class="theme__button"
-            type="button"
-            data-js-theme-button>
-            <svg class="theme__icon theme__sun" width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
-            </svg>
-            <svg class="theme__icon theme__moon" width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
-            </svg>
-          </button>
-        </div>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M45.6001 34.7586C45.6001 33.6157 44.5258 32.6896 43.2001 32.6896H20.8C19.4743 32.6896 18.4 33.6157 18.4 34.7586V51.3103C18.4 51.6909 18.7586 52 19.2 52H44.8001C45.2415 52 45.6001 51.6909 45.6001 51.3103V34.7586ZM32.8412 37.9889L29.6412 46.2647C29.5019 46.6256 29.7283 47.0166 30.1476 47.1372C30.5662 47.2573 31.0198 47.0621 31.1597 46.7007L34.3597 38.4248C34.499 38.064 34.2726 37.6729 33.8533 37.5523C33.4347 37.4322 32.9812 37.6274 32.8412 37.9889ZM27.8658 46.1L24.9619 42.3447L27.8658 38.5895C28.1105 38.2723 28.0115 37.8441 27.6444 37.6328C27.2765 37.4219 26.7797 37.5072 26.5347 37.8237L23.3347 41.9617C23.1554 42.1935 23.1554 42.4955 23.3347 42.7271L26.5347 46.865C26.7794 47.1815 27.2761 47.2671 27.6444 47.0559C28.0115 46.845 28.1108 46.4167 27.8658 46.0993V46.1ZM37.4658 46.8654L40.6658 42.7275C40.8451 42.4956 40.8451 42.1936 40.6658 41.9621L37.4658 37.8241C37.2212 37.5076 36.7244 37.422 36.3562 37.6333C35.989 37.8442 35.8897 38.2724 36.1347 38.5899L39.0387 42.3451L36.1347 46.1004C35.8901 46.4175 35.989 46.8458 36.3562 47.057C36.724 47.2679 37.2208 47.1826 37.4658 46.8661V46.8654Z"
+          fill="white"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M43.2 21.6552C43.2 26.9877 38.1857 31.3103 32 31.3103C25.8143 31.3103 20.8 26.9877 20.8 21.6552C20.8 16.3227 25.8143 12 32 12C38.1857 12 43.2 16.3227 43.2 21.6552Z"
+          fill="white"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M16.8 39.2126C13.8104 42.4657 12 46.692 12 51.3103C12 51.6909 12.3586 52 12.8 52H16.9368C16.8478 51.7842 16.8 51.5523 16.8 51.3103L16.8 39.2126Z"
+          fill="white"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z"
+          fill="white"
+        ></path>
+      </svg>
+    </a>
+    <nav
+      class="header__menu"
+      data-js-header-menu
+    >
+      <ul class="header__list h5">
+        <li class="header__item">
+          <a
+            class="header__link"
+            href="/"
+          >
+            About
+          </a>
+        </li>
+        <li class="header__item">
+          <a
+            class="header__link"
+            href="/"
+          >
+            Skills
+          </a>
+        </li>
+        <li class="header__item">
+          <a
+            class="header__link"
+            href="/"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="header__item">
+          <a
+            class="header__link"
+            href="/"
+          >
+            Work Experience
+          </a>
+        </li>
+        <li class="header__item">
+          <a
+            class="header__link"
+            href="/"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__buttons">
+      <div class="header__theme theme" title="Switch theme">
         <button
-          class="header__burger-button burger-button hidden-tablet"
+          class="theme__button"
           type="button"
-          aria-label="Open menu"
-          title="Open menu"
-          data-js-header-burger-button
+          data-js-theme-button
         >
           <svg
-            class="burger-button__svg"
-            width="30"
-            height="30"
-            viewBox="0 0 100 100"
+            class="theme__icon theme__sun"
+            width="30px"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
           >
-            <path
-              class="burger-button__line burger-button__line--1"
-              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
-            />
-            <path
-              class="burger-button__line burger-button__line--2"
-              d="M 20,50 H 80"
-            />
-            <path
-              class="burger-button__line burger-button__line--3"
-              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
-            />
+            <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
+          </svg>
+          <svg
+            class="theme__icon theme__moon"
+            width="30px"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
           </svg>
         </button>
       </div>
+      <button
+        class="header__burger-button burger-button hidden-tablet"
+        type="button"
+        aria-label="Open menu"
+        title="Open menu"
+        data-js-header-burger-button
+      >
+        <svg
+          class="burger-button__svg"
+          width="30"
+          height="30"
+          viewBox="0 0 100 100"
+        >
+          <path
+            class="burger-button__line burger-button__line--1"
+            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+          />
+          <path
+            class="burger-button__line burger-button__line--2"
+            d="M 20,50 H 80"
+          />
+          <path
+            class="burger-button__line burger-button__line--3"
+            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+          />
+        </svg>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="main">
-    <section class="hero">
-      <div class="hero__container container">
-        <div class="hero__data">
-          <h1 class="hero__title h3">
-            Hello! I'm <br>
-            <span class="h1">Dmitro Poprjaga</span>
-          </h1>
-          <p class="hero__profession h3">
-            Creative <br>
-            <span class="h1">Frontend Developer</span>
-          </p>
-          <a
-            class="hero__button h5"
-            href="/"
+<main class="main">
+  <section class="hero">
+    <div class="hero__container container">
+      <div class="hero__data">
+        <h1 class="hero__title h3">
+          Hello! I'm <br>
+          <span class="h1">Dmitro Poprjaga</span>
+        </h1>
+        <p class="hero__profession h3">
+          Creative <br>
+          <span class="h1">Frontend Developer</span>
+        </p>
+        <a
+          class="hero__button h5"
+          href="#"
+        >
+          Resume
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
           >
-            Resume
-          </a>
-        </div>
-        <div class="hero__content">
-          <picture class="hero__picture">
-            <img
-              class="hero__image"
-              src="./images/home-perfil.png"
-              alt=""
-              width=""
-              height=""
-              loading="lazy"
-            />
-          </picture>
-        </div>
+            <path d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"></path>
+          </svg>
+        </a>
       </div>
-    </section>
+      <div class="hero__content">
+        <picture class="hero__picture">
+          <img
+            class="hero__image"
+            src="./images/home-perfil.png"
+            alt=""
+            width=""
+            height=""
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </div>
+  </section>
 
-    <section class="">
-      <div class="container">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque commodi consectetur consequatur enim ipsam, labore numquam praesentium quia ratione repellat totam, ut vero! Deleniti itaque modi quasi sapiente. Blanditiis, in, iusto. Dignissimos, ipsum nobis? Aliquid cum, eum nam nesciunt nostrum quo repellat vero. Et nihil quos reprehenderit similique veniam voluptatem! A ab accusamus aliquid amet assumenda, at cum deserunt dignissimos, ducimus, hic iste labore maiores molestiae nesciunt nobis odio odit omnis repellat sint tempore? Accusantium assumenda cumque et libero minus molestiae quas sunt voluptate. Alias aliquid esse eum, laudantium officiis quisquam sequi. Amet animi aspernatur assumenda atque autem beatae cumque deleniti dicta enim id in, inventore labore minima nesciunt nihil non possimus recusandae repellendus temporibus tenetur, totam veritatis voluptates voluptatibus! Aliquam aperiam architecto atque autem corporis culpa cum, cumque eveniet explicabo illum iusto minima placeat quia quos sit vitae, voluptatibus? A aliquid architecto at cum in iure labore natus necessitatibus, nemo qui quia quo sit sunt temporibus, voluptates. Architecto assumenda, consequatur dicta dolor esse eum fugit in ipsam numquam, praesentium similique velit vitae. A adipisci alias cum eligendi exercitationem facere inventore iusto perspiciatis. Ad adipisci aliquam assumenda autem beatae commodi dignissimos dolorem error esse est exercitationem facilis fuga fugiat fugit in inventore ipsa itaque laboriosam libero minus nam natus, nemo perferendis placeat quas quo quos recusandae repellat repellendus rerum saepe sequi suscipit tempore temporibus, veritatis voluptatem voluptates! Aperiam architecto asperiores, eveniet expedita incidunt ipsam laboriosam magnam maxime minima modi molestias nemo, nobis omnis quam quas qui quis quisquam ratione reiciendis saepe sapiente tempora vel velit, veniam veritatis voluptates voluptatibus. A corporis eveniet, facere labore laboriosam nemo quae quia quo quos sapiente sit ut voluptatem. Aliquid dolore dolores eligendi et labore nesciunt repellendus tempora. Ab consequuntur culpa dolor, dolorem doloremque eos facere fugit in officiis perferendis praesentium rerum ullam vitae. A ab accusamus aliquid asperiores, aspernatur blanditiis consectetur corporis, delectus distinctio ea eos eveniet exercitationem fuga fugiat ipsum maxime porro possimus provident quidem quisquam quod rerum sunt vel velit voluptates. A accusantium alias aliquam aliquid amet asperiores autem corporis dolore dolores est expedita fugit impedit maxime modi optio pariatur, placeat praesentium quae quibusdam quidem quo, sequi soluta tempore tenetur ut veniam voluptatum! Commodi fugit nostrum quibusdam repellendus. Consequatur consequuntur ducimus enim eum expedita facilis ipsam maxime mollitia, nemo quaerat, quis sunt. Aperiam dicta esse est odit, optio praesentium quibusdam ratione velit voluptatem? Aliquid blanditiis cum, eius impedit ipsum molestiae nam omnis quis repellat, saepe, sequi suscipit. Consequatur eaque est explicabo fugiat harum inventore odit quia repellendus veniam voluptatem! Deserunt labore magni maiores porro quasi quia repellendus reprehenderit saepe, sequi velit? A atque blanditiis consequuntur cumque dicta dignissimos doloribus, fugiat libero officiis sunt? Ab cupiditate itaque nemo officia quidem quisquam quod repudiandae sunt ut voluptas. Accusantium animi, blanditiis corporis dolor ducimus, expedita facere, fugit harum inventore laborum laudantium libero magnam natus nisi nobis odit provident quae quaerat reprehenderit sed sequi suscipit voluptas voluptate. Aperiam, beatae blanditiis cupiditate, debitis dicta eius fuga hic impedit, ipsam iure laboriosam natus officia quas quisquam suscipit veniam?
+  <section class="skills">
+    <div class="skills__container container">
+      <div class="skills__column">
+        <h2 class="skills__title">
+          <span>Hard</span> skills
+        </h2>
+        <ul class="skills__list">
+          <li class="skills__item">HTML (HTML5), JSX</li>
+          <li class="skills__item">CSS (CSS3), SASS (SCSS), PostCSS, Bootstrap, Tailwind, Animations</li>
+          <li class="skills__item">JavaScript (ES6+, OOP), TypeScript</li>
+          <li class="skills__item">React</li>
+          <li class="skills__item">Zustand</li>
+          <li class="skills__item">Vite</li>
+          <li class="skills__item">BEM, Feature-Sliced Design, Accessibility, UX</li>
+          <li class="skills__item">Figma, Canva</li>
+          <li class="skills__item">Agile, Waterfall, SCRUM</li>
+          <li class="skills__item">English level - B1</li>
+        </ul>
       </div>
-    </section>
-  </main>
-  <footer class="footer">FOOTER</footer>
+      <div class="skills__column">
+        <h2 class="skills__title">
+          <span>Soft</span> skills
+        </h2>
+        <ul class="skills__list">
+          <li class="skills__item">I know how to work in a team, I have experience in communication with designers, managers and other developers</li>
+          <li class="skills__item">I am responsible about deadlines</li>
+          <li class="skills__item">I am attentive to the details of the terms of reference</li>
+          <li class="skills__item">I am demanding of the quality of my code, I follow the code-style</li>
+          <li class="skills__item">I have time management skills</li>
+          <li class="skills__item">I welcome constructive criticism and am always happy to find new points of professional and personal growth</li>
+          <li class="skills__item">I know how to solve conflict situations</li>
+          <li class="skills__item">I am correctly convey thoughts, formulate questions</li>
+          <li class="skills__item">I write detailed reports on the work done, if required</li>
+          <li class="skills__item">I am motivated to improve my skills, constantly studying new technologies in my field of activity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="skills__scroll-animation scroll-animation container">
+      <ul class="scroll-animation__list">
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/bootstrap-5-1.svg"
+            title="Bootstrap"
+            alt="Bootstrap"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/css-3.svg"
+            title="CSS"
+            alt="CSS"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/git-icon.svg"
+            title="Git"
+            alt="Git"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/github-icon.svg"
+            title="GitHub"
+            alt="GitHub"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/gitlab.svg"
+            title="GitLab"
+            alt="GitLab"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/html-1.svg"
+            title="HTML"
+            alt="HTML"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/jetbrains-1.svg"
+            title="JetBrains"
+            alt="JetBrains"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/nodejs-icon.svg"
+            title="NodeJS"
+            alt="NodeJS"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/react-2.svg"
+            title="React"
+            alt="React"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/sass-1.svg"
+            title="Sass"
+            alt="Sass"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/tailwind-css-2.svg"
+            title="Tailwind"
+            alt="Tailwind"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/typescript-2.svg"
+            title="TypeScript"
+            alt="TypeScript"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/vitejs.svg"
+            title="Vite"
+            alt="Vite"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/javascript-1.svg"
+            title="JavaScript"
+            alt="JavaScript"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+      </ul>
+      <ul class="scroll-animation__list scroll-animation__list-reverse">
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/bootstrap-5-1.svg"
+            title="Bootstrap"
+            alt="Bootstrap"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/css-3.svg"
+            title="CSS"
+            alt="CSS"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/git-icon.svg"
+            title="Git"
+            alt="Git"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/github-icon.svg"
+            title="GitHub"
+            alt="GitHub"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/gitlab.svg"
+            title="GitLab"
+            alt="GitLab"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/html-1.svg"
+            title="HTML"
+            alt="HTML"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/jetbrains-1.svg"
+            title="JetBrains"
+            alt="JetBrains"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/nodejs-icon.svg"
+            title="NodeJS"
+            alt="NodeJS"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/react-2.svg"
+            title="React"
+            alt="React"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/sass-1.svg"
+            title="Sass"
+            alt="Sass"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/tailwind-css-2.svg"
+            title="Tailwind"
+            alt="Tailwind"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/typescript-2.svg"
+            title="TypeScript"
+            alt="TypeScript"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/vitejs.svg"
+            title="Vite"
+            alt="Vite"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+        <li class="scroll-animation__item">
+          <img
+            class="scroll-animation__image"
+            src="./icons/scroll-animation/javascript-1.svg"
+            title="JavaScript"
+            alt="JavaScript"
+            width="30px"
+            height="30px"
+            loading="lazy"
+          />
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="footer">FOOTER</footer>
 </body>
 </html>

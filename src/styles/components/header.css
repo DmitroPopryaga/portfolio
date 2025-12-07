@@ -38,7 +38,7 @@
     left: 0;
     right: 0;
     margin-inline: 16px;
-    padding-block: 64px;
+    padding-block: 32px;
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow);
     background-color: var(--color-dark);

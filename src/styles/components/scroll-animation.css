@@ -1,0 +1,69 @@
+.scroll-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+}
+
+.scroll-animation__list {
+  display: flex;
+  padding: 16px;
+  column-gap: 16px;
+}
+
+.scroll-animation__list-reverse {
+  flex-direction: row-reverse;
+}
+
+.scroll-animation__item {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  transition-duration: var(--transition-duration-longer);
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: var(--shadow-inset);
+    }
+  }
+
+  @media (any-hover: none) {
+    &:active {
+      box-shadow: var(--shadow-inset);
+    }
+  }
+
+}
+
+.scroll-animation__image {
+  width: 60px;
+}
+
+/*.testimonials__content {*/
+/*  display: flex;*/
+/*  width: max-content;*/
+/*  animation: scroll 35s linear infinite;*/
+
+/*  &:hover {*/
+/*    animation-play-state: paused;*/
+/*  }*/
+/*}*/
+
+/*.testimonials__reverse {*/
+/*  flex-direction: row-reverse;*/
+/*  animation-direction: reverse;*/
+/*  animation-delay: -1s;*/
+/*}*/
+
+/*!* Infinite scroll animation *!*/
+/*@keyframes scroll {*/
+/*  0%{*/
+/*    transform: translateX(0);*/
+/*  }*/
+/*  100%{*/
+/*    transform: translateX(-50%);*/
+/*  }*/
+/*}*/
