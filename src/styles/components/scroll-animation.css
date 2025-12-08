@@ -47,6 +47,7 @@
   padding: 24px;
   background-color: var(--color-dark);
   flex-shrink: 0;
+  border: var(--border);
   border-radius: 50%;
   box-shadow: var(--shadow);
   transition-duration: var(--transition-duration-longer);

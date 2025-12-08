@@ -10,13 +10,15 @@
 @import "components/theme.css";
 @import "components/burger-button.css";
 @import "components/hero.css";
+@import "components/button.css";
 @import "components/skills.css";
 @import "components/scroll-animation.css";
 @import "components/portfolio.css";
 @import "components/swiper.css";
 
+@import "components/footer.css";
 
-main > *:not(:last-child),
-footer {
-  display: none;
-}
+/*header,*/
+/*main > *:not(:last-child) {*/
+/*  display: none;*/
+/*}*/

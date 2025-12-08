@@ -14,7 +14,6 @@ const swiperProject = new Swiper('.swiper', {
   slidesPerView: 'auto',
   grabCursor: true,
   speed: 600,
-  centeredSlides:true,
 
   pagination: {
     el: '.swiper-pagination',
