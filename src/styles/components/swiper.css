@@ -1,0 +1,19 @@
+.swiper {
+  margin-inline: initial;
+  padding-bottom: 4rem;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding-bottom: 3rem;
+  }
+}
+
+.swiper-pagination-bullets {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-accent);
+  transition-duration: var(--transition-duration-longer);
+}

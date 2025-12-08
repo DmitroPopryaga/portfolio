@@ -42,7 +42,7 @@
   padding-inline: 32px;
   font-weight: 600;
   text-transform: uppercase;
-  background-color: var(--color-secondary);
+  background-color: var(--color-dark);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
   transition-duration: var(--transition-duration);

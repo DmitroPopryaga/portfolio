@@ -1,4 +1,6 @@
 @import "normolize.css";
+@import "libs/swiper-bundle.min.css";
+
 @import "fonts.css";
 @import "variables.css";
 @import "utils.css";
@@ -10,3 +12,11 @@
 @import "components/hero.css";
 @import "components/skills.css";
 @import "components/scroll-animation.css";
+@import "components/portfolio.css";
+@import "components/swiper.css";
+
+
+main > *:not(:last-child),
+footer {
+  display: none;
+}

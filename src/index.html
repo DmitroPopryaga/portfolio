@@ -15,6 +15,7 @@
     rel="stylesheet"
     href="./styles/index.css"
   />
+  <script src="./scripts/libs/swiper-bundle.min.js"></script>
   <script
     src="./scripts/index.js"
     type="module"
@@ -78,7 +79,7 @@
         <li class="header__item">
           <a
             class="header__link"
-            href="/"
+            href="#about"
           >
             About
           </a>
@@ -86,7 +87,7 @@
         <li class="header__item">
           <a
             class="header__link"
-            href="/"
+            href="#skills"
           >
             Skills
           </a>
@@ -94,7 +95,7 @@
         <li class="header__item">
           <a
             class="header__link"
-            href="/"
+            href="#portfolio"
           >
             Portfolio
           </a>
@@ -118,7 +119,10 @@
       </ul>
     </nav>
     <div class="header__buttons">
-      <div class="header__theme theme" title="Switch theme">
+      <div
+        class="header__theme theme"
+        title="Switch theme"
+      >
         <button
           class="theme__button"
           type="button"
@@ -176,7 +180,10 @@
 </header>
 
 <main class="main">
-  <section class="hero">
+  <section
+    class="hero"
+    id="about"
+  >
     <div class="hero__container container">
       <div class="hero__data">
         <h1 class="hero__title h3">
@@ -216,7 +223,10 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section
+    class="skills"
+    id="skills"
+  >
     <div class="skills__container container">
       <div class="skills__column">
         <h2 class="skills__title">
@@ -254,7 +264,10 @@
       </div>
     </div>
     <div class="skills__scroll-animation scroll-animation container">
-      <ul class="scroll-animation__list">
+      <ul
+        class="scroll-animation__list"
+        data-js-scroll-animation-list
+      >
         <li class="scroll-animation__item">
           <img
             class="scroll-animation__image"
@@ -410,7 +423,10 @@
           />
         </li>
       </ul>
-      <ul class="scroll-animation__list scroll-animation__list-reverse">
+      <ul
+        class="scroll-animation__list scroll-animation__list-reverse"
+        data-js-scroll-animation-list
+      >
         <li class="scroll-animation__item">
           <img
             class="scroll-animation__image"
@@ -568,6 +584,323 @@
       </ul>
     </div>
   </section>
+
+  <section
+    class="portfolio"
+    id="portfolio"
+  >
+    <div class="portfolio__container container">
+      <h2 class="portfolio__title">
+        My <span>Portfolio</span>
+      </h2>
+      <div class="portfolio__swiper swiper">
+        <div class="swiper-wrapper">
+          <article class="portfolio__card swiper-slide">
+            <div class="portfolio__image">
+              <img
+                class="portfolio__img"
+                src="./images/portfolio/projects-1.png"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+              />
+              <a
+                class="portfolio__link"
+                href="/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio__data">
+              <h3 class="portfolio__card-title">Barbershop <br> website</h3>
+              <div class="portfolio__description h5">
+                <p>Many complex components were implemented in the project: credit calculators, multi-stage mortgage application forms, asynchronous filter of bank services, custom maps (REST API YandexMap) with ATMs and office points.</p>
+              </div>
+              <div class="portfolio__icons">
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio__card swiper-slide">
+            <div class="portfolio__image">
+              <img
+                class="portfolio__img"
+                src="./images/portfolio/projects-2.png"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+              />
+              <a
+                class="portfolio__link"
+                href="/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio__data">
+              <h3 class="portfolio__card-title">Barbershop <br> website</h3>
+              <div class="portfolio__description h5">
+                <p>Many complex components were implemented in the project: credit calculators, multi-stage mortgage application forms, asynchronous filter of bank services, custom maps (REST API YandexMap) with ATMs and office points.</p>
+              </div>
+              <div class="portfolio__icons">
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio__card swiper-slide">
+            <div class="portfolio__image">
+              <img
+                class="portfolio__img"
+                src="./images/portfolio/projects-3.png"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+              />
+              <a
+                class="portfolio__link"
+                href="/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio__data">
+              <h3 class="portfolio__card-title">Barbershop <br> website</h3>
+              <div class="portfolio__description h5">
+                <p>Many complex components were implemented in the project: credit calculators, multi-stage mortgage application forms, asynchronous filter of bank services, custom maps (REST API YandexMap) with ATMs and office points.</p>
+              </div>
+              <div class="portfolio__icons">
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio__card swiper-slide">
+            <div class="portfolio__image">
+              <img
+                class="portfolio__img"
+                src="./images/portfolio/projects-4.png"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+              />
+              <a
+                class="portfolio__link"
+                href="/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio__data">
+              <h3 class="portfolio__card-title">Barbershop <br> website</h3>
+              <div class="portfolio__description h5">
+                <p>Many complex components were implemented in the project: credit calculators, multi-stage mortgage application forms, asynchronous filter of bank services, custom maps (REST API YandexMap) with ATMs and office points.</p>
+              </div>
+              <div class="portfolio__icons">
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio__card swiper-slide">
+            <div class="portfolio__image">
+              <img
+                class="portfolio__img"
+                src="./images/portfolio/projects-5.png"
+                alt=""
+                width=""
+                height=""
+                loading="lazy"
+              />
+              <a
+                class="portfolio__link"
+                href="/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="portfolio__data">
+              <h3 class="portfolio__card-title">Barbershop <br> website</h3>
+              <div class="portfolio__description h5">
+                <p>Many complex components were implemented in the project: credit calculators, multi-stage mortgage application forms, asynchronous filter of bank services, custom maps (REST API YandexMap) with ATMs and office points.</p>
+              </div>
+              <div class="portfolio__icons">
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="portfolio__icon">
+                  <img
+                    src="./icons/scroll-animation/html-1.svg"
+                    alt="HTML"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 <footer class="footer">FOOTER</footer>
 </body>
