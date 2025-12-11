@@ -18,11 +18,12 @@
   text-align: center;
 }
 
-.footer__title {
-  & span {
-    color: var(--color-accent);
-    font-family: var(--font-accent),sans-serif;
-  }
+.footer__button {
+  max-width: 350px;
+}
+
+.footer__email {
+  display: none;
 }
 
 .footer__bottom {
@@ -77,6 +78,7 @@
 
 .footer__copyright {
   align-self: end;
+  font-family: var(--font-accent), sans-serif;
 
   @media (max-width: 767px) {
     align-self: center;

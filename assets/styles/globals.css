@@ -19,6 +19,13 @@ section {
   padding-block: var(--section-padding-y);
 }
 
+.section__title {
+  & span {
+    font-family: var(--font-accent), sans-serif;
+    color: var(--color-accent);
+  }
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,

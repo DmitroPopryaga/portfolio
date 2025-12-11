@@ -4,11 +4,6 @@
   @media (max-width: 767px) {
     padding-left: 1rem;
   }
-
-  & span {
-    font-family: var(--font-accent), sans-serif;
-    color: var(--color-accent);
-  }
 }
 
 .portfolio__container {

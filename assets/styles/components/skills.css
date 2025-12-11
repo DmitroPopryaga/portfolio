@@ -21,13 +21,6 @@
   row-gap: 16px;
 }
 
-.skills__title {
-  & span {
-    font-family: var(--font-accent), sans-serif;
-    color: var(--color-accent);
-  }
-}
-
 .skills__list {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,7 @@
+.hero {
+  margin-top: 3rem;
+}
+
 .hero__container {
   display: flex;
   justify-content: space-between;
@@ -16,14 +20,6 @@
   padding: 1rem;
 }
 
-.hero__title {
-
-  & span {
-    font-family: var(--font-accent), sans-serif;
-    color: var(--color-accent);
-  }
-}
-
 .hero__profession {
   & span {
     font-family: var(--font-accent), sans-serif;
@@ -32,22 +28,9 @@
 }
 
 .hero__button {
-  column-gap: 0.5rem;
   align-self: center;
 
   @media (max-width: 1281px) {
     align-self: start;
-  }
-
-  & svg {
-    width: 30px;
-    
-    @media (max-width: 767px) {
-      width: 25px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    width: 100%;
   }
 }

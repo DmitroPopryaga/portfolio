@@ -15,10 +15,6 @@
 @import "components/scroll-animation.css";
 @import "components/portfolio.css";
 @import "components/swiper.css";
+@import "components/work.css";
 
 @import "components/footer.css";
-
-/*header,*/
-/*main > *:not(:last-child) {*/
-/*  display: none;*/
-/*}*/
