@@ -82,7 +82,7 @@
   row-gap: 1rem;
 }
 
-.work__subtitle {
+.work__profession {
   color: var(--color-accent);
   font-family: var(--font-accent), sans-serif;
 }
@@ -98,6 +98,7 @@
 
 .work__description {
   & span {
+    color: var(--color-accent);
     font-weight: 600;
   }
 }

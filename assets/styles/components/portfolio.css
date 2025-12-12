@@ -26,6 +26,7 @@
   row-gap: 1rem;
   padding: 1rem;
   max-width: 500px;
+  height: 800px;
   flex-shrink: 0;
   border: var(--border);
   border-radius: var(--border-radius-large);
@@ -33,10 +34,12 @@
 
   @media (max-width: 1024px) {
     max-width: 400px;
+    height: 700px;
   }
 
   @media (max-width: 767px) {
     max-width: 300px;
+    height: 600px;
   }
 
   &:hover {
@@ -56,6 +59,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition-duration: var(--transition-duration);
 
   &:hover {
     scale: 1.02;
@@ -92,9 +96,13 @@
   padding: 1rem;
 }
 
+.portfolio__card-title {
+  color: var(--color-accent);
+}
+
 .portfolio__icons {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   column-gap: 1rem;
 }
