@@ -1,6 +1,6 @@
-Portfolio Website – Frontend Developer
+  Portfolio Website – Frontend Developer
 
-Features
+🚀 Features
 
 Fully responsive layout (mobile, tablet, desktop)
 
@@ -16,6 +16,7 @@ Interactive elements built with vanilla JavaScript
 
 Optimized performance and accessibility
 
+
 🛠️ Technologies
 
 HTML5
@@ -23,6 +24,7 @@ HTML5
 CSS3
 
 JavaScript (ES6+)
+
 
 🎨 UI / UX
 
@@ -36,6 +38,7 @@ Hover states and micro-interactions
 
 Focus on readability and usability
 
+
 📱 Responsiveness
 
 The website is fully adaptive and optimized for:
@@ -46,6 +49,7 @@ Tablets
 
 Desktop screens
 
+
 🎯 Purpose
 
 The main goal of this project is to:
@@ -55,6 +59,7 @@ Showcase frontend development skills
 Present projects and experience in a clean format
 
 Demonstrate UI/UX thinking and attention to detail
+
 
 📌 Notes
 
