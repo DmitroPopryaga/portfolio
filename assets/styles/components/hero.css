@@ -34,3 +34,17 @@
     align-self: start;
   }
 }
+
+.hero__image {
+  width: 700px;
+  justify-self: center;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 80%,        /* Верхняя часть видна */
+    transparent 100%  /* Нижняя часть полностью прозрачна */
+  );
+
+  @media (max-width: 767px) {
+    width: 500px;
+  };
+}
