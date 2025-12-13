@@ -9,6 +9,7 @@ body {
   font-size: clamp(15px, 1.2vw, 18px);
   color: var(--color-light);
   background-color: var(--color-dark);
+  transition-duration: var(--transition-duration);
 }
 
 main {
