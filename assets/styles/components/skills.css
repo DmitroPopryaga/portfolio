@@ -1,39 +1,40 @@
 .skills {
   display: flex;
   flex-direction: column;
-  row-gap: 42px;
+  row-gap: 2.5rem;
 }
 
 .skills__container {
   display: flex;
   justify-content: space-between;
-  gap: 36px;
+  gap: 2rem;
+  padding-block: 2rem;
   overflow: hidden;
 
   @media (max-width: 767px) {
     flex-direction: column;
-    gap: 44px
+    gap: 3rem;
   }
 }
 
 .skills__column {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 1rem;
 }
 
 .skills__list {
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
+  row-gap: 1.5rem;
 }
 
 .skills__item {
   display: flex;
   align-items: center;
   justify-content: start;
-  column-gap: 16px;
-  padding: 16px;
+  column-gap: 1rem;
+  padding: 1rem;
   box-shadow: var(--shadow);
   border: var(--border);
   border-radius: var(--border-radius-large);
@@ -53,8 +54,8 @@
 
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     background-color: var(--color-accent);
     border-radius: 50%;
     aspect-ratio: 1;
