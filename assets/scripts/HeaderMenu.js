@@ -17,7 +17,6 @@ class HeaderMenu {
 
     this.isOpen = false
     this.handleClickOutside = this.handleClickOutside.bind(this)
-    this.handleEscape = this.handleEscape.bind(this)
 
     this.burger.addEventListener('click', () => this.toggle())
   }
@@ -29,7 +28,6 @@ class HeaderMenu {
 
     if (this.isOpen) {
       document.addEventListener('click', this.handleClickOutside)
-      document.addEventListener('keydown', this.handleEscape)
       document.body.style.overflow = 'hidden'
     } else {
       this.removeListeners()
@@ -43,13 +41,8 @@ class HeaderMenu {
     }
   }
 
-  handleEscape(e) {
-    if (e.key === 'Escape') this.toggle()
-  }
-
   removeListeners() {
     document.removeEventListener('click', this.handleClickOutside)
-    document.removeEventListener('keydown', this.handleEscape)
   }
 }
 

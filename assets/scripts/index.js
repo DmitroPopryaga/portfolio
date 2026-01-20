@@ -11,6 +11,13 @@ new ScrollAnimation()
 new CopyMail()
 new HeaderScrollEffect()
 
+const navLinks = document.querySelectorAll('.header__item')
+const linkAction = () => {
+  const navMenu = document.querySelector('[data-js-header-menu]')
+  navMenu.classList.remove('show-menu')
+}
+navLinks.forEach(n => n.addEventListener('click', linkAction))
+
 const swiperProject = new Swiper('.swiper', {
   loop: true,
   spaceBetween: 16,
