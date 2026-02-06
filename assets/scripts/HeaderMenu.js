@@ -2,6 +2,7 @@ class HeaderMenu {
   selectors = {
     headerMenu: '[data-js-header-menu]',
     burgerButton: '[data-js-header-burger-button]',
+    menuLink: '[data-js-header-menu-link]',
   }
 
   stateClasses = {
@@ -10,39 +11,55 @@ class HeaderMenu {
   }
 
   constructor() {
-    this.menu = document.querySelector(this.selectors.headerMenu)
-    this.burger = document.querySelector(this.selectors.burgerButton)
+    this.headerMenuElement = document.querySelector(this.selectors.headerMenu)
+    this.burgerButtonElement = document.querySelector(this.selectors.burgerButton)
+    this.menuLinkElements = this.headerMenuElement.querySelectorAll(this.selectors.menuLink)
 
-    if (!this.menu || !this.burger) return
+    if (!this.headerMenuElement
+      || !this.burgerButtonElement) return
+
+    if(this.menuLinkElements.length === 0) return
 
     this.isOpen = false
-    this.handleClickOutside = this.handleClickOutside.bind(this)
 
-    this.burger.addEventListener('click', () => this.toggle())
+    this.bindEvents()
   }
 
-  toggle() {
+  handleMenuLinkClick = () => {
+    if(this.isOpen) {
+      this.onButtonClick()
+    }
+  }
+
+  handleClickOutside = (event) => {
+    if (this.isOpen
+      && !this.headerMenuElement.contains(event.target)
+      && !this.burgerButtonElement.contains(event.target)) {
+      this.onButtonClick()
+    }
+  }
+
+  onButtonClick = () => {
     this.isOpen = !this.isOpen
-    this.burger.classList.toggle(this.stateClasses.isActive)
-    this.menu.classList.toggle(this.stateClasses.showMenu)
+    this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
+    this.headerMenuElement.classList.toggle(this.stateClasses.showMenu)
 
     if (this.isOpen) {
       document.addEventListener('click', this.handleClickOutside)
-      document.body.style.overflow = 'hidden'
     } else {
       this.removeListeners()
-      document.body.style.overflow = ''
     }
   }
 
-  handleClickOutside(e) {
-    if (!this.menu.contains(e.target) && !this.burger.contains(e.target)) {
-      this.toggle()
-    }
-  }
-
-  removeListeners() {
+  removeListeners = () => {
     document.removeEventListener('click', this.handleClickOutside)
+  }
+
+  bindEvents() {
+    this.burgerButtonElement.addEventListener('click', this.onButtonClick)
+    this.menuLinkElements.forEach(element => {
+      element.addEventListener('click', this.handleMenuLinkClick)
+    })
   }
 }
 

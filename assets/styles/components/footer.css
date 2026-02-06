@@ -20,6 +20,10 @@
 
 .footer__button {
   max-width: 350px;
+
+  & svg {
+    width: 20px;
+  }
 }
 
 .footer__email {

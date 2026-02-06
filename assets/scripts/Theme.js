@@ -12,6 +12,8 @@ class Theme {
     this.bodyElement = document.querySelector(this.selectors.body)
     this.buttonElement = document.querySelector(this.selectors.button)
 
+    if(!this.bodyElement || !this.buttonElement) return
+
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme === 'light') {
       this.bodyElement.classList.add(this.stateClasses.lightTheme)
