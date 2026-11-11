@@ -12,10 +12,14 @@
   column-gap: var(--space-xl);
 
   @media (width < 768px) {
-    --profile-media-size: min(100%, 22rem);
+    /* по ширине экрана, но не выше 45% высоты: крупнее на высоких телефонах, компактнее на низких */
+    --profile-media-size: min(100%, 45dvh);
 
+    /* телефон: на всю высоту — фото по центру свободного места, текст и кнопки внизу */
     grid-template-columns: minmax(0, 1fr);
-    align-content: start;
+    /* 1fr с минимумом по контенту: на низких экранах фото не наезжает на текст, страница просто скроллится */
+    grid-template-rows: 1fr auto;
+    align-content: stretch;
     row-gap: var(--space-l);
   }
 }
@@ -75,7 +79,6 @@
   /* на мобильных портрет над текстом; порядок фокуса не меняется — внутри нет интерактива */
   @media (width < 768px) {
     order: -1;
-    justify-self: start;
   }
 }
 
