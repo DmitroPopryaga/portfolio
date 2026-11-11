@@ -77,6 +77,11 @@
   align-items: center;
   min-height: var(--hit-area);
   color: var(--color-accent);
+  column-gap: var(--space-2xs);
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.project__link-icon {
+  flex-shrink: 0;
 }

@@ -69,12 +69,16 @@
 /* hover на тенях — через микс .shadow-effect */
 .contact__link {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   column-gap: var(--space-s);
   min-height: var(--hit-area);
   padding: var(--space-s);
   border-radius: var(--border-radius-medium);
+}
+
+.contact__link-icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
 }
 
 .contact__link-name {
@@ -83,6 +87,7 @@
 }
 
 .contact__link-handle {
+  margin-inline-start: auto;
   font-size: var(--font-size-xs);
   font-weight: 700;
   letter-spacing: 0.04em;

@@ -1,7 +1,16 @@
 /* метка: стек проекта, навыки */
 .tag {
+  display: inline-flex;
+  align-items: center;
+  column-gap: var(--space-2xs);
   padding: var(--space-2xs) var(--space-xs);
   font-size: var(--font-size-xs);
   border: var(--border);
   border-radius: var(--border-radius-small);
+}
+
+.tag__icon {
+  flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
 }
