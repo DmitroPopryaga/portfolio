@@ -1,0 +1,81 @@
+/* модальное подтверждение на нативном <dialog> */
+.confirm {
+  --confirm-width: 28rem;
+  --confirm-shift: var(--space-s);
+
+  width: min(100% - var(--container-padding-x) * 2, var(--confirm-width));
+  padding: var(--space-l);
+  text-align: center;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-raised), var(--shadow);
+
+  /* появление: opacity + transform; display/overlay — чтобы анимация работала и при закрытии */
+  opacity: 0;
+  transform: translateY(var(--confirm-shift)) scale(0.96);
+  transition:
+    opacity var(--transition-duration-longer),
+    transform var(--transition-duration-longer),
+    overlay var(--transition-duration-longer) allow-discrete,
+    display var(--transition-duration-longer) allow-discrete;
+
+  &[open] {
+    opacity: 1;
+    transform: none;
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(var(--confirm-shift)) scale(0.96);
+    }
+  }
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0);
+    transition:
+      background-color var(--transition-duration-longer),
+      overlay var(--transition-duration-longer) allow-discrete,
+      display var(--transition-duration-longer) allow-discrete;
+  }
+
+  &[open]::backdrop {
+    background-color: rgb(0 0 0 / 0.55);
+
+    @starting-style {
+      background-color: rgb(0 0 0 / 0);
+    }
+  }
+}
+
+.confirm__icon {
+  margin-inline: auto;
+  margin-bottom: var(--space-s);
+  color: var(--color-accent);
+}
+
+.confirm__title {
+  font-family: var(--font-accent), serif;
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.confirm__text {
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-s);
+  opacity: 0.8;
+}
+
+.confirm__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
+}
+
+/* текст не переносится: если кнопки не влезают в ряд, они встают друг под другом */
+.confirm__button {
+  flex: 1 1 auto;
+  white-space: nowrap;
+}
