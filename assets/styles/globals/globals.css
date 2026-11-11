@@ -2,6 +2,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/*
+  normalize резервирует место под скроллбар (scrollbar-gutter: stable).
+  На десктопе страница не прокручивается (оболочка 100dvh, скролл внутри панелей),
+  поэтому резерв даёт пустую полосу справа — отключаем его.
+*/
+html {
+  @media (width >= 1024px) {
+    scrollbar-gutter: auto;
+  }
+}
+
 /* атрибут hidden всегда сильнее display у блоков (панели табов с display: grid) */
 [hidden] {
   display: none !important;
