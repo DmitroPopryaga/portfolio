@@ -1,0 +1,58 @@
+.experience {
+  --experience-dot-size: 9px;
+  --experience-timeline-gap: var(--space-l);
+
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: center;
+  align-content: center;
+  column-gap: var(--space-xl);
+
+  @media (width < 768px) {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    row-gap: var(--space-l);
+  }
+}
+
+.experience__intro {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-xs);
+}
+
+.experience__title {
+  font-family: var(--font-accent), serif;
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.experience__subtitle {
+  font-size: var(--font-size-m);
+  opacity: 0.8;
+}
+
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-xl);
+  padding-left: var(--experience-timeline-gap);
+  border-left: var(--border);
+}
+
+.experience__item {
+  position: relative;
+
+  /* точка на линии таймлайна, центр совпадает с border-left списка */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.35em;
+    left: calc(var(--experience-timeline-gap) * -1 - var(--experience-dot-size) / 2 - 0.5px);
+    width: var(--experience-dot-size);
+    height: var(--experience-dot-size);
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+}

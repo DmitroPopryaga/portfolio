@@ -1,6 +1,5 @@
 class Theme {
   selectors = {
-    body: '[data-js-body]',
     button: '[data-js-theme-button]',
   }
 
@@ -8,28 +7,55 @@ class Theme {
     lightTheme: 'light-theme',
   }
 
-  constructor() {
-    this.bodyElement = document.querySelector(this.selectors.body)
-    this.buttonElement = document.querySelector(this.selectors.button)
+  config = {
+    storageKey: 'theme',
+    themes: {
+      light: 'light',
+      dark: 'dark',
+    },
+  }
 
-    if(!this.bodyElement || !this.buttonElement) return
+  constructor(buttonElement) {
+    this.buttonElement = buttonElement
+    // класс ставит инлайн-скрипт в <head> до отрисовки, поэтому тема живёт на <html>
+    this.themeTargetElement = document.documentElement
 
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'light') {
-      this.bodyElement.classList.add(this.stateClasses.lightTheme)
+    if (!this.buttonElement) {
+      console.warn('[Theme] button not found')
+      return
     }
 
     this.bindEvents()
+    // Осознанное отступление от стандарта: синхронизируем aria-pressed с уже применённой темой
+    this.apply(this.themeTargetElement.classList.contains(this.stateClasses.lightTheme))
+  }
+
+  getSavedTheme() {
+    try {
+      return localStorage.getItem(this.config.storageKey)
+    } catch {
+      return null
+    }
+  }
+
+  saveTheme(theme) {
+    try {
+      localStorage.setItem(this.config.storageKey, theme)
+    } catch {
+      // приватный режим / запрет storage: тема просто не запомнится
+    }
+  }
+
+  apply(isLight) {
+    this.themeTargetElement.classList.toggle(this.stateClasses.lightTheme, isLight)
+    this.buttonElement.setAttribute('aria-pressed', String(isLight))
   }
 
   onButtonClick = () => {
-    this.bodyElement.classList.toggle(this.stateClasses.lightTheme)
+    const isLight = !this.themeTargetElement.classList.contains(this.stateClasses.lightTheme)
 
-    if (this.bodyElement.classList.contains(this.stateClasses.lightTheme)) {
-      localStorage.setItem('theme', 'light')
-    } else {
-      localStorage.setItem('theme', 'dark')
-    }
+    this.apply(isLight)
+    this.saveTheme(isLight ? this.config.themes.light : this.config.themes.dark)
   }
 
   bindEvents() {

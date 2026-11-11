@@ -1,0 +1,7 @@
+/* метка: стек проекта, навыки */
+.tag {
+  padding: var(--space-2xs) var(--space-xs);
+  font-size: var(--font-size-xs);
+  border: var(--border);
+  border-radius: var(--border-radius-small);
+}

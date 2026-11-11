@@ -2,22 +2,18 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* атрибут hidden всегда сильнее display у блоков (панели табов с display: grid) */
+[hidden] {
+  display: none !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-main), sans-serif;
-  font-size: clamp(15px, 1.2vw, 18px);
+  font-size: var(--font-size-m);
   color: var(--color-light);
   background-color: var(--color-dark);
-  transition-duration: var(--transition-duration);
-}
-
-main {
-  flex-grow: 1;
-}
-
-section {
-  padding-block: var(--section-padding-y);
 }
 
 .section__title {

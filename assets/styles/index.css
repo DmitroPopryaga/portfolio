@@ -1,20 +1,29 @@
-@import "normolize.css";
-@import "libs/swiper-bundle.min.css";
+@import "normalize.css";
 
 @import "fonts.css";
+@import "tokens.css";
 @import "variables.css";
 @import "utils.css";
 @import "globals.css";
 
-@import "components/header.css";
-@import "components/theme.css";
-@import "components/burger-button.css";
-@import "components/hero.css";
+/* миксы и самостоятельные блоки, затем раскладки, которые их миксуют (header__theme, header__burger-button) */
+@import "components/shadow-effect.css";
 @import "components/button.css";
-@import "components/skills.css";
-@import "components/scroll-animation.css";
-@import "components/portfolio.css";
-@import "components/swiper.css";
-@import "components/work.css";
+@import "components/burger-button.css";
+@import "components/theme.css";
+@import "components/tabs.css";
+@import "components/tag.css";
 
+@import "components/app.css";
+@import "components/header.css";
+@import "components/panel.css";
 @import "components/footer.css";
+
+/* панели */
+@import "sections/profile.css";
+@import "sections/projects.css";
+@import "sections/project.css";
+@import "sections/experience.css";
+@import "sections/job.css";
+@import "sections/skills.css";
+@import "sections/contact.css";

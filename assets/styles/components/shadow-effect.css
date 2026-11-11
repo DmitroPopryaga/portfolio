@@ -1,0 +1,47 @@
+/*
+  Микс hover-эффекта проекта: внешняя тень (raised) на hover,
+  внутренняя (pressed) на нажатие и в активном состоянии.
+  Тени живут в псевдоэлементах, анимируется только opacity.
+  Использование: class="tabs__button shadow-effect".
+*/
+.shadow-effect {
+  position: relative;
+  isolation: isolate;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration);
+  }
+
+  &::before {
+    box-shadow: var(--shadow-raised);
+  }
+
+  &::after {
+    box-shadow: var(--shadow-pressed);
+  }
+
+  @media (any-hover: hover) {
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  &:active,
+  &.is-active {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

@@ -1,65 +1,108 @@
 class HeaderMenu {
   selectors = {
-    headerMenu: '[data-js-header-menu]',
+    root: '[data-js-header]',
+    menu: '[data-js-header-menu]',
     burgerButton: '[data-js-header-burger-button]',
-    menuLink: '[data-js-header-menu-link]',
   }
 
   stateClasses = {
-    showMenu: 'show-menu',
+    isOpen: 'is-open',
     isActive: 'is-active',
   }
 
-  constructor() {
-    this.headerMenuElement = document.querySelector(this.selectors.headerMenu)
-    this.burgerButtonElement = document.querySelector(this.selectors.burgerButton)
-    this.menuLinkElements = this.headerMenuElement.querySelectorAll(this.selectors.menuLink)
+  config = {
+    desktopMediaQuery: '(width >= 768px)',
+    tabsChangeEventName: 'tabs:change',
+    labels: {
+      open: 'Open menu',
+      close: 'Close menu',
+    },
+  }
 
-    if (!this.headerMenuElement
-      || !this.burgerButtonElement) return
+  constructor(rootElement) {
+    this.rootElement = rootElement
+    this.menuElement = this.rootElement?.querySelector(this.selectors.menu)
+    this.burgerButtonElement = this.rootElement?.querySelector(this.selectors.burgerButton)
+    this.desktopMediaQueryList = window.matchMedia(this.config.desktopMediaQuery)
 
-    if(this.menuLinkElements.length === 0) return
-
-    this.isOpen = false
+    if (!this.menuElement || !this.burgerButtonElement) {
+      console.warn('[HeaderMenu] required elements not found')
+      return
+    }
 
     this.bindEvents()
   }
 
-  handleMenuLinkClick = () => {
-    if(this.isOpen) {
-      this.onButtonClick()
+  get isOpen() {
+    return this.menuElement.classList.contains(this.stateClasses.isOpen)
+  }
+
+  toggle(isOpen) {
+    this.menuElement.classList.toggle(this.stateClasses.isOpen, isOpen)
+    this.burgerButtonElement.classList.toggle(this.stateClasses.isActive, isOpen)
+    this.burgerButtonElement.setAttribute('aria-expanded', String(isOpen))
+    this.burgerButtonElement.setAttribute('aria-label', isOpen ? this.config.labels.close : this.config.labels.open)
+  }
+
+  /* Меню скрывается через visibility: если фокус был внутри, возвращаем его на бургер */
+  close() {
+    if (!this.isOpen) return
+
+    const hasFocusInside = this.menuElement.contains(document.activeElement)
+
+    this.toggle(false)
+
+    if (hasFocusInside) {
+      this.burgerButtonElement.focus()
     }
   }
 
-  handleClickOutside = (event) => {
-    if (this.isOpen
-      && !this.headerMenuElement.contains(event.target)
-      && !this.burgerButtonElement.contains(event.target)) {
-      this.onButtonClick()
-    }
-  }
-
-  onButtonClick = () => {
-    this.isOpen = !this.isOpen
-    this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
-    this.headerMenuElement.classList.toggle(this.stateClasses.showMenu)
-
+  onBurgerButtonClick = () => {
     if (this.isOpen) {
-      document.addEventListener('click', this.handleClickOutside)
+      this.close()
     } else {
-      this.removeListeners()
+      this.toggle(true)
     }
   }
 
-  removeListeners = () => {
-    document.removeEventListener('click', this.handleClickOutside)
+  onDocumentClick = (event) => {
+    if (!this.isOpen || this.rootElement.contains(event.target)) return
+
+    this.close()
+  }
+
+  onDocumentKeydown = (event) => {
+    if (event.key !== 'Escape' || !this.isOpen) return
+
+    this.toggle(false)
+    this.burgerButtonElement.focus()
+  }
+
+  /* Событие от Tabs: пользователь выбрал раздел */
+  onDocumentTabsChange = () => {
+    this.close()
+  }
+
+  onDesktopMediaQueryChange = (event) => {
+    if (event.matches) {
+      this.toggle(false)
+    }
   }
 
   bindEvents() {
-    this.burgerButtonElement.addEventListener('click', this.onButtonClick)
-    this.menuLinkElements.forEach(element => {
-      element.addEventListener('click', this.handleMenuLinkClick)
-    })
+    this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
+    document.addEventListener('click', this.onDocumentClick)
+    document.addEventListener('keydown', this.onDocumentKeydown)
+    document.addEventListener(this.config.tabsChangeEventName, this.onDocumentTabsChange)
+    this.desktopMediaQueryList.addEventListener('change', this.onDesktopMediaQueryChange)
+  }
+
+  destroy() {
+    this.burgerButtonElement?.removeEventListener('click', this.onBurgerButtonClick)
+    document.removeEventListener('click', this.onDocumentClick)
+    document.removeEventListener('keydown', this.onDocumentKeydown)
+    document.removeEventListener(this.config.tabsChangeEventName, this.onDocumentTabsChange)
+    this.desktopMediaQueryList.removeEventListener('change', this.onDesktopMediaQueryChange)
   }
 }
 

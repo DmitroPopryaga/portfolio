@@ -1,23 +1,46 @@
+/* hover на тенях — через микс .shadow-effect */
 .burger-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: var(--hit-area);
+  height: var(--hit-area);
   padding: 0;
   background-color: transparent;
-  border: 2px solid var(--color-light);
-  border-radius: 6px;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
 
-  @media (any-hover: none) {
-    &:active {
-      border-color: var(--color-accent);
-
-      .burger-button__line {
-        stroke: var(--color-accent);
-      }
+  @media (any-hover: hover) {
+    &:hover {
+      --burger-line-color: var(--color-accent);
     }
   }
+
+  &.is-active {
+    --burger-line-color: var(--color-accent);
+  }
+}
+
+.burger-button__line {
+  fill: none;
+  stroke: var(--burger-line-color, var(--color-light));
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 60 207;
+  transition:
+    stroke var(--transition-duration),
+    stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-button__line--2 {
+  stroke-dasharray: 60 60;
+}
+
+.burger-button:not(.is-active) .burger-button__line--3 {
+  stroke-dasharray: 30 207;
+  stroke-dashoffset: -30;
 }
 
 .burger-button.is-active .burger-button__line {
@@ -28,24 +51,4 @@
 .burger-button.is-active .burger-button__line--2 {
   stroke-dasharray: 1 60;
   stroke-dashoffset: -30;
-}
-
-.burger-button:not(.is-active) .burger-button__line--3 {
-  stroke-dasharray: 30 207;
-  stroke-dashoffset: -30;
-}
-
-.burger-button__line {
-  fill: none;
-  stroke: var(--color-light);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-dasharray: 60 207;
-  transition:
-    stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.burger-button__line--2 {
-  stroke-dasharray: 60 60;
 }

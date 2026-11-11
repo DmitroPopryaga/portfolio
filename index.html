@@ -2,166 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-  >
-  <meta
-    http-equiv="X-UA-Compatible"
-    content="ie=edge"
-  >
-  <title>Portfolio</title>
-  <link
-    rel="stylesheet"
-    href="assets/styles/index.css"
-  />
-  <script src="assets/scripts/libs/swiper-bundle.min.js"></script>
-  <script src="assets/scripts/libs/scrollreveal.min.js"></script>
-  <script
-    src="assets/scripts/index.js"
-    type="module"
-  ></script>
-  <link
-    rel="shortcut icon"
-    href="assets/icons/favicon.svg"
-    type="image/x-icon"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dmitro Poprjaga — Frontend Engineer</title>
+  <meta name="description" content="Portfolio of Dmitro Poprjaga, creative frontend engineer">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles/index.css">
+  <script>
+    /* тема до первой отрисовки, чтобы светлая не мигала тёмной */
+    try {
+      if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-theme')
+    } catch {}
+  </script>
+  <script src="assets/scripts/index.js" type="module"></script>
 </head>
-<body data-js-body>
-<header
-  class="header"
-  data-js-header
->
-  <div class="header__container container">
-    <a
-      class="header__logo logo"
-      href="#"
-      title="Home"
-    >
-      <svg
-        class="logo__svg"
-        width="64"
-        height="64"
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M45.6001 34.7586C45.6001 33.6157 44.5258 32.6896 43.2001 32.6896H20.8C19.4743 32.6896 18.4 33.6157 18.4 34.7586V51.3103C18.4 51.6909 18.7586 52 19.2 52H44.8001C45.2415 52 45.6001 51.6909 45.6001 51.3103V34.7586ZM32.8412 37.9889L29.6412 46.2647C29.5019 46.6256 29.7283 47.0166 30.1476 47.1372C30.5662 47.2573 31.0198 47.0621 31.1597 46.7007L34.3597 38.4248C34.499 38.064 34.2726 37.6729 33.8533 37.5523C33.4347 37.4322 32.9812 37.6274 32.8412 37.9889ZM27.8658 46.1L24.9619 42.3447L27.8658 38.5895C28.1105 38.2723 28.0115 37.8441 27.6444 37.6328C27.2765 37.4219 26.7797 37.5072 26.5347 37.8237L23.3347 41.9617C23.1554 42.1935 23.1554 42.4955 23.3347 42.7271L26.5347 46.865C26.7794 47.1815 27.2761 47.2671 27.6444 47.0559C28.0115 46.845 28.1108 46.4167 27.8658 46.0993V46.1ZM37.4658 46.8654L40.6658 42.7275C40.8451 42.4956 40.8451 42.1936 40.6658 41.9621L37.4658 37.8241C37.2212 37.5076 36.7244 37.422 36.3562 37.6333C35.989 37.8442 35.8897 38.2724 36.1347 38.5899L39.0387 42.3451L36.1347 46.1004C35.8901 46.4175 35.989 46.8458 36.3562 47.057C36.724 47.2679 37.2208 47.1826 37.4658 46.8661V46.8654Z"
-          fill="white"
-        ></path>
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M43.2 21.6552C43.2 26.9877 38.1857 31.3103 32 31.3103C25.8143 31.3103 20.8 26.9877 20.8 21.6552C20.8 16.3227 25.8143 12 32 12C38.1857 12 43.2 16.3227 43.2 21.6552Z"
-          fill="white"
-        ></path>
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M16.8 39.2126C13.8104 42.4657 12 46.692 12 51.3103C12 51.6909 12.3586 52 12.8 52H16.9368C16.8478 51.7842 16.8 51.5523 16.8 51.3103L16.8 39.2126Z"
-          fill="white"
-        ></path>
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z"
-          fill="white"
-        ></path>
-      </svg>
-    </a>
-    <nav
-      class="header__menu"
-      data-js-header-menu
-    >
-      <ul class="header__list h5">
-        <li class="header__item" data-js-header-menu-link>
-          <a
-            class="header__link"
-            href="#about"
-          >
-            About
-          </a>
-        </li>
-        <li class="header__item" data-js-header-menu-link>
-          <a
-            class="header__link"
-            href="#skills"
-          >
-            Skills
-          </a>
-        </li>
-        <li class="header__item" data-js-header-menu-link>
-          <a
-            class="header__link"
-            href="#portfolio"
-          >
-            Portfolio
-          </a>
-        </li>
-        <li class="header__item" data-js-header-menu-link>
-          <a
-            class="header__link"
-            href="#work"
-          >
-            Work Experience
-          </a>
-        </li>
-        <li class="header__item" data-js-header-menu-link>
-          <a
-            class="header__link"
-            href="#contact"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="header__buttons">
-      <div
-        class="header__theme theme"
-        title="Switch theme"
-      >
-        <button
-          class="theme__button"
-          type="button"
-          data-js-theme-button
-        >
-          <svg
-            class="theme__icon theme__sun"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
+<body class="page">
+<div class="app" data-js-tabs data-js-tabs-hash-sync>
+  <header class="app__header header" data-js-header>
+    <div class="header__inner container">
+      <a class="header__logo logo" href="#profile" aria-label="Dmitro Poprjaga — home">
+        <svg class="logo__svg" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M45.6001 34.7586C45.6001 33.6157 44.5258 32.6896 43.2001 32.6896H20.8C19.4743 32.6896 18.4 33.6157 18.4 34.7586V51.3103C18.4 51.6909 18.7586 52 19.2 52H44.8001C45.2415 52 45.6001 51.6909 45.6001 51.3103V34.7586ZM32.8412 37.9889L29.6412 46.2647C29.5019 46.6256 29.7283 47.0166 30.1476 47.1372C30.5662 47.2573 31.0198 47.0621 31.1597 46.7007L34.3597 38.4248C34.499 38.064 34.2726 37.6729 33.8533 37.5523C33.4347 37.4322 32.9812 37.6274 32.8412 37.9889ZM27.8658 46.1L24.9619 42.3447L27.8658 38.5895C28.1105 38.2723 28.0115 37.8441 27.6444 37.6328C27.2765 37.4219 26.7797 37.5072 26.5347 37.8237L23.3347 41.9617C23.1554 42.1935 23.1554 42.4955 23.3347 42.7271L26.5347 46.865C26.7794 47.1815 27.2761 47.2671 27.6444 47.0559C28.0115 46.845 28.1108 46.4167 27.8658 46.0993V46.1ZM37.4658 46.8654L40.6658 42.7275C40.8451 42.4956 40.8451 42.1936 40.6658 41.9621L37.4658 37.8241C37.2212 37.5076 36.7244 37.422 36.3562 37.6333C35.989 37.8442 35.8897 38.2724 36.1347 38.5899L39.0387 42.3451L36.1347 46.1004C35.8901 46.4175 35.989 46.8458 36.3562 47.057C36.724 47.2679 37.2208 47.1826 37.4658 46.8661V46.8654Z"
             fill="currentColor"
-          >
-            <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
-          </svg>
-          <svg
-            class="theme__icon theme__moon"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M43.2 21.6552C43.2 26.9877 38.1857 31.3103 32 31.3103C25.8143 31.3103 20.8 26.9877 20.8 21.6552C20.8 16.3227 25.8143 12 32 12C38.1857 12 43.2 16.3227 43.2 21.6552Z"
             fill="currentColor"
-          >
-            <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
-          </svg>
-        </button>
-      </div>
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.8 39.2126C13.8104 42.4657 12 46.692 12 51.3103C12 51.6909 12.3586 52 12.8 52H16.9368C16.8478 51.7842 16.8 51.5523 16.8 51.3103L16.8 39.2126Z"
+            fill="currentColor"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </a>
+
       <button
-        class="header__burger-button burger-button hidden-tablet"
+        class="header__burger-button burger-button shadow-effect"
         type="button"
         aria-label="Open menu"
-        title="Open menu"
+        aria-expanded="false"
+        aria-controls="header-menu"
         data-js-header-burger-button
       >
-        <svg
-          class="burger-button__svg"
-          width="30"
-          height="30"
-          viewBox="0 0 100 100"
-        >
+        <svg class="burger-button__svg" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
           <path
             class="burger-button__line burger-button__line--1"
             d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -176,920 +71,670 @@
           />
         </svg>
       </button>
-    </div>
-  </div>
-</header>
 
-<main class="main">
-  <section
-    class="hero"
-    id="about"
-  >
-    <div class="hero__container container">
-      <div class="hero__data">
-        <h1 class="hero__title h3 section__title">
-          Hello! I'm <br>
-          <span class="h1">Dmitro Poprjaga</span>
-        </h1>
-        <p class="hero__profession h3">
-          Creative <br>
-          <span class="h1">Frontend Engineer</span>
-        </p>
-        <a
-          class="hero__button button h5"
-          href="assets/pdf/Resume.pdf"
-          download=""
-          target="_blank"
-          onclick="return confirm('Do you want to download the resume?')"
-        >
-          Resume
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
+      <div class="header__menu" id="header-menu" data-js-header-menu>
+        <div class="header__tabs tabs" role="tablist" aria-label="Portfolio sections">
+          <button
+            class="tabs__button shadow-effect is-active"
+            id="tab-profile"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="profile"
+            data-js-tabs-button
           >
-            <path d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="hero__content">
-        <img
-          class="hero__image"
-          src="assets/images/hero/perfil.webp"
-          alt=""
-          width=""
-          height=""
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="skills"
-    id="skills"
-  >
-    <div class="skills__container container">
-      <div
-        class="skills__column"
-        id="hard-skills"
-      >
-        <h2 class="skills__title section__title">
-          <span>Hard</span> skills
-        </h2>
-        <ul class="skills__list">
-          <li class="skills__item">HTML (HTML5), JSX</li>
-          <li class="skills__item">CSS (CSS3), SASS (SCSS), PostCSS, Bootstrap, Tailwind, Animations</li>
-          <li class="skills__item">JavaScript (ES6+, OOP), TypeScript</li>
-          <li class="skills__item">React</li>
-          <li class="skills__item">Zustand</li>
-          <li class="skills__item">Vite</li>
-          <li class="skills__item">BEM, Feature-Sliced Design, Accessibility, UX</li>
-          <li class="skills__item">Figma, Canva</li>
-          <li class="skills__item">Agile, Waterfall, SCRUM</li>
-          <li class="skills__item">English level - B1</li>
-        </ul>
-      </div>
-      <div
-        class="skills__column"
-        id="soft-skills"
-      >
-        <h2 class="skills__title section__title">
-          <span>Soft</span> skills
-        </h2>
-        <ul class="skills__list">
-          <li class="skills__item">I know how to work in a team, I have experience in communication with designers, managers and other developers</li>
-          <li class="skills__item">I am responsible about deadlines</li>
-          <li class="skills__item">I am attentive to the details of the terms of reference</li>
-          <li class="skills__item">I am demanding of the quality of my code, I follow the code-style</li>
-          <li class="skills__item">I have time management skills</li>
-          <li class="skills__item">I welcome constructive criticism and am always happy to find new points of professional and personal growth</li>
-          <li class="skills__item">I know how to solve conflict situations</li>
-          <li class="skills__item">I am correctly convey thoughts, formulate questions</li>
-          <li class="skills__item">I write detailed reports on the work done, if required</li>
-          <li class="skills__item">I am motivated to improve my skills, constantly studying new technologies in my field of activity</li>
-        </ul>
-      </div>
-    </div>
-    <div class="skills__scroll-animation scroll-animation container">
-      <ul
-        class="scroll-animation__list"
-        data-js-scroll-animation-list
-      >
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/bootstrap-5-1.svg"
-            title="Bootstrap"
-            alt="Bootstrap"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/css-3.svg"
-            title="CSS"
-            alt="CSS"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/git-icon.svg"
-            title="Git"
-            alt="Git"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/github-icon.svg"
-            title="GitHub"
-            alt="GitHub"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/gitlab.svg"
-            title="GitLab"
-            alt="GitLab"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/html-1.svg"
-            title="HTML"
-            alt="HTML"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/jetbrains-1.svg"
-            title="JetBrains"
-            alt="JetBrains"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/nodejs-icon.svg"
-            title="NodeJS"
-            alt="NodeJS"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/react-2.svg"
-            title="React"
-            alt="React"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/sass-1.svg"
-            title="Sass"
-            alt="Sass"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/tailwind-css-2.svg"
-            title="Tailwind"
-            alt="Tailwind"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/typescript-2.svg"
-            title="TypeScript"
-            alt="TypeScript"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/vitejs.svg"
-            title="Vite"
-            alt="Vite"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/javascript-1.svg"
-            title="JavaScript"
-            alt="JavaScript"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-      </ul>
-      <ul
-        class="scroll-animation__list scroll-animation__list-reverse"
-        data-js-scroll-animation-list
-      >
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/bootstrap-5-1.svg"
-            title="Bootstrap"
-            alt="Bootstrap"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/css-3.svg"
-            title="CSS"
-            alt="CSS"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/git-icon.svg"
-            title="Git"
-            alt="Git"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/github-icon.svg"
-            title="GitHub"
-            alt="GitHub"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/gitlab.svg"
-            title="GitLab"
-            alt="GitLab"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/html-1.svg"
-            title="HTML"
-            alt="HTML"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/jetbrains-1.svg"
-            title="JetBrains"
-            alt="JetBrains"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/nodejs-icon.svg"
-            title="NodeJS"
-            alt="NodeJS"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/react-2.svg"
-            title="React"
-            alt="React"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/sass-1.svg"
-            title="Sass"
-            alt="Sass"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/tailwind-css-2.svg"
-            title="Tailwind"
-            alt="Tailwind"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/typescript-2.svg"
-            title="TypeScript"
-            alt="TypeScript"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/vitejs.svg"
-            title="Vite"
-            alt="Vite"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-        <li class="scroll-animation__item">
-          <img
-            class="scroll-animation__image"
-            src="assets/icons/scroll-animation/javascript-1.svg"
-            title="JavaScript"
-            alt="JavaScript"
-            width="30px"
-            height="30px"
-            loading="lazy"
-          />
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section
-    class="portfolio"
-    id="portfolio"
-  >
-    <div class="portfolio__container container">
-      <h2 class="portfolio__title section__title">
-        My <span>Portfolio</span>
-      </h2>
-      <div class="portfolio__swiper swiper">
-        <div class="swiper-wrapper">
-          <article class="portfolio__card swiper-slide">
-            <div class="portfolio__image">
-              <img
-                class="portfolio__img"
-                src="assets/images/portfolio/travel.webp"
-                alt=""
-                width=""
-                height=""
-                loading="lazy"
-              />
-              <a
-                class="portfolio__link"
-                href="https://fanagoriatravel.com/"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="portfolio__data">
-              <h3 class="portfolio__card-title">Travel</h3>
-              <div class="portfolio__description h5">
-                <p>Modern travel website, Fanagoria, featuring a fully responsive interface and interactive elements. Implemented the structure and visual design, ensuring high performance and optimized loading speed.</p>
-              </div>
-              <div class="portfolio__icons">
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/html-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/css-3.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/javascript-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/vitejs.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/php-4.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/laravel-2.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="portfolio__card swiper-slide">
-            <div class="portfolio__image">
-              <img
-                class="portfolio__img"
-                src="assets/images/portfolio/stream.webp"
-                alt=""
-                width=""
-                height=""
-                loading="lazy"
-              />
-              <a
-                class="portfolio__link"
-                href="https://github.com/DmitroPopryaga/pet-stream-vibe"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="portfolio__data">
-              <h3 class="portfolio__card-title">Streaming</h3>
-              <div class="portfolio__description h5">
-                <p>StreamVibe is a multipage responsive website inspired by Netflix.
-                  The project includes reusable JSX components for building interactive UI elements efficiently.
-                </p>
-              </div>
-              <div class="portfolio__icons">
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/html-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/css-3.svg"
-                    alt="CSS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/sass-1.svg"
-                    alt="SASS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/javascript-1.svg"
-                    alt="JavaScript"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/vitejs.svg"
-                    alt="Vite"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="portfolio__card swiper-slide">
-            <div class="portfolio__image">
-              <img
-                class="portfolio__img"
-                src="assets/images/portfolio/tech.webp"
-                alt=""
-                width=""
-                height=""
-                loading="lazy"
-              />
-              <a
-                class="portfolio__link"
-                href="https://github.com/DmitroPopryaga/pet-future-tech"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="portfolio__data">
-              <h3 class="portfolio__card-title">FutureTech</h3>
-              <div class="portfolio__description h5">
-                <p>Multipage responsive website called FutureTech.
-                  It was created with a focus on modern UI/UX principles and enhanced with custom interactive components.
-                </p>
-              </div>
-              <div class="portfolio__icons">
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/html-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/css-3.svg"
-                    alt="CSS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/sass-1.svg"
-                    alt="SASS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/javascript-1.svg"
-                    alt="JavaScript"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="portfolio__card swiper-slide">
-            <div class="portfolio__image">
-              <img
-                class="portfolio__img"
-                src="assets/images/portfolio/it-company.webp"
-                alt=""
-                width=""
-                height=""
-                loading="lazy"
-              />
-              <a
-                class="portfolio__link"
-                href="https://github.com/DmitroPopryaga/pet-positivus"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="portfolio__data">
-              <h3 class="portfolio__card-title">IT company</h3>
-              <div class="portfolio__description h5">
-                <p>One-page responsive website developed for an IT company called Positivus.
-                  The layout was implemented with a focus on UI/UX principles and structured using the BEM methodology.
-                </p>
-              </div>
-              <div class="portfolio__icons">
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/html-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/css-3.svg"
-                    alt="CSS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/sass-1.svg"
-                    alt="SASS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="portfolio__card swiper-slide">
-            <div class="portfolio__image">
-              <img
-                class="portfolio__img"
-                src="assets/images/portfolio/fitness.webp"
-                alt=""
-                width=""
-                height=""
-                loading="lazy"
-              />
-              <a
-                class="portfolio__link"
-                href="https://github.com/DmitroPopryaga/pet-kropp-fitness"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5.63589 19.7784L4.22169 18.3644L15.657 6.92908L10.0712 6.92908V4.92908L19.0712 4.92908L19.0712 13.9291H17.0712L17.0712 8.34326L5.63589 19.7784Z"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="portfolio__data">
-              <h3 class="portfolio__card-title">Fitness Club</h3>
-              <div class="portfolio__description h5">
-                <p>This project is a one-page responsive website for a fitness club.
-                  The layout was created to showcase the club’s services and benefits, with a focus on UI/UX and clean design.
-                </p>
-              </div>
-              <div class="portfolio__icons">
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/html-1.svg"
-                    alt="HTML"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="portfolio__icon">
-                  <img
-                    src="assets/icons/scroll-animation/css-3.svg"
-                    alt="CSS"
-                    width="20px"
-                    height="20px"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="work"
-    id="work"
-  >
-    <div class="work__container container">
-      <h2 class="work__title section__title">
-        Work
-        <span>Experience</span>
-      </h2>
-      <div class="work__wrapper">
-        <!--        <div class="work__line"></div>-->
-        <div class="work__content">
-          <div class="work__line"></div>
-          <div class="work__card">
-            <div class="work__data">
-              <div class="work__titles">
-                <h3 class="work__profession">Frontend Engineer</h3>
-                <p class="work__subtitle">Freelance</p>
-              </div>
-              <span class="work__year h5"><time datetime="2024">2024</time> - now</span>
-            </div>
-            <p class="work__description">
-              <span>Interface Development:</span> Responsible for the full cycle of UI design and development — from concept and prototyping to implementation and final optimization.
-              <br>
-              <span>Component-Based Architecture:</span> Built and integrated the product’s user interface using JavaScript, applying modern component-oriented development principles.
-              <br>
-              <span>Performance Optimization:</span> Improved overall performance and stability, significantly increasing Lighthouse Performance scores.
-              <br>
-              <span>SEO Enhancement:</span> Enhanced search visibility and improved key SEO metrics.
-            </p>
-          </div>
+            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="assets/icons/sprite.svg#user"></use>
+            </svg>
+            <span class="tabs__label">Profile</span>
+          </button>
+          <button
+            class="tabs__button shadow-effect"
+            id="tab-projects"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="projects"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="assets/icons/sprite.svg#briefcase"></use>
+            </svg>
+            <span class="tabs__label">Projects</span>
+          </button>
+          <button
+            class="tabs__button shadow-effect"
+            id="tab-experience"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="experience"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="assets/icons/sprite.svg#clock"></use>
+            </svg>
+            <span class="tabs__label">Experience</span>
+          </button>
+          <button
+            class="tabs__button shadow-effect"
+            id="tab-skills"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="skills"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="assets/icons/sprite.svg#code"></use>
+            </svg>
+            <span class="tabs__label">Skills</span>
+          </button>
+          <button
+            class="tabs__button shadow-effect"
+            id="tab-contact"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="contact"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+              <use href="assets/icons/sprite.svg#mail"></use>
+            </svg>
+            <span class="tabs__label">Contact</span>
+          </button>
         </div>
       </div>
-    </div>
-  </section>
-</main>
 
-<footer
-  class="footer"
-  id="contact"
->
-  <div class="footer__container container">
-    <div class="footer__top">
-      <h2 class="footer__title section__title">
-        <span>Contact</span> Me
-      </h2>
-      <p class="footer__subtitle h4">Do you want to ask
-        something interesting?
-      </p>
       <button
-        class="footer__button button"
+        class="header__theme theme shadow-effect"
         type="button"
-        data-js-copy-button
+        aria-label="Light theme"
+        aria-pressed="false"
+        data-js-theme-button
       >
-        Copy email
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"></path>
+        <svg class="theme__icon theme__icon--sun" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"></path>
+        </svg>
+        <svg class="theme__icon theme__icon--moon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
         </svg>
       </button>
-      <span
-        class="footer__email"
-        data-js-copy-email
-      >
-        zurkul18@gmail.com
-      </span>
     </div>
-    <div class="footer__bottom">
-      <div class="footer__soc1als">
-        <a
-          class="footer__link"
-          href="https://github.com/DmitroPopryaga"
-          target="_blank"
-          title="GitHub"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
+  </header>
+
+  <main class="app__main" id="main">
+    <section
+      class="app__panel panel is-active"
+      id="profile"
+      role="tabpanel"
+      aria-labelledby="tab-profile"
+      tabindex="0"
+      data-js-tabs-content
+    >
+      <div class="panel__inner container profile">
+        <div class="profile__content">
+          <p class="profile__eyebrow">Frontend developer · React / TypeScript</p>
+
+          <h1 class="profile__title">Dmitro Poprjaga</h1>
+
+          <p class="profile__lead">
+            I build fast, accessible and carefully detailed interfaces, from design to production.
+          </p>
+
+          <div class="profile__actions">
+            <a class="profile__button button shadow-effect button--primary" href="#contact">
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <div class="profile__media">
+          <span class="profile__frame" aria-hidden="true"></span>
+          <img
+            class="profile__image"
+            src="assets/images/hero/perfil.webp"
+            alt="Portrait of Dmitro Poprjaga"
+            width="1024"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
           >
-            <path
-              d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          class="footer__link"
-          href="https://t.me/DmitroPoprjaga"
-          target="_blank"
-          title="Telegram"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M2.14753 11.8099C7.3949 9.52374 10.894 8.01654 12.6447 7.28833C17.6435 5.20916 18.6822 4.84799 19.3592 4.83606C19.5081 4.83344 19.8411 4.87034 20.0567 5.04534C20.2388 5.1931 20.2889 5.39271 20.3129 5.5328C20.3369 5.6729 20.3667 5.99204 20.343 6.2414C20.0721 9.08763 18.9 15.9947 18.3037 19.1825C18.0514 20.5314 17.5546 20.9836 17.0736 21.0279C16.0283 21.1241 15.2345 20.3371 14.2221 19.6735C12.6379 18.635 11.7429 17.9885 10.2051 16.9751C8.42795 15.804 9.58001 15.1603 10.5928 14.1084C10.8579 13.8331 15.4635 9.64397 15.5526 9.26395C15.5637 9.21642 15.5741 9.03926 15.4688 8.94571C15.3636 8.85216 15.2083 8.88415 15.0962 8.9096C14.9373 8.94566 12.4064 10.6184 7.50365 13.928C6.78528 14.4212 6.13461 14.6616 5.55163 14.649C4.90893 14.6351 3.67265 14.2856 2.7536 13.9869C1.62635 13.6204 0.730432 13.4267 0.808447 12.8044C0.849081 12.4803 1.29544 12.1488 2.14753 11.8099Z"></path>
-          </svg>
-        </a>
-        <a
-          class="footer__link"
-          href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b"
-          target="_blank"
-          title="InLinked"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path>
-          </svg>
-        </a>
+        </div>
       </div>
-      <div class="footer__copyright">
-        <p>© Dmitro Poprjaga,
-          <time
-            class="footer__year"
-            datetime="2025"
-          >2025
-          </time>
-        </p>
+    </section>
+
+    <section
+      class="app__panel panel"
+      id="projects"
+      role="tabpanel"
+      aria-labelledby="tab-projects"
+      tabindex="0"
+      hidden
+      data-js-tabs-content
+    >
+      <div class="panel__inner container projects" data-js-tabs>
+        <h2 class="visually-hidden">Projects</h2>
+
+        <div class="projects__list" role="tablist" aria-label="Projects" aria-orientation="vertical">
+            <button
+              class="projects__tab shadow-effect is-active"
+              id="project-tab-fanagoria"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="project-fanagoria"
+              data-js-tabs-button
+            >
+              <span class="projects__tab-title">Fanagoria Travel</span>
+              <span class="projects__tab-type">Travel website</span>
+            </button>
+            <button
+              class="projects__tab shadow-effect"
+              id="project-tab-stream-vibe"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="project-stream-vibe"
+              tabindex="-1"
+              data-js-tabs-button
+            >
+              <span class="projects__tab-title">StreamVibe</span>
+              <span class="projects__tab-type">Streaming platform</span>
+            </button>
+            <button
+              class="projects__tab shadow-effect"
+              id="project-tab-future-tech"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="project-future-tech"
+              tabindex="-1"
+              data-js-tabs-button
+            >
+              <span class="projects__tab-title">FutureTech</span>
+              <span class="projects__tab-type">Tech company website</span>
+            </button>
+            <button
+              class="projects__tab shadow-effect"
+              id="project-tab-positivus"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="project-positivus"
+              tabindex="-1"
+              data-js-tabs-button
+            >
+              <span class="projects__tab-title">Positivus</span>
+              <span class="projects__tab-type">IT company landing</span>
+            </button>
+            <button
+              class="projects__tab shadow-effect"
+              id="project-tab-kropp-fitness"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="project-kropp-fitness"
+              tabindex="-1"
+              data-js-tabs-button
+            >
+              <span class="projects__tab-title">Kropp Fitness</span>
+              <span class="projects__tab-type">Fitness club landing</span>
+            </button>
+        </div>
+
+        <div class="projects__content">
+          <article
+            class="projects__details project is-active"
+            id="project-fanagoria"
+            role="tabpanel"
+            aria-labelledby="project-tab-fanagoria"
+            tabindex="0"
+            data-js-tabs-content
+          >
+            <img
+              class="project__image"
+              src="assets/images/portfolio/travel.webp"
+              alt="Fanagoria Travel website screenshot"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="project__body">
+              <h3 class="project__title">Fanagoria Travel</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">Modern travel website featuring a fully responsive interface and interactive elements. Implemented the structure and visual design, ensuring high performance and optimized loading speed.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">HTML</li>
+                      <li class="tag">CSS</li>
+                      <li class="tag">JavaScript</li>
+                      <li class="tag">Vite</li>
+                      <li class="tag">PHP</li>
+                      <li class="tag">Laravel</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a class="project__link" href="https://fanagoriatravel.com/" target="_blank" rel="noopener noreferrer">
+                      fanagoriatravel.com<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="projects__details project"
+            id="project-stream-vibe"
+            role="tabpanel"
+            aria-labelledby="project-tab-stream-vibe"
+            tabindex="0"
+            hidden
+            data-js-tabs-content
+          >
+            <img
+              class="project__image"
+              src="assets/images/portfolio/stream.webp"
+              alt="StreamVibe website screenshot"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="project__body">
+              <h3 class="project__title">StreamVibe</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">Multipage responsive website inspired by Netflix. Includes reusable JSX components for building interactive UI elements efficiently.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">HTML</li>
+                      <li class="tag">CSS</li>
+                      <li class="tag">SASS</li>
+                      <li class="tag">JavaScript</li>
+                      <li class="tag">Vite</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-stream-vibe" target="_blank" rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="projects__details project"
+            id="project-future-tech"
+            role="tabpanel"
+            aria-labelledby="project-tab-future-tech"
+            tabindex="0"
+            hidden
+            data-js-tabs-content
+          >
+            <img
+              class="project__image"
+              src="assets/images/portfolio/tech.webp"
+              alt="FutureTech website screenshot"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="project__body">
+              <h3 class="project__title">FutureTech</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">Multipage responsive website created with a focus on modern UI/UX principles and enhanced with custom interactive components.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">HTML</li>
+                      <li class="tag">CSS</li>
+                      <li class="tag">SASS</li>
+                      <li class="tag">JavaScript</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-future-tech" target="_blank" rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="projects__details project"
+            id="project-positivus"
+            role="tabpanel"
+            aria-labelledby="project-tab-positivus"
+            tabindex="0"
+            hidden
+            data-js-tabs-content
+          >
+            <img
+              class="project__image"
+              src="assets/images/portfolio/it-company.webp"
+              alt="Positivus website screenshot"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="project__body">
+              <h3 class="project__title">Positivus</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">One-page responsive website for an IT company. The layout was implemented with a focus on UI/UX principles and structured using the BEM methodology.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">HTML</li>
+                      <li class="tag">CSS</li>
+                      <li class="tag">SASS</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-positivus" target="_blank" rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="projects__details project"
+            id="project-kropp-fitness"
+            role="tabpanel"
+            aria-labelledby="project-tab-kropp-fitness"
+            tabindex="0"
+            hidden
+            data-js-tabs-content
+          >
+            <img
+              class="project__image"
+              src="assets/images/portfolio/fitness.webp"
+              alt="Kropp Fitness website screenshot"
+              width="1280"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="project__body">
+              <h3 class="project__title">Kropp Fitness</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">One-page responsive website for a fitness club, created to showcase the club’s services and benefits with a focus on UI/UX and clean design.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">HTML</li>
+                      <li class="tag">CSS</li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-kropp-fitness" target="_blank" rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section
+      class="app__panel panel"
+      id="experience"
+      role="tabpanel"
+      aria-labelledby="tab-experience"
+      tabindex="0"
+      hidden
+      data-js-tabs-content
+    >
+      <div class="panel__inner container experience">
+        <div class="experience__intro">
+          <h2 class="experience__title">Experience</h2>
+          <p class="experience__subtitle">Where I have worked.</p>
+        </div>
+
+        <ol class="experience__timeline">
+          <li class="experience__item job">
+            <h3 class="job__title">
+              Frontend Engineer
+              <span class="job__company">· Freelance</span>
+            </h3>
+            <p class="job__period"><time datetime="2024">2024</time> — now</p>
+            <ul class="job__tasks">
+              <li class="job__task">
+                <strong class="job__task-label">Interface development:</strong>
+                full cycle of UI design and development, from concept and prototyping to implementation and final optimization.
+              </li>
+              <li class="job__task">
+                <strong class="job__task-label">Component-based architecture:</strong>
+                built and integrated the product’s user interface in JavaScript using component-oriented principles.
+              </li>
+              <li class="job__task">
+                <strong class="job__task-label">Performance:</strong>
+                improved overall performance and stability, significantly increasing Lighthouse Performance scores.
+              </li>
+              <li class="job__task">
+                <strong class="job__task-label">SEO:</strong>
+                enhanced search visibility and improved key SEO metrics.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section
+      class="app__panel panel"
+      id="skills"
+      role="tabpanel"
+      aria-labelledby="tab-skills"
+      tabindex="0"
+      hidden
+      data-js-tabs-content
+    >
+      <div class="panel__inner container skills">
+        <h2 class="skills__title">Skills</h2>
+
+        <div class="skills__groups">
+          <div class="skills__group">
+            <h3 class="skills__group-title">Frontend</h3>
+            <ul class="skills__tags">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS3</li>
+              <li class="tag">SASS / SCSS</li>
+              <li class="tag">PostCSS</li>
+              <li class="tag">JavaScript ES6+</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">React / JSX</li>
+              <li class="tag">Zustand</li>
+              <li class="tag">Tailwind</li>
+              <li class="tag">Bootstrap</li>
+              <li class="tag">CSS animations</li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Tooling</h3>
+            <ul class="skills__tags">
+              <li class="tag">Vite</li>
+              <li class="tag">Git</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">GitLab</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">JetBrains IDE</li>
+              <li class="tag">Figma</li>
+              <li class="tag">Canva</li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Practices</h3>
+            <ul class="skills__tags">
+              <li class="tag">BEM</li>
+              <li class="tag">Feature-Sliced Design</li>
+              <li class="tag">OOP</li>
+              <li class="tag">Accessibility</li>
+              <li class="tag">UX</li>
+              <li class="tag">Agile / Scrum</li>
+              <li class="tag">Waterfall</li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Languages</h3>
+            <ul class="skills__tags">
+              <li class="tag">English — B1</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skills__principles">
+          <h3 class="skills__principles-title">Principles</h3>
+          <ul class="skills__principles-list">
+            <li class="skills__principle">Teamwork and clear communication with designers, managers and developers.</li>
+            <li class="skills__principle">Responsibility for deadlines and detailed reports on the work done.</li>
+            <li class="skills__principle">Attention to the brief and to code quality, following the code style.</li>
+            <li class="skills__principle">Open to constructive criticism and constantly learning new technologies.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="app__panel panel"
+      id="contact"
+      role="tabpanel"
+      aria-labelledby="tab-contact"
+      tabindex="0"
+      hidden
+      data-js-tabs-content
+    >
+      <div class="panel__inner container contact">
+        <div class="contact__main" data-js-copy>
+          <h2 class="contact__title">Let’s work together</h2>
+          <p class="contact__subtitle">Open to full-time roles and freelance projects.</p>
+
+          <p class="contact__email" data-js-copy-source>zurkul18@gmail.com</p>
+
+          <div class="contact__actions">
+            <a class="contact__button button shadow-effect button--primary" href="mailto:zurkul18@gmail.com">
+              Write me
+            </a>
+            <button
+              class="contact__button button shadow-effect button--secondary"
+              type="button"
+              data-js-copy-button
+            >
+              Copy email
+            </button>
+          </div>
+
+          <p class="visually-hidden" role="status" data-js-copy-status></p>
+        </div>
+
+        <ul class="contact__links">
+          <li class="contact__item">
+            <a class="contact__link shadow-effect" href="https://github.com/DmitroPopryaga" target="_blank" rel="noopener noreferrer">
+              <span class="contact__link-name">GitHub</span>
+              <span class="contact__link-handle">DmitroPopryaga</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li class="contact__item">
+            <a class="contact__link shadow-effect" href="https://t.me/DmitroPoprjaga" target="_blank" rel="noopener noreferrer">
+              <span class="contact__link-name">Telegram</span>
+              <span class="contact__link-handle">@DmitroPoprjaga</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li class="contact__item">
+            <a class="contact__link shadow-effect" href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b" target="_blank" rel="noopener noreferrer">
+              <span class="contact__link-name">LinkedIn</span>
+              <span class="contact__link-handle">dmitro-poprjaga</span>
+              <span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </li>
+          <li class="contact__item">
+            <a class="contact__link shadow-effect" href="assets/pdf/Resume.pdf" download>
+              <span class="contact__link-name">Resume</span>
+              <span class="contact__link-handle">PDF</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app__footer footer">
+    <div class="footer__inner container">
+      <ul class="footer__socials">
+        <li class="footer__social">
+          <a class="footer__link" href="https://github.com/DmitroPopryaga" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li class="footer__social">
+          <a class="footer__link" href="https://t.me/DmitroPoprjaga" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </li>
+        <li class="footer__social">
+          <a class="footer__link" href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+      </ul>
+      <p class="footer__copyright">© Dmitro Poprjaga, <time datetime="2026">2026</time></p>
     </div>
-  </div>
-</footer>
+  </footer>
+</div>
 </body>
 </html>

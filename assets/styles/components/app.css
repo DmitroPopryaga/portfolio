@@ -1,0 +1,25 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+
+  /* desktop: оболочка ровно в экран, скроллится только активная панель */
+  @media (width >= 1024px) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+.app__main {
+  display: grid;
+  min-height: 0;
+}
+
+.app__panel {
+  grid-area: 1 / 1;
+
+  @media (width >= 1024px) {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}

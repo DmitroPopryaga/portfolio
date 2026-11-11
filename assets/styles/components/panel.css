@@ -1,0 +1,17 @@
+.panel {
+  &.is-active {
+    animation: panel-in var(--transition-duration-longer) ease-out;
+  }
+}
+
+.panel__inner {
+  min-height: 100%;
+  padding-block: var(--space-l);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-s));
+  }
+}

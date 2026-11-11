@@ -1,38 +1,44 @@
-.theme__button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-block: 1rem;
+/* hover на тенях — через микс .shadow-effect */
+.theme {
+  display: grid;
+  place-items: center;
+  width: var(--hit-area);
+  height: var(--hit-area);
+  padding: 0;
   color: var(--color-light);
   background-color: transparent;
   border: none;
-  overflow: hidden;
-  transition-duration: var(--transition-duration);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--transition-duration);
 
   @media (any-hover: hover) {
     &:hover {
       color: var(--color-accent);
-      border-radius: 50%;
-    }
-  }
-
-  @media (any-hover: none) {
-    &:active {
-      color: var(--color-accent);
-      border-radius: 50%;
     }
   }
 }
 
 .theme__icon {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.5s ease, opacity 0.4s ease;
+  grid-area: 1 / 1;
+  transition:
+    transform var(--transition-duration-longer) ease,
+    opacity var(--transition-duration-longer) ease;
 }
 
-.theme__moon {
-  position: absolute;
+.theme__icon--moon {
   opacity: 0;
   transform: rotate(-90deg);
+}
+
+.light-theme {
+  .theme__icon--sun {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  .theme__icon--moon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }

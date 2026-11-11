@@ -1,0 +1,75 @@
+.projects {
+  --projects-list-width: 16rem;
+
+  display: grid;
+  grid-template-columns: var(--projects-list-width) minmax(0, 1fr);
+  align-items: center;
+  align-content: center;
+  column-gap: var(--space-xl);
+
+  @media (width < 768px) {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    row-gap: var(--space-l);
+  }
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-2xs);
+}
+
+/* hover на тенях — через микс .shadow-effect */
+.projects__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: var(--space-2xs);
+  min-height: var(--hit-area);
+  padding: var(--space-xs) var(--space-s);
+  text-align: start;
+  color: var(--color-light);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  transition: color var(--transition-duration);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &.is-active {
+    color: var(--color-accent);
+    cursor: default;
+  }
+}
+
+.projects__tab-title {
+  font-family: var(--font-accent), serif;
+  font-size: var(--font-size-l);
+  line-height: 1.2;
+}
+
+.projects__tab-type {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.projects__content {
+  display: grid;
+}
+
+.projects__details {
+  grid-area: 1 / 1;
+
+  &.is-active {
+    animation: panel-in var(--transition-duration-longer) ease-out;
+  }
+}
