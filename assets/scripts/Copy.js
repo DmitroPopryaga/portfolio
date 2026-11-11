@@ -1,6 +1,5 @@
 class Copy {
   selectors = {
-    root: '[data-js-copy]',
     source: '[data-js-copy-source]',
     button: '[data-js-copy-button]',
     status: '[data-js-copy-status]',

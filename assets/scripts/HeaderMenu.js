@@ -1,6 +1,5 @@
 class HeaderMenu {
   selectors = {
-    root: '[data-js-header]',
     menu: '[data-js-header-menu]',
     burgerButton: '[data-js-header-burger-button]',
   }

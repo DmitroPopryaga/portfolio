@@ -1,8 +1,4 @@
 class Theme {
-  selectors = {
-    button: '[data-js-theme-button]',
-  }
-
   stateClasses = {
     lightTheme: 'light-theme',
   }
