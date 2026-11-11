@@ -1,9 +1,10 @@
 .project {
   /* скриншот не выше доступной высоты экрана, чтобы панель помещалась в 100dvh */
-  --project-media-max: 50dvh;
+  --project-media-max: 66dvh;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  /* скриншот шире текста, чтобы заполнить пространство между списком и описанием */
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   align-items: center;
   gap: var(--space-l);
 
@@ -16,7 +17,7 @@
 }
 
 .project__image {
-  justify-self: end;
+  justify-self: center;
   width: 100%;
   max-width: var(--project-media-max);
 
@@ -83,5 +84,19 @@
 }
 
 .project__link-icon {
+  --project-link-icon-shift: 3px;
+
   flex-shrink: 0;
+  transition: transform var(--transition-duration-longer);
+}
+
+/* стрелка ↗ уходит вверх-вправо — «откроется в новой вкладке» */
+@media (any-hover: hover) {
+  .project__link:hover .project__link-icon {
+    transform: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
+  }
+}
+
+.project__link:focus-visible .project__link-icon {
+  transform: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
 }
