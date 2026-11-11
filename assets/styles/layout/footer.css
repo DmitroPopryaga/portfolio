@@ -23,11 +23,27 @@
 }
 
 .footer__link {
+  --footer-link-shift: 3px;
+
   display: inline-flex;
   align-items: center;
   column-gap: var(--space-2xs);
   min-height: var(--hit-area);
   color: var(--color-accent);
+  transition:
+    transform var(--transition-duration),
+    color var(--transition-duration);
+
+  /* hover: ссылка чуть поднимается и уходит вправо */
+  @media (any-hover: hover) {
+    &:hover {
+      transform: translate(var(--footer-link-shift), calc(var(--footer-link-shift) * -1));
+    }
+  }
+
+  &:focus-visible {
+    transform: translate(var(--footer-link-shift), calc(var(--footer-link-shift) * -1));
+  }
 }
 
 .footer__link-icon {
