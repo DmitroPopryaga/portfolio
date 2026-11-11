@@ -24,8 +24,13 @@
 .footer__link {
   display: inline-flex;
   align-items: center;
+  column-gap: var(--space-2xs);
   min-height: var(--hit-area);
   color: var(--color-accent);
+}
+
+.footer__link-icon {
+  flex-shrink: 0;
 }
 
 .footer__copyright {
