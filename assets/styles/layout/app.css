@@ -13,6 +13,7 @@
 .app__main {
   display: grid;
   min-height: 0;
+  background: var(--gradient-surface);
 }
 
 .app__panel {

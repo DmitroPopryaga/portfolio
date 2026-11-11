@@ -1,16 +1,26 @@
 :root {
   --color-light: #FFF8EA;
-  --color-dark: #594545;
+  /* фон страницы и диалога — тёмная точка палитры */
+  --color-dark: oklch(34.25% 0.0262 48.8);
 
-  --color-primary: #9E7676;
-  --color-secondary: #815B5B;
+  /* приглушённый тон палитры (пятно за портретом) */
+  --color-primary: oklch(61.02% 0.0496 62.55);
+  /* обводки и разделители: ≥ 3:1 на всех точках фонов */
+  --color-secondary: oklch(72.34% 0.064 73.79);
 
-  /* акцент для текста, обводок и фокуса: 4.63:1 на #594545 */
-  --color-accent: #F4AA85;
+  /* акцент для текста, обводок и фокуса: ≥ 4.62:1 на всех точках градиентов */
+  --color-accent: #F7B898;
   /* акцент для заливок (кнопки) — исходный цвет сайта */
   --color-accent-fill: #D97D55;
   /* текст на заливке акцентом: 5.38:1 */
   --color-on-accent: #2A1E1E;
+
+  /*
+    фоны по диагонали из общей палитры (oklch, тон 49–84°):
+    шапка/футер темнее, секции чуть светлее; текст и акцент ≥ 4.5:1 на каждой точке
+  */
+  --gradient-chrome: linear-gradient(120deg in oklch, oklch(34.25% 0.0262 48.8), oklch(24.02% 0.0248 48.82));
+  --gradient-surface: linear-gradient(120deg in oklch, oklch(43.88% 0.05 53.89), oklch(34.25% 0.0262 48.8));
 
   --font-main: 'Science Gothic';
   --font-accent: 'Artifika';
@@ -54,12 +64,18 @@
 }
 
 .light-theme {
-  --color-light: #594545;
-  --color-dark: #FFF8EA;
+  /* текст — тёмная точка палитры: ≥ 8.45:1 */
+  --color-light: oklch(34.25% 0.0262 48.8);
+  --color-dark: oklch(94.09% 0.0248 75.23);
+  /* обводки: ≥ 3:1 */
+  --color-secondary: oklch(57.76% 0.056 60.87);
 
-  /* 5.17:1 на #FFF8EA */
-  --color-accent: #A8502A;
+  /* ≥ 4.92:1 на всех точках градиентов */
+  --color-accent: #94431F;
+
+  --gradient-chrome: linear-gradient(120deg in oklch, oklch(91.34% 0.0331 83.67), oklch(89.29% 0.0431 81.52));
+  --gradient-surface: linear-gradient(120deg in oklch, oklch(94.09% 0.0248 75.23), oklch(91.34% 0.0331 83.67));
 
   --shadow-tone-light: rgb(255 255 255 / 0.9);
-  --shadow-tone-dark: rgb(89 69 69 / 0.22);
+  --shadow-tone-dark: rgb(68 53 45 / 0.22);
 }

@@ -1,6 +1,7 @@
 .footer {
   border-top: var(--border);
   font-size: var(--font-size-xs);
+  background: var(--gradient-chrome);
 }
 
 .footer__inner {

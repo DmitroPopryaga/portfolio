@@ -3,7 +3,7 @@
   top: 0;
   z-index: var(--z-index-100);
   border-bottom: var(--border);
-  background-color: var(--color-dark);
+  background: var(--gradient-chrome);
 }
 
 .header__inner {
@@ -60,7 +60,7 @@
     inset-inline: 0;
     padding: var(--space-s) var(--container-padding-x);
     border-bottom: var(--border);
-    background-color: var(--color-dark);
+    background: var(--gradient-chrome);
     box-shadow: var(--shadow);
     visibility: hidden;
     opacity: 0;

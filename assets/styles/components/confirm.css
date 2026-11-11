@@ -7,7 +7,7 @@
   padding: var(--space-l);
   text-align: center;
   color: var(--color-light);
-  background-color: var(--color-dark);
+  background: var(--gradient-surface);
   border: var(--border);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow-raised), var(--shadow);
