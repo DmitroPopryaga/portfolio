@@ -1,12 +1,12 @@
-@import "normalize.css";
+/* globals: сброс, шрифты, токены, переменные, утилиты, базовые стили */
+@import "globals/normalize.css";
+@import "globals/fonts.css";
+@import "globals/tokens.css";
+@import "globals/variables.css";
+@import "globals/utils.css";
+@import "globals/globals.css";
 
-@import "fonts.css";
-@import "tokens.css";
-@import "variables.css";
-@import "utils.css";
-@import "globals.css";
-
-/* миксы и самостоятельные блоки, затем раскладки, которые их миксуют (header__theme, header__burger-button) */
+/* components: переиспользуемые блоки и миксы (до layout, который их миксует) */
 @import "components/shadow-effect.css";
 @import "components/button.css";
 @import "components/burger-button.css";
@@ -14,12 +14,13 @@
 @import "components/tabs.css";
 @import "components/tag.css";
 
-@import "components/app.css";
-@import "components/header.css";
-@import "components/panel.css";
-@import "components/footer.css";
+/* layout: каркас страницы */
+@import "layout/app.css";
+@import "layout/header.css";
+@import "layout/panel.css";
+@import "layout/footer.css";
 
-/* панели */
+/* sections: панели */
 @import "sections/profile.css";
 @import "sections/projects.css";
 @import "sections/project.css";

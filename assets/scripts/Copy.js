@@ -94,14 +94,20 @@ class Copy {
   bindEvents() {
     this.buttonElement.addEventListener('click', this.onButtonClick)
   }
+}
 
-  destroy() {
-    this.buttonElement?.removeEventListener('click', this.onButtonClick)
+const rootSelector = '[data-js-copy]'
 
-    if (this.buttonElement) {
-      this.reset()
-    }
+class CopyCollection {
+  constructor() {
+    this.init()
+  }
+
+  init() {
+    document.querySelectorAll(rootSelector).forEach((element) => {
+      new Copy(element)
+    })
   }
 }
 
-export default Copy
+export default CopyCollection

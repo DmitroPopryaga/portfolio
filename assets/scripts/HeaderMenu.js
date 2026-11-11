@@ -96,14 +96,20 @@ class HeaderMenu {
     document.addEventListener(this.config.tabsChangeEventName, this.onDocumentTabsChange)
     this.desktopMediaQueryList.addEventListener('change', this.onDesktopMediaQueryChange)
   }
+}
 
-  destroy() {
-    this.burgerButtonElement?.removeEventListener('click', this.onBurgerButtonClick)
-    document.removeEventListener('click', this.onDocumentClick)
-    document.removeEventListener('keydown', this.onDocumentKeydown)
-    document.removeEventListener(this.config.tabsChangeEventName, this.onDocumentTabsChange)
-    this.desktopMediaQueryList.removeEventListener('change', this.onDesktopMediaQueryChange)
+const rootSelector = '[data-js-header]'
+
+class HeaderMenuCollection {
+  constructor() {
+    this.init()
+  }
+
+  init() {
+    document.querySelectorAll(rootSelector).forEach((element) => {
+      new HeaderMenu(element)
+    })
   }
 }
 
-export default HeaderMenu
+export default HeaderMenuCollection

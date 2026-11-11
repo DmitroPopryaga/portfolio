@@ -30,14 +30,6 @@ class Theme {
     this.apply(this.themeTargetElement.classList.contains(this.stateClasses.lightTheme))
   }
 
-  getSavedTheme() {
-    try {
-      return localStorage.getItem(this.config.storageKey)
-    } catch {
-      return null
-    }
-  }
-
   saveTheme(theme) {
     try {
       localStorage.setItem(this.config.storageKey, theme)
@@ -63,4 +55,18 @@ class Theme {
   }
 }
 
-export default Theme
+const rootSelector = '[data-js-theme-button]'
+
+class ThemeCollection {
+  constructor() {
+    this.init()
+  }
+
+  init() {
+    document.querySelectorAll(rootSelector).forEach((element) => {
+      new Theme(element)
+    })
+  }
+}
+
+export default ThemeCollection

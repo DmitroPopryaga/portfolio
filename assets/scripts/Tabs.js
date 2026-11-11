@@ -167,16 +167,20 @@ class Tabs {
     window.addEventListener('popstate', this.onWindowHashChange)
     window.addEventListener('load', this.onWindowLoad, { once: true })
   }
+}
 
-  destroy() {
-    this.buttonElements.forEach((buttonElement) => {
-      buttonElement.removeEventListener('click', this.onButtonClick)
-      buttonElement.removeEventListener('keydown', this.onButtonKeydown)
+const rootSelector = '[data-js-tabs]'
+
+class TabsCollection {
+  constructor() {
+    this.init()
+  }
+
+  init() {
+    document.querySelectorAll(rootSelector).forEach((element) => {
+      new Tabs(element)
     })
-    window.removeEventListener('hashchange', this.onWindowHashChange)
-    window.removeEventListener('popstate', this.onWindowHashChange)
-    window.removeEventListener('load', this.onWindowLoad)
   }
 }
 
-export default Tabs
+export default TabsCollection
