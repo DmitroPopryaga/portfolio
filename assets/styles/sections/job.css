@@ -32,7 +32,7 @@
 }
 
 .job__task {
-  padding-block: var(--space-xs);
+  padding-block: var(--space-2xs);
   font-size: var(--font-size-s);
   border-bottom: var(--border);
 

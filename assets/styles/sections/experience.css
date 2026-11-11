@@ -1,12 +1,20 @@
 .experience {
   --experience-dot-size: 9px;
+  --experience-dot-top: 0.35em;
   --experience-timeline-gap: var(--space-l);
+  --experience-line-color: var(--color-secondary);
 
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   align-items: center;
   align-content: center;
   column-gap: var(--space-xl);
+
+  /* desktop: блок занимает высоту панели, чтобы таймлайн мог скроллиться внутри */
+  @media (width >= 1024px) {
+    grid-template-rows: minmax(0, 1fr);
+    height: 100%;
+  }
 
   @media (width < 768px) {
     grid-template-columns: minmax(0, 1fr);
@@ -33,23 +41,40 @@
   opacity: 0.8;
 }
 
+/*
+  Линия таймлайна — фон контейнера: начинается от верха первой точки (точка закрывает её начало)
+  и при скролле стоит на месте, а точки едут вместе с контентом.
+*/
 .experience__timeline {
   display: flex;
   flex-direction: column;
-  row-gap: var(--space-xl);
+  row-gap: var(--space-l);
   padding-left: var(--experience-timeline-gap);
-  border-left: var(--border);
+  background-image: linear-gradient(var(--experience-line-color), var(--experience-line-color));
+  background-repeat: no-repeat;
+  background-position: calc(var(--experience-dot-size) / 2 - 0.5px) var(--experience-dot-top);
+  background-size: 1px calc(100% - var(--experience-dot-top));
+
+  /* desktop: скролл внутри таймлайна, панель и заголовок слева остаются на месте */
+  @media (width >= 1024px) {
+    max-height: 100%;
+    padding-right: var(--space-s);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-secondary) transparent;
+  }
 }
 
 .experience__item {
   position: relative;
 
-  /* точка на линии таймлайна, центр совпадает с border-left списка */
+  /* точка на линии: левый край контейнера, центр совпадает с линией */
   &::before {
     content: '';
     position: absolute;
-    top: 0.35em;
-    left: calc(var(--experience-timeline-gap) * -1 - var(--experience-dot-size) / 2 - 0.5px);
+    top: var(--experience-dot-top);
+    left: calc(var(--experience-timeline-gap) * -1);
     width: var(--experience-dot-size);
     height: var(--experience-dot-size);
     border-radius: 50%;

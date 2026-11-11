@@ -1,10 +1,13 @@
-/* hover на тенях — через микс .shadow-effect; поверх — блик и «живая» иконка */
+/* hover: блик и «живая» иконка (без теней) */
 .button {
   --button-shine-color: rgb(255 255 255 / 0.35);
   --button-shine-duration: 0.6s;
   --button-icon-shift: 3px;
   --button-icon-tilt: -12deg;
 
+  /* контекст для блика: полоса позиционируется по кнопке и лежит между фоном и текстом */
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   justify-content: center;
   align-items: center;
