@@ -72,8 +72,8 @@ class Tabs {
       const isActive = buttonIndex === index
 
       buttonElement.classList.toggle(this.stateClasses.isActive, isActive)
+      // все табы доступны по Tab (без roving tabindex); стрелки — дополнительный способ
       buttonElement.setAttribute('aria-selected', String(isActive))
-      buttonElement.tabIndex = isActive ? 0 : -1
     })
 
     this.contentElements.forEach((element, contentIndex) => {
