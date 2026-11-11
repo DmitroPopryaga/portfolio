@@ -2,25 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Dmitro Poprjaga — Frontend Engineer</title>
-  <meta name="description" content="Portfolio of Dmitro Poprjaga, creative frontend engineer">
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles/index.css">
+  <meta
+    name="description"
+    content="Portfolio of Dmitro Poprjaga, creative frontend engineer">
+  <link
+    rel="icon"
+    href="assets/icons/favicon.svg"
+    type="image/svg+xml">
+  <link
+    rel="stylesheet"
+    href="assets/styles/index.css">
   <script>
     /* тема до первой отрисовки, чтобы светлая не мигала тёмной */
     try {
       if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-theme')
-    } catch {}
+    } catch {
+    }
   </script>
-  <script src="assets/scripts/index.js" type="module"></script>
+  <script
+    src="assets/scripts/index.js"
+    type="module"></script>
 </head>
 <body class="page">
-<div class="app" data-js-tabs data-js-tabs-hash-sync>
-  <header class="app__header header" data-js-header>
+<div
+  class="app"
+  data-js-tabs
+  data-js-tabs-hash-sync>
+  <header
+    class="app__header header"
+    data-js-header>
     <div class="header__inner container">
-      <a class="header__logo logo" href="#profile" aria-label="Dmitro Poprjaga — home">
-        <svg class="logo__svg" width="64" height="64" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#logo"></use></svg>
+      <a
+        class="header__logo logo"
+        href="#profile"
+        aria-label="Dmitro Poprjaga — home">
+        <svg
+          class="logo__svg"
+          width="64"
+          height="64"
+          aria-hidden="true"
+          focusable="false">
+          <use href="assets/icons/sprite.svg#logo"></use>
+        </svg>
       </a>
 
       <button
@@ -31,7 +58,13 @@
         aria-controls="header-menu"
         data-js-header-burger-button
       >
-        <svg class="burger-button__svg" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <svg
+          class="burger-button__svg"
+          width="30"
+          height="30"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          focusable="false">
           <path
             class="burger-button__line burger-button__line--1"
             d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -47,8 +80,14 @@
         </svg>
       </button>
 
-      <div class="header__menu" id="header-menu" data-js-header-menu>
-        <div class="header__tabs tabs" role="tablist" aria-label="Portfolio sections">
+      <div
+        class="header__menu"
+        id="header-menu"
+        data-js-header-menu>
+        <div
+          class="header__tabs tabs"
+          role="tablist"
+          aria-label="Portfolio sections">
           <button
             class="tabs__button shadow-effect is-active"
             id="tab-profile"
@@ -58,7 +97,12 @@
             aria-controls="profile"
             data-js-tabs-button
           >
-            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+            <svg
+              class="tabs__icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+              focusable="false">
               <use href="assets/icons/sprite.svg#user"></use>
             </svg>
             <span class="tabs__label">Profile</span>
@@ -73,7 +117,12 @@
             tabindex="-1"
             data-js-tabs-button
           >
-            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+            <svg
+              class="tabs__icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+              focusable="false">
               <use href="assets/icons/sprite.svg#briefcase"></use>
             </svg>
             <span class="tabs__label">Projects</span>
@@ -88,7 +137,12 @@
             tabindex="-1"
             data-js-tabs-button
           >
-            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+            <svg
+              class="tabs__icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+              focusable="false">
               <use href="assets/icons/sprite.svg#clock"></use>
             </svg>
             <span class="tabs__label">Experience</span>
@@ -103,7 +157,12 @@
             tabindex="-1"
             data-js-tabs-button
           >
-            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+            <svg
+              class="tabs__icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+              focusable="false">
               <use href="assets/icons/sprite.svg#code"></use>
             </svg>
             <span class="tabs__label">Skills</span>
@@ -118,7 +177,12 @@
             tabindex="-1"
             data-js-tabs-button
           >
-            <svg class="tabs__icon" width="24" height="24" aria-hidden="true" focusable="false">
+            <svg
+              class="tabs__icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+              focusable="false">
               <use href="assets/icons/sprite.svg#mail"></use>
             </svg>
             <span class="tabs__label">Contact</span>
@@ -133,13 +197,29 @@
         aria-pressed="false"
         data-js-theme-button
       >
-        <svg class="theme__icon theme__icon--sun" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#sun"></use></svg>
-        <svg class="theme__icon theme__icon--moon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#moon"></use></svg>
+        <svg
+          class="theme__icon theme__icon--sun"
+          width="24"
+          height="24"
+          aria-hidden="true"
+          focusable="false">
+          <use href="assets/icons/sprite.svg#sun"></use>
+        </svg>
+        <svg
+          class="theme__icon theme__icon--moon"
+          width="24"
+          height="24"
+          aria-hidden="true"
+          focusable="false">
+          <use href="assets/icons/sprite.svg#moon"></use>
+        </svg>
       </button>
     </div>
   </header>
 
-  <main class="app__main" id="main">
+  <main
+    class="app__main"
+    id="main">
     <section
       class="app__panel panel is-active"
       id="profile"
@@ -159,8 +239,12 @@
           </p>
 
           <div class="profile__actions">
-            <a class="profile__button button shadow-effect button--primary" href="#contact">
-              <span class="button__shine" aria-hidden="true"></span>
+            <a
+              class="profile__button button shadow-effect button--primary"
+              href="#contact">
+              <span
+                class="button__shine"
+                aria-hidden="true"></span>
               Contact
             </a>
             <a
@@ -170,15 +254,26 @@
               aria-haspopup="dialog"
               data-js-confirm-open="resume-dialog"
             >
-              <span class="button__shine" aria-hidden="true"></span>
-              <svg class="button__icon button__icon--download" width="20" height="20" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#resume"></use></svg>
+              <span
+                class="button__shine"
+                aria-hidden="true"></span>
+              <svg
+                class="button__icon button__icon--download"
+                width="20"
+                height="20"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#resume"></use>
+              </svg>
               Resume
             </a>
           </div>
         </div>
 
         <div class="profile__media">
-          <span class="profile__blob" aria-hidden="true"></span>
+          <span
+            class="profile__blob"
+            aria-hidden="true"></span>
           <img
             class="profile__image"
             src="assets/images/hero/perfil.webp"
@@ -201,74 +296,80 @@
       hidden
       data-js-tabs-content
     >
-      <div class="panel__inner container projects" data-js-tabs>
+      <div
+        class="panel__inner container projects"
+        data-js-tabs>
         <h2 class="visually-hidden">Projects</h2>
 
-        <div class="projects__list" role="tablist" aria-label="Projects" aria-orientation="vertical">
-            <button
-              class="projects__tab shadow-effect is-active"
-              id="project-tab-fanagoria"
-              type="button"
-              role="tab"
-              aria-selected="true"
-              aria-controls="project-fanagoria"
-              data-js-tabs-button
-            >
-              <span class="projects__tab-title">Fanagoria Travel</span>
-              <span class="projects__tab-type">Travel website</span>
-            </button>
-            <button
-              class="projects__tab shadow-effect"
-              id="project-tab-stream-vibe"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="project-stream-vibe"
-              tabindex="-1"
-              data-js-tabs-button
-            >
-              <span class="projects__tab-title">StreamVibe</span>
-              <span class="projects__tab-type">Streaming platform</span>
-            </button>
-            <button
-              class="projects__tab shadow-effect"
-              id="project-tab-future-tech"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="project-future-tech"
-              tabindex="-1"
-              data-js-tabs-button
-            >
-              <span class="projects__tab-title">FutureTech</span>
-              <span class="projects__tab-type">Tech company website</span>
-            </button>
-            <button
-              class="projects__tab shadow-effect"
-              id="project-tab-positivus"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="project-positivus"
-              tabindex="-1"
-              data-js-tabs-button
-            >
-              <span class="projects__tab-title">Positivus</span>
-              <span class="projects__tab-type">IT company landing</span>
-            </button>
-            <button
-              class="projects__tab shadow-effect"
-              id="project-tab-kropp-fitness"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="project-kropp-fitness"
-              tabindex="-1"
-              data-js-tabs-button
-            >
-              <span class="projects__tab-title">Kropp Fitness</span>
-              <span class="projects__tab-type">Fitness club landing</span>
-            </button>
+        <div
+          class="projects__list"
+          role="tablist"
+          aria-label="Projects"
+          aria-orientation="vertical">
+          <button
+            class="projects__tab shadow-effect is-active"
+            id="project-tab-fanagoria"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="project-fanagoria"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">Fanagoria Travel</span>
+            <span class="projects__tab-type">Travel website</span>
+          </button>
+          <button
+            class="projects__tab shadow-effect"
+            id="project-tab-stream-vibe"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="project-stream-vibe"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">StreamVibe</span>
+            <span class="projects__tab-type">Streaming platform</span>
+          </button>
+          <button
+            class="projects__tab shadow-effect"
+            id="project-tab-future-tech"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="project-future-tech"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">FutureTech</span>
+            <span class="projects__tab-type">Tech company website</span>
+          </button>
+          <button
+            class="projects__tab shadow-effect"
+            id="project-tab-positivus"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="project-positivus"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">Positivus</span>
+            <span class="projects__tab-type">IT company landing</span>
+          </button>
+          <button
+            class="projects__tab shadow-effect"
+            id="project-tab-kropp-fitness"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="project-kropp-fitness"
+            tabindex="-1"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">Kropp Fitness</span>
+            <span class="projects__tab-type">Fitness club landing</span>
+          </button>
         </div>
 
         <div class="projects__content">
@@ -300,20 +401,92 @@
                   <dt class="project__info-label">Stack</dt>
                   <dd class="project__info-value">
                     <ul class="project__stack">
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-js"></use></svg>JavaScript</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-vite"></use></svg>Vite</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-php"></use></svg>PHP</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-laravel"></use></svg>Laravel</li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-js"></use>
+                        </svg>
+                        JavaScript
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-vite"></use>
+                        </svg>
+                        Vite
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-php"></use>
+                        </svg>
+                        PHP
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-laravel"></use>
+                        </svg>
+                        Laravel
+                      </li>
                     </ul>
                   </dd>
                 </div>
                 <div class="project__info-item">
                   <dt class="project__info-label">Link</dt>
                   <dd class="project__info-value">
-                    <a class="project__link" href="https://fanagoriatravel.com/" target="_blank" rel="noopener noreferrer">
-                      fanagoriatravel.com<span class="visually-hidden"> (opens in a new tab)</span><svg class="project__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+                    <a
+                      class="project__link"
+                      href="https://fanagoriatravel.com/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      fanagoriatravel.com<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
                     </a>
                   </dd>
                 </div>
@@ -350,19 +523,81 @@
                   <dt class="project__info-label">Stack</dt>
                   <dd class="project__info-value">
                     <ul class="project__stack">
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-sass"></use></svg>SASS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-js"></use></svg>JavaScript</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-vite"></use></svg>Vite</li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-sass"></use>
+                        </svg>
+                        SASS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-js"></use>
+                        </svg>
+                        JavaScript
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-vite"></use>
+                        </svg>
+                        Vite
+                      </li>
                     </ul>
                   </dd>
                 </div>
                 <div class="project__info-item">
                   <dt class="project__info-label">Link</dt>
                   <dd class="project__info-value">
-                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-stream-vibe" target="_blank" rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span><svg class="project__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+                    <a
+                      class="project__link"
+                      href="https://github.com/DmitroPopryaga/pet-stream-vibe"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
                     </a>
                   </dd>
                 </div>
@@ -399,18 +634,70 @@
                   <dt class="project__info-label">Stack</dt>
                   <dd class="project__info-value">
                     <ul class="project__stack">
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-sass"></use></svg>SASS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-js"></use></svg>JavaScript</li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-sass"></use>
+                        </svg>
+                        SASS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-js"></use>
+                        </svg>
+                        JavaScript
+                      </li>
                     </ul>
                   </dd>
                 </div>
                 <div class="project__info-item">
                   <dt class="project__info-label">Link</dt>
                   <dd class="project__info-value">
-                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-future-tech" target="_blank" rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span><svg class="project__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+                    <a
+                      class="project__link"
+                      href="https://github.com/DmitroPopryaga/pet-future-tech"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
                     </a>
                   </dd>
                 </div>
@@ -447,17 +734,59 @@
                   <dt class="project__info-label">Stack</dt>
                   <dd class="project__info-value">
                     <ul class="project__stack">
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-sass"></use></svg>SASS</li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-sass"></use>
+                        </svg>
+                        SASS
+                      </li>
                     </ul>
                   </dd>
                 </div>
                 <div class="project__info-item">
                   <dt class="project__info-label">Link</dt>
                   <dd class="project__info-value">
-                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-positivus" target="_blank" rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span><svg class="project__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+                    <a
+                      class="project__link"
+                      href="https://github.com/DmitroPopryaga/pet-positivus"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
                     </a>
                   </dd>
                 </div>
@@ -494,16 +823,48 @@
                   <dt class="project__info-label">Stack</dt>
                   <dd class="project__info-value">
                     <ul class="project__stack">
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML</li>
-                      <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS</li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
                     </ul>
                   </dd>
                 </div>
                 <div class="project__info-item">
                   <dt class="project__info-label">Link</dt>
                   <dd class="project__info-value">
-                    <a class="project__link" href="https://github.com/DmitroPopryaga/pet-kropp-fitness" target="_blank" rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span><svg class="project__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+                    <a
+                      class="project__link"
+                      href="https://github.com/DmitroPopryaga/pet-kropp-fitness"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
                     </a>
                   </dd>
                 </div>
@@ -535,7 +896,10 @@
               Frontend Engineer
               <span class="job__company">· Freelance</span>
             </h3>
-            <p class="job__period"><time datetime="2024">2024</time> — now</p>
+            <p class="job__period">
+              <time datetime="2024">2024</time>
+              — now
+            </p>
             <ul class="job__tasks">
               <li class="job__task">
                 <strong class="job__task-label">Interface development:</strong>
@@ -575,51 +939,321 @@
           <div class="skills__group">
             <h3 class="skills__group-title">Frontend</h3>
             <ul class="skills__tags">
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-html"></use></svg>HTML5</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-css"></use></svg>CSS3</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-sass"></use></svg>SASS / SCSS</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-postcss"></use></svg>PostCSS</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-js"></use></svg>JavaScript ES6+</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-ts"></use></svg>TypeScript</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-react"></use></svg>React / JSX</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-store"></use></svg>Zustand</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-tailwind"></use></svg>Tailwind</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-bootstrap"></use></svg>Bootstrap</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-animation"></use></svg>CSS animations</li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-html"></use>
+                </svg>
+                HTML5
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-css"></use>
+                </svg>
+                CSS3
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-sass"></use>
+                </svg>
+                SASS / SCSS
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-postcss"></use>
+                </svg>
+                PostCSS
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-js"></use>
+                </svg>
+                JavaScript ES6+
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-ts"></use>
+                </svg>
+                TypeScript
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-react"></use>
+                </svg>
+                React / JSX
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-store"></use>
+                </svg>
+                Zustand
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-tailwind"></use>
+                </svg>
+                Tailwind
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-bootstrap"></use>
+                </svg>
+                Bootstrap
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-animation"></use>
+                </svg>
+                CSS animations
+              </li>
             </ul>
           </div>
 
           <div class="skills__group">
             <h3 class="skills__group-title">Tooling</h3>
             <ul class="skills__tags">
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-vite"></use></svg>Vite</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-git"></use></svg>Git</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-github"></use></svg>GitHub</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-gitlab"></use></svg>GitLab</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-node"></use></svg>Node.js</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-jetbrains"></use></svg>JetBrains IDE</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-figma"></use></svg>Figma</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#tech-canva"></use></svg>Canva</li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-vite"></use>
+                </svg>
+                Vite
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-git"></use>
+                </svg>
+                Git
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-github"></use>
+                </svg>
+                GitHub
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-gitlab"></use>
+                </svg>
+                GitLab
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-node"></use>
+                </svg>
+                Node.js
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-jetbrains"></use>
+                </svg>
+                JetBrains IDE
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-figma"></use>
+                </svg>
+                Figma
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#tech-canva"></use>
+                </svg>
+                Canva
+              </li>
             </ul>
           </div>
 
           <div class="skills__group">
             <h3 class="skills__group-title">Practices</h3>
             <ul class="skills__tags">
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-bem"></use></svg>BEM</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-layers"></use></svg>Feature-Sliced Design</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-cube"></use></svg>OOP</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-accessibility"></use></svg>Accessibility</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-cursor"></use></svg>UX</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-cycle"></use></svg>Agile / Scrum</li>
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-steps"></use></svg>Waterfall</li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-bem"></use>
+                </svg>
+                BEM
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-layers"></use>
+                </svg>
+                Feature-Sliced Design
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-cube"></use>
+                </svg>
+                OOP
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-accessibility"></use>
+                </svg>
+                Accessibility
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-cursor"></use>
+                </svg>
+                UX
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-cycle"></use>
+                </svg>
+                Agile / Scrum
+              </li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-steps"></use>
+                </svg>
+                Waterfall
+              </li>
             </ul>
           </div>
 
           <div class="skills__group">
             <h3 class="skills__group-title">Languages</h3>
             <ul class="skills__tags">
-              <li class="tag"><svg class="tag__icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#skill-globe"></use></svg>English — B1</li>
+              <li class="tag">
+                <svg
+                  class="tag__icon"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#skill-globe"></use>
+                </svg>
+                English — B1
+              </li>
             </ul>
           </div>
         </div>
@@ -646,16 +1280,32 @@
       data-js-tabs-content
     >
       <div class="panel__inner container contact">
-        <div class="contact__main" data-js-copy>
+        <div
+          class="contact__main"
+          data-js-copy>
           <h2 class="contact__title">Let’s work together</h2>
           <p class="contact__subtitle">Open to full-time roles and freelance projects.</p>
 
-          <p class="contact__email" data-js-copy-source>zurkul18@gmail.com</p>
+          <p
+            class="contact__email"
+            data-js-copy-source>zurkul18@gmail.com
+          </p>
 
           <div class="contact__actions">
-            <a class="contact__button button shadow-effect button--primary" href="mailto:zurkul18@gmail.com">
-              <span class="button__shine" aria-hidden="true"></span>
-              <svg class="button__icon button__icon--mail" width="20" height="20" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#mail"></use></svg>
+            <a
+              class="contact__button button shadow-effect button--primary"
+              href="mailto:zurkul18@gmail.com">
+              <span
+                class="button__shine"
+                aria-hidden="true"></span>
+              <svg
+                class="button__icon button__icon--mail"
+                width="20"
+                height="20"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#mail"></use>
+              </svg>
               Write me
             </a>
             <button
@@ -663,34 +1313,72 @@
               type="button"
               data-js-copy-button
             >
-              <span class="button__shine" aria-hidden="true"></span>
+              <span
+                class="button__shine"
+                aria-hidden="true"></span>
               <span data-js-copy-label>Copy email</span>
             </button>
           </div>
 
-          <p class="visually-hidden" role="status" data-js-copy-status></p>
+          <p
+            class="visually-hidden"
+            role="status"
+            data-js-copy-status></p>
         </div>
 
         <ul class="contact__links">
           <li class="contact__item">
-            <a class="contact__link shadow-effect" href="https://github.com/DmitroPopryaga" target="_blank" rel="noopener noreferrer">
-              <svg class="contact__link-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#github"></use></svg>
+            <a
+              class="contact__link shadow-effect"
+              href="https://github.com/DmitroPopryaga"
+              target="_blank"
+              rel="noopener noreferrer">
+              <svg
+                class="contact__link-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#github"></use>
+              </svg>
               <span class="contact__link-name">GitHub</span>
               <span class="contact__link-handle">DmitroPopryaga</span>
               <span class="visually-hidden"> (opens in a new tab)</span>
             </a>
           </li>
           <li class="contact__item">
-            <a class="contact__link shadow-effect" href="https://t.me/DmitroPoprjaga" target="_blank" rel="noopener noreferrer">
-              <svg class="contact__link-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#telegram"></use></svg>
+            <a
+              class="contact__link shadow-effect"
+              href="https://t.me/DmitroPoprjaga"
+              target="_blank"
+              rel="noopener noreferrer">
+              <svg
+                class="contact__link-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#telegram"></use>
+              </svg>
               <span class="contact__link-name">Telegram</span>
               <span class="contact__link-handle">@DmitroPoprjaga</span>
               <span class="visually-hidden"> (opens in a new tab)</span>
             </a>
           </li>
           <li class="contact__item">
-            <a class="contact__link shadow-effect" href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b" target="_blank" rel="noopener noreferrer">
-              <svg class="contact__link-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#linkedin"></use></svg>
+            <a
+              class="contact__link shadow-effect"
+              href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b"
+              target="_blank"
+              rel="noopener noreferrer">
+              <svg
+                class="contact__link-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#linkedin"></use>
+              </svg>
               <span class="contact__link-name">LinkedIn</span>
               <span class="contact__link-handle">dmitro-poprjaga</span>
               <span class="visually-hidden"> (opens in a new tab)</span>
@@ -704,7 +1392,14 @@
               aria-haspopup="dialog"
               data-js-confirm-open="resume-dialog"
             >
-              <svg class="contact__link-icon" width="24" height="24" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#resume"></use></svg>
+              <svg
+                class="contact__link-icon"
+                width="24"
+                height="24"
+                aria-hidden="true"
+                focusable="false">
+                <use href="assets/icons/sprite.svg#resume"></use>
+              </svg>
               <span class="contact__link-name">Resume</span>
               <span class="contact__link-handle">PDF</span>
             </a>
@@ -719,25 +1414,60 @@
     <div class="footer__inner container">
       <ul class="footer__socials">
         <li class="footer__social">
-          <a class="footer__link" href="https://github.com/DmitroPopryaga" target="_blank" rel="noopener noreferrer">
-            <svg class="footer__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#github"></use></svg>
+          <a
+            class="footer__link"
+            href="https://github.com/DmitroPopryaga"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg
+              class="footer__link-icon"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              focusable="false">
+              <use href="assets/icons/sprite.svg#github"></use>
+            </svg>
             GitHub<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         </li>
         <li class="footer__social">
-          <a class="footer__link" href="https://t.me/DmitroPoprjaga" target="_blank" rel="noopener noreferrer">
-            <svg class="footer__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#telegram"></use></svg>
+          <a
+            class="footer__link"
+            href="https://t.me/DmitroPoprjaga"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg
+              class="footer__link-icon"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              focusable="false">
+              <use href="assets/icons/sprite.svg#telegram"></use>
+            </svg>
             Telegram<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         </li>
         <li class="footer__social">
-          <a class="footer__link" href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b" target="_blank" rel="noopener noreferrer">
-            <svg class="footer__link-icon" width="16" height="16" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#linkedin"></use></svg>
+          <a
+            class="footer__link"
+            href="https://www.linkedin.com/in/dmitro-poprjaga-53702637b"
+            target="_blank"
+            rel="noopener noreferrer">
+            <svg
+              class="footer__link-icon"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              focusable="false">
+              <use href="assets/icons/sprite.svg#linkedin"></use>
+            </svg>
             LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         </li>
       </ul>
-      <p class="footer__copyright">© Dmitro Poprjaga, <time datetime="2026">2026</time></p>
+      <p class="footer__copyright">© Dmitro Poprjaga,
+        <time datetime="2026">2026</time>
+      </p>
     </div>
   </footer>
 </div>
@@ -749,9 +1479,22 @@
   aria-describedby="resume-dialog-text"
   data-js-confirm
 >
-  <svg class="confirm__icon" width="32" height="32" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#resume"></use></svg>
-  <h2 class="confirm__title" id="resume-dialog-title">Download resume?</h2>
-  <p class="confirm__text" id="resume-dialog-text">PDF file, about 250 KB.</p>
+  <svg
+    class="confirm__icon"
+    width="32"
+    height="32"
+    aria-hidden="true"
+    focusable="false">
+    <use href="assets/icons/sprite.svg#resume"></use>
+  </svg>
+  <h2
+    class="confirm__title"
+    id="resume-dialog-title">Download resume?
+  </h2>
+  <p
+    class="confirm__text"
+    id="resume-dialog-text">PDF file, about 250 KB.
+  </p>
   <div class="confirm__actions">
     <button
       class="confirm__button button shadow-effect button--secondary"
@@ -759,7 +1502,9 @@
       autofocus
       data-js-confirm-cancel
     >
-      <span class="button__shine" aria-hidden="true"></span>
+      <span
+        class="button__shine"
+        aria-hidden="true"></span>
       No
     </button>
     <a
@@ -768,7 +1513,9 @@
       download
       data-js-confirm-accept
     >
-      <span class="button__shine" aria-hidden="true"></span>
+      <span
+        class="button__shine"
+        aria-hidden="true"></span>
       Yes, download
     </a>
   </div>
