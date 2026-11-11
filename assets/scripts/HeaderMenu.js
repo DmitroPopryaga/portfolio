@@ -1,5 +1,6 @@
 class HeaderMenu {
   selectors = {
+    root: '[data-js-header]',
     menu: '[data-js-header-menu]',
     burgerButton: '[data-js-header-burger-button]',
   }
@@ -18,8 +19,8 @@ class HeaderMenu {
     },
   }
 
-  constructor(rootElement) {
-    this.rootElement = rootElement
+  constructor() {
+    this.rootElement = document.querySelector(this.selectors.root)
     this.menuElement = this.rootElement?.querySelector(this.selectors.menu)
     this.burgerButtonElement = this.rootElement?.querySelector(this.selectors.burgerButton)
     this.desktopMediaQueryList = window.matchMedia(this.config.desktopMediaQuery)
@@ -97,18 +98,4 @@ class HeaderMenu {
   }
 }
 
-const rootSelector = '[data-js-header]'
-
-class HeaderMenuCollection {
-  constructor() {
-    this.init()
-  }
-
-  init() {
-    document.querySelectorAll(rootSelector).forEach((element) => {
-      new HeaderMenu(element)
-    })
-  }
-}
-
-export default HeaderMenuCollection
+export default HeaderMenu

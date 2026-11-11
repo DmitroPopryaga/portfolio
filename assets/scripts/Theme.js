@@ -1,4 +1,8 @@
 class Theme {
+  selectors = {
+    button: '[data-js-theme-button]',
+  }
+
   stateClasses = {
     lightTheme: 'light-theme',
   }
@@ -11,8 +15,8 @@ class Theme {
     },
   }
 
-  constructor(buttonElement) {
-    this.buttonElement = buttonElement
+  constructor() {
+    this.buttonElement = document.querySelector(this.selectors.button)
     // класс ставит инлайн-скрипт в <head> до отрисовки, поэтому тема живёт на <html>
     this.themeTargetElement = document.documentElement
 
@@ -51,18 +55,4 @@ class Theme {
   }
 }
 
-const rootSelector = '[data-js-theme-button]'
-
-class ThemeCollection {
-  constructor() {
-    this.init()
-  }
-
-  init() {
-    document.querySelectorAll(rootSelector).forEach((element) => {
-      new Theme(element)
-    })
-  }
-}
-
-export default ThemeCollection
+export default Theme
