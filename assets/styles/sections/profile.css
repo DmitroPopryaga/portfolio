@@ -82,7 +82,7 @@
 /* «лужа»: статичное органическое пятно в нижней части, над ним парит портрет */
 .profile__blob {
   position: absolute;
-  inset: 38% 2% 0;
+  inset: 56% 2% 0;
   z-index: -1;
   border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
   background:

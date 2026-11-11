@@ -2,6 +2,7 @@ class Copy {
   selectors = {
     source: '[data-js-copy-source]',
     button: '[data-js-copy-button]',
+    label: '[data-js-copy-label]',
     status: '[data-js-copy-status]',
   }
 
@@ -22,11 +23,13 @@ class Copy {
     this.rootElement = rootElement
     this.sourceElement = this.rootElement?.querySelector(this.selectors.source)
     this.buttonElement = this.rootElement?.querySelector(this.selectors.button)
+    // меняем только подпись: внутри кнопки есть декоративный блик, его нельзя стирать
+    this.labelElement = this.buttonElement?.querySelector(this.selectors.label)
     this.statusElement = this.rootElement?.querySelector(this.selectors.status)
-    this.defaultLabel = this.buttonElement?.textContent.trim()
+    this.defaultLabel = this.labelElement?.textContent.trim()
     this.resetTimeoutId = null
 
-    if (!this.sourceElement || !this.buttonElement) {
+    if (!this.sourceElement || !this.buttonElement || !this.labelElement) {
       console.warn('[Copy] required elements not found')
       return
     }
@@ -61,7 +64,7 @@ class Copy {
   showCopied() {
     clearTimeout(this.resetTimeoutId)
 
-    this.buttonElement.textContent = this.config.labels.copied
+    this.labelElement.textContent = this.config.labels.copied
     this.buttonElement.classList.add(this.stateClasses.isCopied)
     this.announce(this.config.labels.success)
 
@@ -72,7 +75,7 @@ class Copy {
     clearTimeout(this.resetTimeoutId)
     this.resetTimeoutId = null
 
-    this.buttonElement.textContent = this.defaultLabel
+    this.labelElement.textContent = this.defaultLabel
     this.buttonElement.classList.remove(this.stateClasses.isCopied)
   }
 

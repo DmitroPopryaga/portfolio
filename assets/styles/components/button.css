@@ -1,5 +1,10 @@
-/* hover на тенях — через микс .shadow-effect */
+/* hover на тенях — через микс .shadow-effect; поверх — блик и «живая» иконка */
 .button {
+  --button-shine-color: rgb(255 255 255 / 0.35);
+  --button-shine-duration: 0.6s;
+  --button-icon-shift: 3px;
+  --button-icon-tilt: -12deg;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +23,60 @@
   transition: color var(--transition-duration);
 }
 
+/*
+  Блик: span обрезает полосу по форме кнопки (overflow на самой кнопке
+  обрезал бы внешнюю тень .shadow-effect). z-index: -1 — над фоном, под текстом.
+*/
+.button__shine {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, var(--button-shine-color) 50%, transparent 70%);
+    transform: translateX(-120%);
+  }
+}
+
 .button__icon {
   flex-shrink: 0;
+  transition: transform var(--transition-duration-longer);
+}
+
+/* полоса пробегает один раз за наведение и без обратного хода при уходе курсора */
+@media (any-hover: hover) {
+  .button:hover .button__shine::before {
+    transform: translateX(120%);
+    transition: transform var(--button-shine-duration) ease-out;
+  }
+
+  .button:hover .button__icon--download {
+    transform: translateY(var(--button-icon-shift));
+  }
+
+  .button:hover .button__icon--mail {
+    transform: rotate(var(--button-icon-tilt)) translateX(calc(var(--button-icon-shift) * -1));
+  }
+}
+
+/* то же для клавиатуры */
+.button:focus-visible .button__shine::before {
+  transform: translateX(120%);
+  transition: transform var(--button-shine-duration) ease-out;
+}
+
+.button:focus-visible .button__icon--download {
+  transform: translateY(var(--button-icon-shift));
+}
+
+.button:focus-visible .button__icon--mail {
+  transform: rotate(var(--button-icon-tilt)) translateX(calc(var(--button-icon-shift) * -1));
 }
 
 .button--primary {
@@ -35,6 +92,8 @@
 }
 
 .button--secondary {
+  --button-shine-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+
   color: var(--color-accent);
   border: 1px solid var(--color-accent);
 }
