@@ -20,15 +20,33 @@
   justify-self: center;
   width: 100%;
   max-width: var(--project-media-max);
-
-  @media (width < 1200px) {
-    justify-self: start;
-  }
-
   aspect-ratio: 1;
   object-fit: cover;
   border: var(--border);
   border-radius: var(--border-radius-small);
+
+  @media (width < 1200px) {
+    justify-self: start;
+  }
+}
+
+/* видео-превью 16:9: на всю ширину колонки, до загрузки показывается постер */
+.project__video {
+  --project-video-max: 40rem;
+
+  justify-self: center;
+  width: 100%;
+  max-width: var(--project-video-max);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: var(--color-dark);
+  border: var(--border);
+  border-radius: var(--border-radius-small);
+
+  @media (width < 1200px) {
+    justify-self: start;
+  }
 }
 
 .project__body {

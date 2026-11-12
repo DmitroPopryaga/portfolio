@@ -302,72 +302,162 @@
           aria-orientation="vertical">
           <button
             class="projects__tab shadow-effect is-active"
-            id="project-tab-fanagoria"
+            id="project-tab-matrix"
             type="button"
             role="tab"
             aria-selected="true"
+            aria-controls="project-matrix"
+            data-js-tabs-button
+          >
+            <span class="projects__tab-title">Matrix Real Estate</span>
+            <span class="projects__tab-type">Real estate broker website</span>
+          </button>
+          <button
+            class="projects__tab shadow-effect"
+            id="project-tab-fanagoria"
+            type="button"
+            role="tab"
+            aria-selected="false"
             aria-controls="project-fanagoria"
             data-js-tabs-button
           >
             <span class="projects__tab-title">Fanagoria Travel</span>
             <span class="projects__tab-type">Travel website</span>
           </button>
-          <button
-            class="projects__tab shadow-effect"
-            id="project-tab-stream-vibe"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="project-stream-vibe"
-            data-js-tabs-button
-          >
-            <span class="projects__tab-title">StreamVibe</span>
-            <span class="projects__tab-type">Streaming platform</span>
-          </button>
-          <button
-            class="projects__tab shadow-effect"
-            id="project-tab-future-tech"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="project-future-tech"
-            data-js-tabs-button
-          >
-            <span class="projects__tab-title">FutureTech</span>
-            <span class="projects__tab-type">Tech company website</span>
-          </button>
-          <button
-            class="projects__tab shadow-effect"
-            id="project-tab-positivus"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="project-positivus"
-            data-js-tabs-button
-          >
-            <span class="projects__tab-title">Positivus</span>
-            <span class="projects__tab-type">IT company landing</span>
-          </button>
-          <button
-            class="projects__tab shadow-effect"
-            id="project-tab-kropp-fitness"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="project-kropp-fitness"
-            data-js-tabs-button
-          >
-            <span class="projects__tab-title">Kropp Fitness</span>
-            <span class="projects__tab-type">Fitness club landing</span>
-          </button>
         </div>
 
         <div class="projects__content">
           <article
             class="projects__details project is-active"
+            id="project-matrix"
+            role="tabpanel"
+            aria-labelledby="project-tab-matrix"
+            data-js-tabs-content
+          >
+            <video
+              class="project__video"
+              poster="assets/images/portfolio/matrix-poster.jpg"
+              width="1280"
+              height="720"
+              controls
+              playsinline
+              preload="none"
+              aria-label="Matrix Real Estate website video preview">
+              <source
+                src="assets/videos/matrix.mp4"
+                type="video/mp4">
+              <a href="assets/videos/matrix.mp4">Watch the Matrix Real Estate video preview</a>
+            </video>
+            <div class="project__body">
+              <h3 class="project__title">Matrix Real Estate</h3>
+              <dl class="project__info">
+                <div class="project__info-item">
+                  <dt class="project__info-label">About</dt>
+                  <dd class="project__info-value">Website for a real estate brokerage: property listings with search by location, district, property type and budget, for both sale and rent. Fully responsive interface.</dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Stack</dt>
+                  <dd class="project__info-value">
+                    <ul class="project__stack">
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-html"></use>
+                        </svg>
+                        HTML
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-css"></use>
+                        </svg>
+                        CSS
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-js"></use>
+                        </svg>
+                        JavaScript
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-vite"></use>
+                        </svg>
+                        Vite
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-php"></use>
+                        </svg>
+                        PHP
+                      </li>
+                      <li class="tag">
+                        <svg
+                          class="tag__icon"
+                          width="16"
+                          height="16"
+                          aria-hidden="true"
+                          focusable="false">
+                          <use href="assets/icons/sprite.svg#tech-laravel"></use>
+                        </svg>
+                        Laravel
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="project__info-item">
+                  <dt class="project__info-label">Link</dt>
+                  <dd class="project__info-value">
+                    <a
+                      class="project__link"
+                      href="https://matrix-realestate.bg/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      matrix-realestate.bg<span class="visually-hidden"> (opens in a new tab)</span>
+                      <svg
+                        class="project__link-icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
+                      </svg>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article
+            class="projects__details project"
             id="project-fanagoria"
             role="tabpanel"
             aria-labelledby="project-tab-fanagoria"
+            hidden
             data-js-tabs-content
           >
             <img
@@ -468,380 +558,6 @@
                       target="_blank"
                       rel="noopener noreferrer">
                       fanagoriatravel.com<span class="visually-hidden"> (opens in a new tab)</span>
-                      <svg
-                        class="project__link-icon"
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                        focusable="false">
-                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
-                      </svg>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </article>
-
-          <article
-            class="projects__details project"
-            id="project-stream-vibe"
-            role="tabpanel"
-            aria-labelledby="project-tab-stream-vibe"
-            hidden
-            data-js-tabs-content
-          >
-            <img
-              class="project__image"
-              src="assets/images/portfolio/stream.webp"
-              alt="StreamVibe website screenshot"
-              width="1280"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="project__body">
-              <h3 class="project__title">StreamVibe</h3>
-              <dl class="project__info">
-                <div class="project__info-item">
-                  <dt class="project__info-label">About</dt>
-                  <dd class="project__info-value">Multipage responsive website inspired by Netflix. Includes reusable JSX components for building interactive UI elements efficiently.</dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Stack</dt>
-                  <dd class="project__info-value">
-                    <ul class="project__stack">
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-html"></use>
-                        </svg>
-                        HTML
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-css"></use>
-                        </svg>
-                        CSS
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-sass"></use>
-                        </svg>
-                        SASS
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-js"></use>
-                        </svg>
-                        JavaScript
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-vite"></use>
-                        </svg>
-                        Vite
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Link</dt>
-                  <dd class="project__info-value">
-                    <a
-                      class="project__link"
-                      href="https://github.com/DmitroPopryaga/pet-stream-vibe"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
-                      <svg
-                        class="project__link-icon"
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                        focusable="false">
-                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
-                      </svg>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </article>
-
-          <article
-            class="projects__details project"
-            id="project-future-tech"
-            role="tabpanel"
-            aria-labelledby="project-tab-future-tech"
-            hidden
-            data-js-tabs-content
-          >
-            <img
-              class="project__image"
-              src="assets/images/portfolio/tech.webp"
-              alt="FutureTech website screenshot"
-              width="1280"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="project__body">
-              <h3 class="project__title">FutureTech</h3>
-              <dl class="project__info">
-                <div class="project__info-item">
-                  <dt class="project__info-label">About</dt>
-                  <dd class="project__info-value">Multipage responsive website created with a focus on modern UI/UX principles and enhanced with custom interactive components.</dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Stack</dt>
-                  <dd class="project__info-value">
-                    <ul class="project__stack">
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-html"></use>
-                        </svg>
-                        HTML
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-css"></use>
-                        </svg>
-                        CSS
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-sass"></use>
-                        </svg>
-                        SASS
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-js"></use>
-                        </svg>
-                        JavaScript
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Link</dt>
-                  <dd class="project__info-value">
-                    <a
-                      class="project__link"
-                      href="https://github.com/DmitroPopryaga/pet-future-tech"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
-                      <svg
-                        class="project__link-icon"
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                        focusable="false">
-                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
-                      </svg>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </article>
-
-          <article
-            class="projects__details project"
-            id="project-positivus"
-            role="tabpanel"
-            aria-labelledby="project-tab-positivus"
-            hidden
-            data-js-tabs-content
-          >
-            <img
-              class="project__image"
-              src="assets/images/portfolio/it-company.webp"
-              alt="Positivus website screenshot"
-              width="1280"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="project__body">
-              <h3 class="project__title">Positivus</h3>
-              <dl class="project__info">
-                <div class="project__info-item">
-                  <dt class="project__info-label">About</dt>
-                  <dd class="project__info-value">One-page responsive website for an IT company. The layout was implemented with a focus on UI/UX principles and structured using the BEM methodology.</dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Stack</dt>
-                  <dd class="project__info-value">
-                    <ul class="project__stack">
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-html"></use>
-                        </svg>
-                        HTML
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-css"></use>
-                        </svg>
-                        CSS
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-sass"></use>
-                        </svg>
-                        SASS
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Link</dt>
-                  <dd class="project__info-value">
-                    <a
-                      class="project__link"
-                      href="https://github.com/DmitroPopryaga/pet-positivus"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
-                      <svg
-                        class="project__link-icon"
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                        focusable="false">
-                        <use href="assets/icons/sprite.svg#arrow-up-right"></use>
-                      </svg>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </article>
-
-          <article
-            class="projects__details project"
-            id="project-kropp-fitness"
-            role="tabpanel"
-            aria-labelledby="project-tab-kropp-fitness"
-            hidden
-            data-js-tabs-content
-          >
-            <img
-              class="project__image"
-              src="assets/images/portfolio/fitness.webp"
-              alt="Kropp Fitness website screenshot"
-              width="1280"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="project__body">
-              <h3 class="project__title">Kropp Fitness</h3>
-              <dl class="project__info">
-                <div class="project__info-item">
-                  <dt class="project__info-label">About</dt>
-                  <dd class="project__info-value">One-page responsive website for a fitness club, created to showcase the club’s services and benefits with a focus on UI/UX and clean design.</dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Stack</dt>
-                  <dd class="project__info-value">
-                    <ul class="project__stack">
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-html"></use>
-                        </svg>
-                        HTML
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-css"></use>
-                        </svg>
-                        CSS
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-                <div class="project__info-item">
-                  <dt class="project__info-label">Link</dt>
-                  <dd class="project__info-value">
-                    <a
-                      class="project__link"
-                      href="https://github.com/DmitroPopryaga/pet-kropp-fitness"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub repository<span class="visually-hidden"> (opens in a new tab)</span>
                       <svg
                         class="project__link-icon"
                         width="16"
