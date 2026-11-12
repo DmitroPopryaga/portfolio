@@ -18,6 +18,10 @@ html {
   display: none !important;
 }
 
+/*
+  Типографика: размеры только из шкалы tokens.css.
+  У заголовков своих глобальных размеров нет — каждый задаёт размер в своём блоке.
+*/
 body {
   display: flex;
   flex-direction: column;
@@ -27,64 +31,9 @@ body {
   background-color: var(--color-dark);
 }
 
-.section__title {
-  & span {
-    font-family: var(--font-accent), sans-serif;
-    color: var(--color-accent);
-  }
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  color: var(--color-light);
-}
-
-h1, .h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 700;
-}
-
-h2, .h2 {
-  font-size: clamp(26px, 4.5vw, 48px);
-  font-weight: 700;
-}
-
-h3, .h3 {
-  font-size: clamp(22px, 3.5vw, 36px);
-  font-weight: 700;
-}
-
-h4, .h4 {
-  font-size: clamp(18px, 2.5vw, 28px);
-  font-weight: 600;
-}
-
-h5, .h5 {
-  font-size: clamp(16px, 2vw, 20px);
-  font-weight: 500;
-}
-
-h6, .h6 {
-  font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 600;
-}
-
-a,
-button,
-label,
-input,
-textarea,
-select,
-svg * {
-  transition-duration: var(--transition-duration);
-}
-
 a {
   color: inherit;
+  transition: color var(--transition-duration);
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {

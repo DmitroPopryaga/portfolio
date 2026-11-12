@@ -13,7 +13,6 @@
   --space-m: clamp(1rem, 0.679rem + 1.468vw, 2rem); /* 16→32px */
   --space-l: clamp(1.5rem, 1.018rem + 2.202vw, 3rem); /* 24→48px */
   --space-xl: clamp(2rem, 1.037rem + 4.404vw, 5rem); /* 32→80px */
-  --space-2xl: clamp(3rem, 1.555rem + 6.606vw, 7.5rem); /* 48→120px */
 
   --container-padding: clamp(1rem, 0.518rem + 2.202vw, 2.5rem); /* 16→40px */
 }

@@ -5,6 +5,7 @@
   padding-inline: var(--container-padding-x);
 }
 
+/* скрыто визуально, но доступно скринридерам */
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -14,18 +15,5 @@
   padding: 0 !important;
   white-space: nowrap !important;
   clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
-}
-
-.hidden-tablet {
-  @media (min-width: 768px) {
-    display: none !important;
-  }
-}
-
-.hidden-mobile {
-  @media (max-width: 767px) {
-    display: none !important;
-  }
 }
