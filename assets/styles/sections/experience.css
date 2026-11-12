@@ -3,6 +3,7 @@
   --experience-dot-top: 0.35em;
   --experience-timeline-gap: var(--space-l);
   --experience-line-color: var(--color-secondary);
+  --experience-line-width: 1px;
 
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
@@ -52,8 +53,9 @@
   padding-left: var(--experience-timeline-gap);
   background-image: linear-gradient(var(--experience-line-color), var(--experience-line-color));
   background-repeat: no-repeat;
-  background-position: calc(var(--experience-dot-size) / 2 - 0.5px) var(--experience-dot-top);
-  background-size: 1px calc(100% - var(--experience-dot-top));
+  /* линия по центру точки: половина точки минус половина толщины линии */
+  background-position: calc((var(--experience-dot-size) - var(--experience-line-width)) / 2) var(--experience-dot-top);
+  background-size: var(--experience-line-width) calc(100% - var(--experience-dot-top));
 
   /* desktop: скролл внутри таймлайна, панель и заголовок слева остаются на месте */
   @media (width >= 1024px) {

@@ -94,27 +94,28 @@
 .project__link {
   display: inline-flex;
   align-items: center;
+  column-gap: var(--space-2xs);
   min-height: var(--hit-area);
   color: var(--color-accent);
-  column-gap: var(--space-2xs);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
 .project__link-icon {
   --project-link-icon-shift: 3px;
+  /* стрелка ↗ уходит вверх-вправо — «откроется в новой вкладке» */
+  --project-link-icon-lift: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
 
   flex-shrink: 0;
   transition: transform var(--transition-duration-longer);
 }
 
-/* стрелка ↗ уходит вверх-вправо — «откроется в новой вкладке» */
 @media (hover: hover) and (pointer: fine) {
   .project__link:hover .project__link-icon {
-    transform: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
+    transform: var(--project-link-icon-lift);
   }
 }
 
 .project__link:focus-visible .project__link-icon {
-  transform: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
+  transform: var(--project-link-icon-lift);
 }

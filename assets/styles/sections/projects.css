@@ -20,7 +20,7 @@
   row-gap: var(--space-2xs);
 }
 
-/* hover на тенях — через микс .shadow-effect */
+/* hover на тенях — через микс .shadow-effect; сброс кнопки — в normalize */
 .projects__tab {
   display: flex;
   flex-direction: column;
@@ -30,10 +30,7 @@
   padding: var(--space-xs) var(--space-s);
   text-align: start;
   color: var(--color-light);
-  background-color: transparent;
-  border: none;
   border-radius: var(--border-radius-medium);
-  cursor: pointer;
   transition: color var(--transition-duration);
 
   @media (hover: hover) and (pointer: fine) {
@@ -66,6 +63,7 @@
   display: grid;
 }
 
+/* детали проектов лежат друг на друге; появление — общие keyframes panel-in из layout/panel.css */
 .projects__details {
   grid-area: 1 / 1;
 
