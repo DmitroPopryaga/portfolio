@@ -1,15 +1,11 @@
-/* hover на тенях — через микс .shadow-effect */
+/* hover на тенях — через микс .shadow-effect; сброс кнопки — в normalize */
 .theme {
   display: grid;
   place-items: center;
   width: var(--hit-area);
   height: var(--hit-area);
-  padding: 0;
   color: var(--color-light);
-  background-color: transparent;
-  border: none;
   border-radius: 50%;
-  cursor: pointer;
   transition: color var(--transition-duration);
 
   @media (hover: hover) and (pointer: fine) {

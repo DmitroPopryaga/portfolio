@@ -1,15 +1,14 @@
-/* hover на тенях — через микс .shadow-effect */
+/* hover на тенях — через микс .shadow-effect; сброс кнопки — в normalize */
 .burger-button {
+  /* длины штрихов подобраны под path в разметке (viewBox 0 0 100 100) */
+  --burger-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: var(--hit-area);
   height: var(--hit-area);
-  padding: 0;
-  background-color: transparent;
-  border: none;
   border-radius: var(--border-radius-medium);
-  cursor: pointer;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -30,14 +29,15 @@
   stroke-dasharray: 60 207;
   transition:
     stroke var(--transition-duration),
-    stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dasharray var(--transition-duration-longer) var(--burger-easing),
+    stroke-dashoffset var(--transition-duration-longer) var(--burger-easing);
 }
 
 .burger-button__line--2 {
   stroke-dasharray: 60 60;
 }
 
+/* состояния на блоке: линии превращаются в крестик */
 .burger-button:not(.is-active) .burger-button__line--3 {
   stroke-dasharray: 30 207;
   stroke-dashoffset: -30;

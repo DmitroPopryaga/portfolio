@@ -104,6 +104,16 @@ button {
   font: inherit;
 }
 
+/**
+  Сбрасываем системный вид кнопкам, у которых есть атрибут class:
+  компоненты задают фон, рамку и отступы сами
+ */
+:where(button[class]) {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
 html {
   /**
     Пригодится в большинстве ситуаций

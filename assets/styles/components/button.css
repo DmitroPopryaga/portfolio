@@ -1,4 +1,4 @@
-/* hover: блик и «живая» иконка (без теней) */
+/* hover: блик и «живая» иконка (без теней); сброс кнопки — в normalize */
 .button {
   --button-shine-color: rgb(255 255 255 / 0.35);
   --button-shine-duration: 0.6s;
@@ -19,11 +19,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-light);
-  background-color: transparent;
-  border: none;
   border-radius: var(--border-radius-medium);
-  cursor: pointer;
-  transition: color var(--transition-duration);
 }
 
 /*
