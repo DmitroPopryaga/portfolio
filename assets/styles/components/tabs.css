@@ -28,7 +28,7 @@
   cursor: pointer;
   transition: color var(--transition-duration);
 
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--color-accent);
     }

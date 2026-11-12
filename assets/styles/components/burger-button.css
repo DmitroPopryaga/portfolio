@@ -11,7 +11,7 @@
   border-radius: var(--border-radius-medium);
   cursor: pointer;
 
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       --burger-line-color: var(--color-accent);
     }

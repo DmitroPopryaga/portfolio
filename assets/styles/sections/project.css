@@ -91,7 +91,7 @@
 }
 
 /* стрелка ↗ уходит вверх-вправо — «откроется в новой вкладке» */
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .project__link:hover .project__link-icon {
     transform: translate(var(--project-link-icon-shift), calc(var(--project-link-icon-shift) * -1));
   }

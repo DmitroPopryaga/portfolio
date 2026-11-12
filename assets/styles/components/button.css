@@ -53,7 +53,7 @@
 }
 
 /* полоса пробегает один раз за наведение и без обратного хода при уходе курсора */
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .button:hover .button__shine::before {
     transform: translateX(120%);
     transition: transform var(--button-shine-duration) ease-out;
@@ -87,7 +87,7 @@
   background-color: var(--color-accent-fill);
 
   /* перекрываем глобальный a:hover, иначе текст сольётся с фоном */
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--color-on-accent);
     }

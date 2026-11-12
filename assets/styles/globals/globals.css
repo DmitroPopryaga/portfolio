@@ -86,13 +86,14 @@ svg * {
 a {
   color: inherit;
 
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--color-accent);
     }
   }
 
-  @media (any-hover: none) {
+  /* сенсорные экраны: отклик на тап вместо hover (зеркало условия выше) */
+  @media (hover: none), (pointer: coarse) {
     &:active {
       color: var(--color-accent);
     }

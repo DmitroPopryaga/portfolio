@@ -35,7 +35,7 @@
     color var(--transition-duration);
 
   /* hover: ссылка чуть поднимается и уходит вправо */
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       transform: translate(var(--footer-link-shift), calc(var(--footer-link-shift) * -1));
     }

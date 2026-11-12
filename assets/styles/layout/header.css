@@ -30,7 +30,7 @@
     transform 0.9s,
     color var(--transition-duration);
 
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       transform: rotateY(360deg);
     }
