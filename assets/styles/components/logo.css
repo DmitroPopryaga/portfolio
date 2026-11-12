@@ -1,0 +1,21 @@
+/* логотип-ссылка на главную; на hover делает оборот вокруг вертикальной оси */
+.logo {
+  --logo-spin-duration: 0.9s;
+
+  display: inline-flex;
+  color: var(--color-light);
+  transition:
+    transform var(--logo-spin-duration),
+    color var(--transition-duration);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: rotateY(1turn);
+    }
+  }
+}
+
+.logo__svg {
+  width: var(--logo-size);
+  height: var(--logo-size);
+}

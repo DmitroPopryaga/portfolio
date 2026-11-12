@@ -21,25 +21,10 @@
   }
 }
 
+/* размещение логотипа в шапке; сам блок — components/logo.css */
 .header__logo {
   grid-area: logo;
   justify-self: start;
-  display: inline-flex;
-  color: var(--color-light);
-  transition:
-    transform 0.9s,
-    color var(--transition-duration);
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      transform: rotateY(360deg);
-    }
-  }
-}
-
-.logo__svg {
-  width: var(--logo-size);
-  height: var(--logo-size);
 }
 
 .header__burger-button {
@@ -73,7 +58,7 @@
     &.is-open {
       visibility: visible;
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
 }
