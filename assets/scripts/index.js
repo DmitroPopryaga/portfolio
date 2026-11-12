@@ -1,8 +1,8 @@
-import TabsCollection from "./Tabs.js";
-import HeaderMenu from "./HeaderMenu.js";
-import Theme from "./Theme.js";
-import CopyCollection from "./Copy.js";
-import ConfirmCollection from "./Confirm.js";
+import TabsCollection from './Tabs.js'
+import HeaderMenu from './HeaderMenu.js'
+import Theme from './Theme.js'
+import CopyCollection from './Copy.js'
+import ConfirmCollection from './Confirm.js'
 
 new TabsCollection()
 new HeaderMenu()

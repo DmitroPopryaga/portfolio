@@ -66,8 +66,6 @@ class Tabs {
   }
 
   activate(index, { isUserAction }) {
-    const contentElement = this.contentElements[index]
-
     this.buttonElements.forEach((buttonElement, buttonIndex) => {
       const isActive = buttonIndex === index
 
@@ -90,10 +88,8 @@ class Tabs {
       window.scrollTo({ top: 0 })
     }
 
-    this.rootElement.dispatchEvent(new CustomEvent(this.config.changeEventName, {
-      bubbles: true,
-      detail: { index, id: contentElement.id },
-    }))
+    // сигнал другим компонентам (HeaderMenu закрывает меню)
+    this.rootElement.dispatchEvent(new CustomEvent(this.config.changeEventName, { bubbles: true }))
   }
 
   /* Ручная активация (WAI-ARIA APG): стрелки двигают фокус, Enter/Space/клик выбирают таб */
@@ -136,7 +132,10 @@ class Tabs {
     event.preventDefault()
   }
 
-  /* Назад/вперёд в браузере и обычные ссылки вида href="#skills" (логотип, кнопка Contact) */
+  /*
+    Назад/вперёд в браузере и обычные ссылки вида href="#skills" (логотип, кнопка Contact).
+    hashchange срабатывает и при переходе по истории, если hash отличается, — popstate не нужен.
+  */
   onWindowHashChange = () => {
     const id = this.getHashId()
     // «Назад» до исходного адреса без hash возвращает на первый таб
@@ -164,7 +163,6 @@ class Tabs {
     if (!this.isHashSync) return
 
     window.addEventListener('hashchange', this.onWindowHashChange)
-    window.addEventListener('popstate', this.onWindowHashChange)
     window.addEventListener('load', this.onWindowLoad, { once: true })
   }
 }

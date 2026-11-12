@@ -6,10 +6,6 @@ class Copy {
     status: '[data-js-copy-status]',
   }
 
-  stateClasses = {
-    isCopied: 'is-copied',
-  }
-
   config = {
     resetDelay: 2000,
     labels: {
@@ -65,7 +61,6 @@ class Copy {
     clearTimeout(this.resetTimeoutId)
 
     this.labelElement.textContent = this.config.labels.copied
-    this.buttonElement.classList.add(this.stateClasses.isCopied)
     this.announce(this.config.labels.success)
 
     this.resetTimeoutId = setTimeout(this.reset, this.config.resetDelay)
@@ -76,7 +71,6 @@ class Copy {
     this.resetTimeoutId = null
 
     this.labelElement.textContent = this.defaultLabel
-    this.buttonElement.classList.remove(this.stateClasses.isCopied)
   }
 
   onButtonClick = async () => {
