@@ -84,7 +84,8 @@
 
 .button--primary {
   color: var(--color-on-accent);
-  background-color: var(--color-accent-fill);
+  text-shadow: var(--text-shadow-on-accent);
+  background: var(--gradient-accent);
 
   /* перекрываем глобальный a:hover, иначе текст сольётся с фоном */
   @media (hover: hover) and (pointer: fine) {
