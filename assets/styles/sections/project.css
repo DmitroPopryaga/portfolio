@@ -73,14 +73,6 @@
   border-top: var(--border);
 }
 
-.project__info-label {
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
 .project__info-value {
   font-size: var(--font-size-s);
 }

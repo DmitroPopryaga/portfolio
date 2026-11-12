@@ -53,14 +53,6 @@
   border-top: var(--border);
 }
 
-.skills__principles-title {
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
 .skills__principles-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
