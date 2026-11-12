@@ -42,3 +42,13 @@
     transform: rotate(0deg);
   }
 }
+
+/*
+  Смена темы через View Transitions (Theme.js): отключаем стандартный кроссфейд,
+  чтобы новая тема проявлялась только кругом от кнопки, без полупрозрачной смеси.
+*/
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
