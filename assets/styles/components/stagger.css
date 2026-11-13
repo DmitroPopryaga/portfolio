@@ -1,7 +1,8 @@
 /*
   Микс появления по очереди: дочерние элементы выезжают один за другим.
   Анимация перезапускается сама, когда панель снова становится видимой (hidden → display).
-  Использование: class="profile__content stagger".
+  Использование: class="profile__content stagger";
+  .stagger--reverse — снизу вверх (последний элемент первым).
 */
 .stagger {
   --stagger-step: 70ms;
@@ -21,6 +22,16 @@
     > :nth-child(5) { --stagger-index: 4; }
     > :nth-child(6) { --stagger-index: 5; }
     > :nth-child(n + 7) { --stagger-index: 6; }
+
+    &.stagger--reverse {
+      > :nth-last-child(1) { --stagger-index: 0; }
+      > :nth-last-child(2) { --stagger-index: 1; }
+      > :nth-last-child(3) { --stagger-index: 2; }
+      > :nth-last-child(4) { --stagger-index: 3; }
+      > :nth-last-child(5) { --stagger-index: 4; }
+      > :nth-last-child(6) { --stagger-index: 5; }
+      > :nth-last-child(n + 7) { --stagger-index: 6; }
+    }
   }
 }
 
