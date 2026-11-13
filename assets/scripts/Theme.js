@@ -1,10 +1,16 @@
 class Theme {
   selectors = {
     button: '[data-js-theme-button]',
+    favicon: '[data-js-theme-favicon-dark]',
   }
 
   stateClasses = {
     lightTheme: 'light-theme',
+  }
+
+  attributes = {
+    faviconDark: 'data-js-theme-favicon-dark',
+    faviconLight: 'data-js-theme-favicon-light',
   }
 
   config = {
@@ -24,6 +30,8 @@ class Theme {
 
   constructor() {
     this.buttonElement = document.querySelector(this.selectors.button)
+    // иконка вкладки не видит класс темы на странице, поэтому меняем сам файл (необязательна)
+    this.faviconElement = document.querySelector(this.selectors.favicon)
     // класс ставит инлайн-скрипт в <head> до отрисовки, поэтому тема живёт на <html>
     this.themeTargetElement = document.documentElement
     this.reducedMotionQueryList = window.matchMedia(this.config.reducedMotionQuery)
@@ -53,6 +61,14 @@ class Theme {
   apply(isLight) {
     this.themeTargetElement.classList.toggle(this.stateClasses.lightTheme, isLight)
     this.buttonElement.setAttribute('aria-pressed', String(isLight))
+    this.updateFavicon(isLight)
+  }
+
+  updateFavicon(isLight) {
+    if (!this.faviconElement) return
+
+    const href = this.faviconElement.getAttribute(isLight ? this.attributes.faviconLight : this.attributes.faviconDark)
+    this.faviconElement.setAttribute('href', href)
   }
 
   /* Круг от центра кнопки до самого дальнего угла экрана */

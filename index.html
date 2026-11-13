@@ -12,14 +12,20 @@
   <link
     rel="icon"
     href="assets/icons/favicon.svg"
-    type="image/svg+xml">
+    type="image/svg+xml"
+    data-js-theme-favicon-dark="assets/icons/favicon.svg"
+    data-js-theme-favicon-light="assets/icons/favicon-light.svg">
   <link
     rel="stylesheet"
     href="assets/styles/index.css">
   <script>
-    /* тема до первой отрисовки, чтобы светлая не мигала тёмной */
+    /* тема (и иконка вкладки) до первой отрисовки, чтобы светлая не мигала тёмной */
     try {
-      if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-theme')
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light-theme')
+        const favicon = document.querySelector('[data-js-theme-favicon-light]')
+        favicon?.setAttribute('href', favicon.getAttribute('data-js-theme-favicon-light'))
+      }
     } catch {
     }
   </script>
