@@ -3,10 +3,13 @@ class Tabs {
     root: '[data-js-tabs]',
     button: '[data-js-tabs-button]',
     content: '[data-js-tabs-content]',
+    indicator: '[data-js-tabs-indicator]',
   }
 
   stateClasses = {
     isActive: 'is-active',
+    isReady: 'is-ready',
+    isAnimated: 'is-animated',
   }
 
   attributes = {
@@ -25,6 +28,8 @@ class Tabs {
     this.rootElement = rootElement
     this.buttonElements = this.getOwnElements(this.selectors.button)
     this.contentElements = this.getOwnElements(this.selectors.content)
+    // подложка активного таба (необязательна)
+    this.indicatorElement = this.getOwnElements(this.selectors.indicator)[0] ?? null
     this.isHashSync = Boolean(this.rootElement?.hasAttribute(this.attributes.hashSync))
     // вложенные табы (проекты) не трогают скролл и заголовок вкладки — это дело внешних
     this.isNested = Boolean(this.rootElement?.parentElement?.closest(this.selectors.root))
@@ -34,6 +39,8 @@ class Tabs {
       console.warn('[Tabs] buttons not found or buttons/contents count mismatch')
       return
     }
+
+    this.resizeObserver = this.indicatorElement ? new ResizeObserver(this.onButtonsResize) : null
 
     this.bindEvents()
     // Осознанное отступление от стандарта: начальная синхронизация с hash (прямые ссылки вида /#skills)
@@ -99,6 +106,8 @@ class Tabs {
       element.hidden = !isActive
     })
 
+    this.updateIndicator()
+
     const isMain = this.isHashSync && !this.isNested
 
     if (isMain) {
@@ -114,6 +123,32 @@ class Tabs {
 
     // сигнал другим компонентам (HeaderMenu закрывает меню)
     this.rootElement.dispatchEvent(new CustomEvent(this.config.changeEventName, { bubbles: true }))
+  }
+
+  /*
+    Подложка переезжает к активной кнопке. Кнопка в скрытой панели имеет нулевой размер —
+    тогда ждём ResizeObserver, который сработает, когда панель покажут.
+  */
+  updateIndicator() {
+    const buttonElement = this.buttonElements[this.activeIndex]
+
+    if (!this.indicatorElement || !buttonElement?.offsetWidth) return
+
+    const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = buttonElement
+    const { style, classList } = this.indicatorElement
+
+    style.setProperty('--tabs-indicator-x', `${offsetLeft}px`)
+    style.setProperty('--tabs-indicator-y', `${offsetTop}px`)
+    style.setProperty('--tabs-indicator-width', `${offsetWidth}px`)
+    style.setProperty('--tabs-indicator-height', `${offsetHeight}px`)
+
+    if (classList.contains(this.stateClasses.isReady)) return
+
+    // первая расстановка — без анимации, переезды включаем со следующего кадра
+    classList.add(this.stateClasses.isReady)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => classList.add(this.stateClasses.isAnimated))
+    })
   }
 
   /* Ручная активация (WAI-ARIA APG): стрелки двигают фокус, Enter/Space/клик выбирают таб */
@@ -178,11 +213,19 @@ class Tabs {
     window.scrollTo({ top: 0 })
   }
 
+  /* Шрифт догрузился, сменился брейкпоинт или панель стала видимой — пересчитываем подложку */
+  onButtonsResize = () => {
+    this.updateIndicator()
+  }
+
   bindEvents() {
     this.buttonElements.forEach((buttonElement) => {
       buttonElement.addEventListener('click', this.onButtonClick)
       buttonElement.addEventListener('keydown', this.onButtonKeydown)
+      this.resizeObserver?.observe(buttonElement)
     })
+    // fluid-отступы между кнопками меняют сам tablist, даже если кнопки остались прежними
+    this.resizeObserver?.observe(this.indicatorElement.parentElement)
 
     if (!this.isHashSync) return
 

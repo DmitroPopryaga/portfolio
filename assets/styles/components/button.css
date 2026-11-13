@@ -78,6 +78,38 @@
   transform: rotate(var(--button-icon-tilt)) translateX(calc(var(--button-icon-shift) * -1));
 }
 
+/* галочка «скопировано»: пока на кнопке .is-copied, выскакивает и прорисовывается штрихом */
+.button__icon--check {
+  display: none;
+
+  & path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+}
+
+.button.is-copied .button__icon--check {
+  display: block;
+  animation: button-check-pop var(--transition-duration-longer) cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  & path {
+    animation: button-check-draw var(--transition-duration-longer) ease-out 0.1s forwards;
+  }
+}
+
+@keyframes button-check-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+@keyframes button-check-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .button--primary {
   color: var(--color-on-accent);
   text-shadow: var(--text-shadow-on-accent);

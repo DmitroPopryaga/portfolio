@@ -100,6 +100,10 @@
           class="header__tabs tabs"
           role="tablist"
           aria-label="Portfolio sections">
+          <span
+            class="tabs-indicator"
+            aria-hidden="true"
+            data-js-tabs-indicator></span>
           <button
             class="tabs__button shadow-effect is-active"
             id="tab-profile"
@@ -236,7 +240,7 @@
       data-js-tabs-content
     >
       <div class="panel__inner container profile">
-        <div class="profile__content">
+        <div class="profile__content stagger">
           <p class="profile__eyebrow label label--accent">Frontend Engineer</p>
 
           <h1 class="profile__title">Dmitro Poprjaga</h1>
@@ -309,10 +313,14 @@
         <h2 class="visually-hidden">Projects</h2>
 
         <div
-          class="projects__list"
+          class="projects__list stagger"
           role="tablist"
           aria-label="Projects"
           aria-orientation="vertical">
+          <span
+            class="tabs-indicator"
+            aria-hidden="true"
+            data-js-tabs-indicator></span>
           <button
             class="projects__tab shadow-effect is-active"
             id="project-tab-matrix"
@@ -757,7 +765,7 @@
           <p class="experience__subtitle">Where I have worked.</p>
         </div>
 
-        <ol class="experience__timeline">
+        <ol class="experience__timeline stagger">
           <li class="experience__item job">
             <h3 class="job__title">
               Frontend Engineer
@@ -830,7 +838,7 @@
       <div class="panel__inner container skills">
         <h2 class="skills__title">Skills</h2>
 
-        <div class="skills__groups">
+        <div class="skills__groups stagger">
           <div class="skills__group">
             <h3 class="skills__group-title">Frontend</h3>
             <ul class="skills__tags">
@@ -1188,7 +1196,7 @@
 
         <div class="skills__principles">
           <h3 class="skills__principles-title label label--accent">Principles</h3>
-          <ul class="skills__principles-list">
+          <ul class="skills__principles-list stagger">
             <li class="skills__principle">Teamwork and clear communication with designers, managers and developers.</li>
             <li class="skills__principle">Responsibility for deadlines and detailed reports on the work done.</li>
             <li class="skills__principle">Attention to the brief and to code quality, following the code style.</li>
@@ -1208,7 +1216,7 @@
     >
       <div class="panel__inner container contact">
         <div
-          class="contact__main"
+          class="contact__main stagger"
           data-js-copy>
           <h2 class="contact__title">Let’s work together</h2>
           <p class="contact__subtitle">Open to full-time roles and freelance projects.</p>
@@ -1243,6 +1251,23 @@
               <span
                 class="button__shine"
                 aria-hidden="true"></span>
+              <svg
+                class="button__icon button__icon--check"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false">
+                <!-- путь инлайном: штрих прорисовывается через stroke-dashoffset (pathLength="1") -->
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  pathLength="1"/>
+              </svg>
               <span data-js-copy-label>Copy email</span>
             </button>
           </div>
@@ -1253,7 +1278,7 @@
             data-js-copy-status></p>
         </div>
 
-        <ul class="contact__links">
+        <ul class="contact__links stagger">
           <li class="contact__item">
             <a
               class="contact__link shadow-effect"

@@ -12,6 +12,8 @@
 @import "components/burger-button.css";
 @import "components/theme.css";
 @import "components/tabs.css";
+@import "components/tabs-indicator.css";
+@import "components/stagger.css";
 @import "components/tag.css";
 @import "components/label.css";
 @import "components/confirm.css";

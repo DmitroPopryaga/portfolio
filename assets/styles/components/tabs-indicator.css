@@ -1,0 +1,35 @@
+/*
+  Подложка активного таба: переезжает между кнопками вместо того, чтобы мигать на каждой.
+  Ставится первым ребёнком tablist (родителю нужен position: relative).
+  Положение и размер задаёт Tabs.js через --tabs-indicator-*; пока JS не отработал (.is-ready нет),
+  подложка скрыта, а активная кнопка показывает свою «вдавленную» тень из .shadow-effect.
+*/
+.tabs-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--tabs-indicator-width, 0);
+  height: var(--tabs-indicator-height, 0);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-pressed);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(var(--tabs-indicator-x, 0), var(--tabs-indicator-y, 0));
+
+  &.is-ready {
+    opacity: 1;
+  }
+
+  /* is-animated ставится после первой расстановки, чтобы подложка не выезжала из угла при загрузке */
+  &.is-animated {
+    transition:
+      transform var(--transition-duration-longer) cubic-bezier(0.22, 1, 0.36, 1),
+      width var(--transition-duration-longer) cubic-bezier(0.22, 1, 0.36, 1),
+      height var(--transition-duration-longer) cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* подложка работает — своя тень у активной кнопки не нужна */
+  &.is-ready ~ .is-active::after {
+    opacity: 0;
+  }
+}

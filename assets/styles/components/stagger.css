@@ -1,0 +1,32 @@
+/*
+  Микс появления по очереди: дочерние элементы выезжают один за другим.
+  Анимация перезапускается сама, когда панель снова становится видимой (hidden → display).
+  Использование: class="profile__content stagger".
+*/
+.stagger {
+  --stagger-step: 70ms;
+  --stagger-offset: 0.1s;
+  --stagger-duration: 0.5s;
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* декоративные элементы (подложка таба и т. п.) не трогаем: у них свой transform */
+    > :not([aria-hidden="true"]) {
+      animation: stagger-in var(--stagger-duration) cubic-bezier(0.22, 1, 0.36, 1) backwards;
+      animation-delay: calc(var(--stagger-offset) + var(--stagger-index, 0) * var(--stagger-step));
+    }
+
+    > :nth-child(2) { --stagger-index: 1; }
+    > :nth-child(3) { --stagger-index: 2; }
+    > :nth-child(4) { --stagger-index: 3; }
+    > :nth-child(5) { --stagger-index: 4; }
+    > :nth-child(6) { --stagger-index: 5; }
+    > :nth-child(n + 7) { --stagger-index: 6; }
+  }
+}
+
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-s));
+  }
+}

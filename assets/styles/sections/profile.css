@@ -78,7 +78,7 @@
   }
 }
 
-/* «лужа»: статичное органическое пятно в нижней части, над ним парит портрет */
+/* «лужа»: органическое пятно в нижней части, над ним парит портрет */
 .profile__blob {
   position: absolute;
   inset: 56% 2% 0;
@@ -91,6 +91,8 @@
       color-mix(in srgb, var(--color-primary) 35%, transparent) 70%
     );
   filter: blur(2px);
+  /* «дышит» в такт портрету: портрет вверх — пятно сжимается и бледнеет, как тень */
+  animation: profile-blob var(--profile-float-duration) ease-in-out infinite;
 }
 
 /* портрет парит; низ растворяется, чтобы не было резкого среза */
@@ -100,6 +102,14 @@
   object-fit: contain;
   mask-image: linear-gradient(to bottom, #000 78%, transparent);
   animation: profile-float var(--profile-float-duration) ease-in-out infinite;
+}
+
+@keyframes profile-blob {
+  50% {
+    border-radius: 58% 42% 37% 63% / 56% 59% 41% 44%;
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
 }
 
 @keyframes profile-float {

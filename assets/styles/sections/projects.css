@@ -15,6 +15,7 @@
 }
 
 .projects__list {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: var(--space-2xs);
