@@ -1,12 +1,19 @@
 .panel {
+  /* сама панель только проявляется: движение даёт .stagger внутри, двойной сдвиг выглядел рвано */
   &.is-active {
-    animation: panel-in var(--transition-duration-longer) ease-out;
+    animation: panel-fade var(--transition-duration-longer) ease-out;
   }
 }
 
 .panel__inner {
   min-height: 100%;
   padding-block: var(--space-l);
+}
+
+@keyframes panel-fade {
+  from {
+    opacity: 0;
+  }
 }
 
 @keyframes panel-in {

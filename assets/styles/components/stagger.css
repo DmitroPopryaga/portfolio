@@ -5,14 +5,16 @@
   .stagger--reverse — снизу вверх (последний элемент первым).
 */
 .stagger {
-  --stagger-step: 70ms;
-  --stagger-offset: 0.1s;
-  --stagger-duration: 0.5s;
+  --stagger-step: 110ms;
+  --stagger-offset: 0.15s;
+  --stagger-duration: 0.9s;
+  /* мягкий выход без «доводки» в конце */
+  --stagger-easing: cubic-bezier(0.16, 1, 0.3, 1);
 
   @media (prefers-reduced-motion: no-preference) {
     /* декоративные элементы (подложка таба и т. п.) не трогаем: у них свой transform */
     > :not([aria-hidden="true"]) {
-      animation: stagger-in var(--stagger-duration) cubic-bezier(0.22, 1, 0.36, 1) backwards;
+      animation: stagger-in var(--stagger-duration) var(--stagger-easing) backwards;
       animation-delay: calc(var(--stagger-offset) + var(--stagger-index, 0) * var(--stagger-step));
     }
 
@@ -35,9 +37,11 @@
   }
 }
 
+/* проявляется из лёгкого размытия: переход мягче, чем просто opacity */
 @keyframes stagger-in {
   from {
     opacity: 0;
-    transform: translateY(var(--space-s));
+    filter: blur(6px);
+    transform: translateY(var(--space-m));
   }
 }
