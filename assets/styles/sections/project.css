@@ -1,32 +1,13 @@
 .project {
-  /* скриншот не выше доступной высоты экрана, чтобы панель помещалась в 100dvh */
-  --project-media-max: 66dvh;
-
   display: grid;
-  /* скриншот шире текста, чтобы заполнить пространство между списком и описанием */
+  /* видео шире текста, чтобы заполнить пространство между списком и описанием */
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   align-items: center;
   gap: var(--space-l);
 
   @media (width < 1200px) {
-    --project-media-max: 28rem;
-
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
-  }
-}
-
-.project__image {
-  justify-self: center;
-  width: 100%;
-  max-width: var(--project-media-max);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: var(--border);
-  border-radius: var(--border-radius-small);
-
-  @media (width < 1200px) {
-    justify-self: start;
   }
 }
 

@@ -635,15 +635,39 @@
             hidden
             data-js-tabs-content
           >
-            <img
-              class="project__image"
-              src="assets/images/portfolio/travel.webp"
-              alt="Fanagoria Travel website screenshot"
-              width="1280"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            >
+            <div class="project__video video-player" data-js-video-player>
+              <video
+                class="video-player__video"
+                data-js-video-player-video
+                poster="assets/images/portfolio/fanagoria-travel_thumbnail_1280x720.jpg"
+                width="1280"
+                height="720"
+                controls
+                playsinline
+                preload="none"
+                aria-label="Fanagoria Travel website video preview">
+                <source
+                  src="assets/videos/fanagoria-travel.mp4"
+                  type="video/mp4">
+                <a href="assets/videos/fanagoria-travel.mp4">Watch the Fanagoria Travel video preview</a>
+              </video>
+              <button
+                class="video-player__play"
+                type="button"
+                hidden
+                aria-label="Play Fanagoria Travel video"
+                data-js-video-player-button
+              >
+                <svg
+                  class="video-player__icon"
+                  width="28"
+                  height="28"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
             <div class="project__body">
               <h3 class="project__title">Fanagoria Travel</h3>
               <dl class="project__info">
@@ -687,28 +711,6 @@
                           <use href="assets/icons/sprite.svg#tech-js"></use>
                         </svg>
                         JavaScript
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-vite"></use>
-                        </svg>
-                        Vite
-                      </li>
-                      <li class="tag">
-                        <svg
-                          class="tag__icon"
-                          width="16"
-                          height="16"
-                          aria-hidden="true"
-                          focusable="false">
-                          <use href="assets/icons/sprite.svg#tech-php"></use>
-                        </svg>
-                        PHP
                       </li>
                       <li class="tag">
                         <svg
