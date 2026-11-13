@@ -19,14 +19,20 @@
     rel="stylesheet"
     href="assets/styles/index.css">
   <script>
-    /* тема (и иконка вкладки) до первой отрисовки, чтобы светлая не мигала тёмной */
-    try {
-      if (localStorage.getItem('theme') === 'light') {
+    /* тема (и иконка вкладки) до первой отрисовки: выбор пользователя, иначе системная */
+    {
+      let savedTheme = null
+      try {
+        savedTheme = localStorage.getItem('theme')
+      } catch {
+      }
+      const isLight = savedTheme ? savedTheme === 'light' : matchMedia('(prefers-color-scheme: light)').matches
+
+      if (isLight) {
         document.documentElement.classList.add('light-theme')
         const favicon = document.querySelector('[data-js-theme-favicon-light]')
         favicon?.setAttribute('href', favicon.getAttribute('data-js-theme-favicon-light'))
       }
-    } catch {
     }
   </script>
   <script
@@ -298,7 +304,8 @@
     >
       <div
         class="panel__inner container projects"
-        data-js-tabs>
+        data-js-tabs
+        data-js-tabs-hash-sync>
         <h2 class="visually-hidden">Projects</h2>
 
         <div

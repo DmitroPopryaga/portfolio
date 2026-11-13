@@ -30,10 +30,11 @@
   background: var(--gradient-accent);
   border-radius: 50%;
   box-shadow: var(--shadow);
+  /* появляется (после конца видео) с visibility сразу, иначе focus() на кнопку не сработает */
   transition:
     opacity var(--transition-duration-longer),
     transform var(--transition-duration-longer),
-    visibility var(--transition-duration-longer);
+    visibility 0s;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -52,4 +53,7 @@
   visibility: hidden;
   opacity: 0;
   transform: scale(0.8);
+  /* прячется плавно: visibility выключается в конце вместе с opacity */
+  transition-property: opacity, transform, visibility;
+  transition-duration: var(--transition-duration-longer);
 }

@@ -10,7 +10,7 @@ class Tabs {
   }
 
   attributes = {
-    // флаг на root: этот экземпляр управляет адресом страницы (#skills) и скроллом
+    // флаг на root: экземпляр синхронизируется с адресом (#skills, #project-matrix)
     hashSync: 'data-js-tabs-hash-sync',
   }
 
@@ -18,6 +18,7 @@ class Tabs {
     changeEventName: 'tabs:change',
     prevKeys: ['ArrowLeft', 'ArrowUp'],
     nextKeys: ['ArrowRight', 'ArrowDown'],
+    titleSeparator: ' | ',
   }
 
   constructor(rootElement) {
@@ -25,6 +26,9 @@ class Tabs {
     this.buttonElements = this.getOwnElements(this.selectors.button)
     this.contentElements = this.getOwnElements(this.selectors.content)
     this.isHashSync = Boolean(this.rootElement?.hasAttribute(this.attributes.hashSync))
+    // вложенные табы (проекты) не трогают скролл и заголовок вкладки — это дело внешних
+    this.isNested = Boolean(this.rootElement?.parentElement?.closest(this.selectors.root))
+    this.baseTitle = document.title
 
     if (this.buttonElements.length === 0 || this.buttonElements.length !== this.contentElements.length) {
       console.warn('[Tabs] buttons not found or buttons/contents count mismatch')
@@ -53,8 +57,22 @@ class Tabs {
     return decodeURIComponent(window.location.hash.slice(1))
   }
 
+  /* Панель с этим id или панель, внутри которой он лежит: #project-matrix открывает и «Projects» */
   getIndexById(id) {
-    return this.contentElements.findIndex((contentElement) => contentElement.id === id)
+    if (!id) return -1
+
+    const selector = `#${CSS.escape(id)}`
+
+    return this.contentElements.findIndex((contentElement) => (
+      contentElement.id === id || contentElement.querySelector(selector)
+    ))
+  }
+
+  /* Заголовок вкладки по разделу: «Projects | Dmitro Poprjaga — …»; первый раздел — исходный заголовок */
+  updateTitle(index) {
+    const label = this.buttonElements[index].textContent.trim()
+
+    document.title = index === 0 ? this.baseTitle : `${label}${this.config.titleSeparator}${this.baseTitle}`
   }
 
   getInitialIndex() {
@@ -81,10 +99,16 @@ class Tabs {
       element.hidden = !isActive
     })
 
+    const isMain = this.isHashSync && !this.isNested
+
+    if (isMain) {
+      this.updateTitle(index)
+    }
+
     if (!isUserAction) return
 
     // На мобильных скроллится страница: новый раздел открывается с начала
-    if (this.isHashSync) {
+    if (isMain) {
       window.scrollTo({ top: 0 })
     }
 
@@ -163,6 +187,9 @@ class Tabs {
     if (!this.isHashSync) return
 
     window.addEventListener('hashchange', this.onWindowHashChange)
+
+    if (this.isNested) return
+
     window.addEventListener('load', this.onWindowLoad, { once: true })
   }
 }

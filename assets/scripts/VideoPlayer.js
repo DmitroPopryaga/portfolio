@@ -10,6 +10,8 @@ class VideoPlayer {
 
   config = {
     tabsChangeEventName: 'tabs:change',
+    // видно меньше этой доли — ставим на паузу (на мобильных видео уезжает при скролле)
+    visibilityThreshold: 0.25,
   }
 
   constructor(rootElement) {
@@ -21,6 +23,10 @@ class VideoPlayer {
       console.warn('[VideoPlayer] required elements not found')
       return
     }
+
+    this.intersectionObserver = new IntersectionObserver(this.onIntersection, {
+      threshold: this.config.visibilityThreshold,
+    })
 
     this.bindEvents()
     /*
@@ -41,6 +47,27 @@ class VideoPlayer {
     })
   }
 
+  /* Досмотрели до конца: возвращаем постер и кнопку Play, как до старта */
+  onVideoEnded = () => {
+    const hasFocusInside = this.rootElement.contains(document.activeElement)
+
+    this.rootElement.classList.remove(this.stateClasses.isPlaying)
+    this.videoElement.controls = false
+    // load() сбрасывает видео к постеру (с preload="none" данные заново не качаются)
+    this.videoElement.load()
+
+    if (hasFocusInside) {
+      this.buttonElement.focus()
+    }
+  }
+
+  /* Видео ушло с экрана: пауза, чтобы оно не играло там, где его не видно */
+  onIntersection = ([entry]) => {
+    if (entry.isIntersecting || this.videoElement.paused) return
+
+    this.videoElement.pause()
+  }
+
   /* Сменился таб: если плеер оказался в скрытой панели — ставим на паузу, чтобы звук не играл фоном */
   onDocumentTabsChange = () => {
     if (this.rootElement.closest('[hidden]')) {
@@ -50,6 +77,8 @@ class VideoPlayer {
 
   bindEvents() {
     this.buttonElement.addEventListener('click', this.onButtonClick)
+    this.videoElement.addEventListener('ended', this.onVideoEnded)
+    this.intersectionObserver.observe(this.rootElement)
     document.addEventListener(this.config.tabsChangeEventName, this.onDocumentTabsChange)
   }
 }

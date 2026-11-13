@@ -26,6 +26,8 @@ class Theme {
       pseudoElement: '::view-transition-new(root)',
     },
     reducedMotionQuery: '(prefers-reduced-motion: reduce)',
+    // пока пользователь не выбрал тему сам, следуем системной
+    systemLightQuery: '(prefers-color-scheme: light)',
   }
 
   constructor() {
@@ -35,6 +37,8 @@ class Theme {
     // класс ставит инлайн-скрипт в <head> до отрисовки, поэтому тема живёт на <html>
     this.themeTargetElement = document.documentElement
     this.reducedMotionQueryList = window.matchMedia(this.config.reducedMotionQuery)
+    this.systemLightQueryList = window.matchMedia(this.config.systemLightQuery)
+    this.isSwitching = false
 
     if (!this.buttonElement) {
       console.warn('[Theme] button not found')
@@ -43,11 +47,23 @@ class Theme {
 
     this.bindEvents()
     // Осознанное отступление от стандарта: синхронизируем aria-pressed с уже применённой темой
-    this.apply(this.themeTargetElement.classList.contains(this.stateClasses.lightTheme))
+    this.apply(this.isLight)
+  }
+
+  get isLight() {
+    return this.themeTargetElement.classList.contains(this.stateClasses.lightTheme)
   }
 
   get canReveal() {
     return typeof document.startViewTransition === 'function' && !this.reducedMotionQueryList.matches
+  }
+
+  getSavedTheme() {
+    try {
+      return localStorage.getItem(this.config.storageKey)
+    } catch {
+      return null
+    }
   }
 
   saveTheme(theme) {
@@ -95,20 +111,40 @@ class Theme {
     const clipPath = this.getRevealClipPath()
     const transition = document.startViewTransition(() => this.apply(isLight))
 
-    transition.ready.then(() => {
-      this.themeTargetElement.animate({ clipPath }, this.config.reveal)
+    // класс меняется не сразу: до конца перехода новые клики игнорируем, иначе тема и storage разъедутся
+    this.isSwitching = true
+    transition.finished.finally(() => {
+      this.isSwitching = false
     })
+
+    transition.ready
+      .then(() => {
+        this.themeTargetElement.animate({ clipPath }, this.config.reveal)
+      })
+      .catch(() => {
+        // переход пропущен (вкладка скрыта и т. п.): тема всё равно применится, анимации просто не будет
+      })
   }
 
   onButtonClick = () => {
-    const isLight = !this.themeTargetElement.classList.contains(this.stateClasses.lightTheme)
+    if (this.isSwitching) return
+
+    const isLight = !this.isLight
 
     this.switchTheme(isLight)
     this.saveTheme(isLight ? this.config.themes.light : this.config.themes.dark)
   }
 
+  /* Системная тема сменилась: подхватываем, только если пользователь ещё не выбирал сам */
+  onSystemLightQueryChange = (event) => {
+    if (this.getSavedTheme() || this.isSwitching) return
+
+    this.switchTheme(event.matches)
+  }
+
   bindEvents() {
     this.buttonElement.addEventListener('click', this.onButtonClick)
+    this.systemLightQueryList.addEventListener('change', this.onSystemLightQueryChange)
   }
 }
 
