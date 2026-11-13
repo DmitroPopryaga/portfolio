@@ -346,20 +346,39 @@
             aria-labelledby="project-tab-matrix"
             data-js-tabs-content
           >
-            <video
-              class="project__video"
-              poster="assets/images/portfolio/matrix_thumbnail_1280x720.jpg"
-              width="1280"
-              height="720"
-              controls
-              playsinline
-              preload="none"
-              aria-label="Matrix Real Estate website video preview">
-              <source
-                src="assets/videos/matrix.mp4"
-                type="video/mp4">
-              <a href="assets/videos/matrix.mp4">Watch the Matrix Real Estate video preview</a>
-            </video>
+            <div class="project__video video-player" data-js-video-player>
+              <video
+                class="video-player__video"
+                data-js-video-player-video
+                poster="assets/images/portfolio/matrix_thumbnail_1280x720.jpg"
+                width="1280"
+                height="720"
+                controls
+                playsinline
+                preload="none"
+                aria-label="Matrix Real Estate website video preview">
+                <source
+                  src="assets/videos/matrix.mp4"
+                  type="video/mp4">
+                <a href="assets/videos/matrix.mp4">Watch the Matrix Real Estate video preview</a>
+              </video>
+              <button
+                class="video-player__play"
+                type="button"
+                hidden
+                aria-label="Play Matrix Real Estate video"
+                data-js-video-player-button
+              >
+                <svg
+                  class="video-player__icon"
+                  width="28"
+                  height="28"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
             <div class="project__body">
               <h3 class="project__title">Matrix Real Estate</h3>
               <dl class="project__info">
@@ -472,20 +491,39 @@
             hidden
             data-js-tabs-content
           >
-            <video
-              class="project__video"
-              poster="assets/images/portfolio/fanagoria-cruises_thumbnail_1280x720.jpg"
-              width="1280"
-              height="720"
-              controls
-              playsinline
-              preload="none"
-              aria-label="Fanagoria Cruises website video preview">
-              <source
-                src="assets/videos/fanagoria-cruises.mp4"
-                type="video/mp4">
-              <a href="assets/videos/fanagoria-cruises.mp4">Watch the Fanagoria Cruises video preview</a>
-            </video>
+            <div class="project__video video-player" data-js-video-player>
+              <video
+                class="video-player__video"
+                data-js-video-player-video
+                poster="assets/images/portfolio/fanagoria-cruises_thumbnail_1280x720.jpg"
+                width="1280"
+                height="720"
+                controls
+                playsinline
+                preload="none"
+                aria-label="Fanagoria Cruises website video preview">
+                <source
+                  src="assets/videos/fanagoria-cruises.mp4"
+                  type="video/mp4">
+                <a href="assets/videos/fanagoria-cruises.mp4">Watch the Fanagoria Cruises video preview</a>
+              </video>
+              <button
+                class="video-player__play"
+                type="button"
+                hidden
+                aria-label="Play Fanagoria Cruises video"
+                data-js-video-player-button
+              >
+                <svg
+                  class="video-player__icon"
+                  width="28"
+                  height="28"
+                  aria-hidden="true"
+                  focusable="false">
+                  <use href="assets/icons/sprite.svg#play"></use>
+                </svg>
+              </button>
+            </div>
             <div class="project__body">
               <h3 class="project__title">Fanagoria Cruises</h3>
               <dl class="project__info">

@@ -30,16 +30,14 @@
   }
 }
 
-/* видео-превью 16:9: на всю ширину колонки, до загрузки показывается постер */
+/* место видео-плеера в карточке: 16:9 на всю ширину колонки; сам плеер — components/video-player.css */
 .project__video {
   --project-video-max: 40rem;
 
   justify-self: center;
   width: 100%;
   max-width: var(--project-video-max);
-  height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
   background-color: var(--color-dark);
   border: var(--border);
   border-radius: var(--border-radius-small);

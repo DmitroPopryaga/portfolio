@@ -1,0 +1,55 @@
+/*
+  Видео с кнопкой Play по центру (как на мобильных): нативные controls
+  появляются только после старта. Размеры задаёт место в разметке (например, .project__video).
+*/
+.video-player {
+  --video-player-button-size: 4rem;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.video-player__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* сброс кнопки — в normalize */
+.video-player__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: var(--video-player-button-size);
+  height: var(--video-player-button-size);
+  margin: auto;
+  color: var(--color-on-accent);
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  transition:
+    opacity var(--transition-duration-longer),
+    transform var(--transition-duration-longer),
+    visibility var(--transition-duration-longer);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+}
+
+/* лёгкая оптическая поправка вправо заложена в саму иконку play в спрайте */
+.video-player__icon {
+  flex-shrink: 0;
+}
+
+/* после старта кнопка исчезает, остаются нативные controls */
+.video-player.is-playing .video-player__play {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+}

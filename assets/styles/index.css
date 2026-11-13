@@ -16,6 +16,7 @@
 @import "components/label.css";
 @import "components/confirm.css";
 @import "components/logo.css";
+@import "components/video-player.css";
 
 /* layout: каркас страницы */
 @import "layout/app.css";
