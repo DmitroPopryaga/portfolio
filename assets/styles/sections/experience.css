@@ -2,6 +2,9 @@
   --experience-dot-size: 9px;
   --experience-dot-top: 0.35em;
   --experience-timeline-gap: var(--space-l);
+  --experience-item-gap: var(--space-l);
+  /* радиус кольца-пульса у точки */
+  --experience-pulse-size: 10px;
   --experience-line-color: var(--color-secondary);
   --experience-line-width: 1px;
   /* прорисовка при открытии раздела: линия растёт снизу вверх, точки загораются, когда она до них доходит */
@@ -46,30 +49,22 @@
   opacity: 0.8;
 }
 
-/*
-  Линия таймлайна — фон контейнера: начинается от верха первой точки (точка закрывает её начало)
-  и при скролле стоит на месте, а точки едут вместе с контентом.
-  Прижата к низу, поэтому при анимации размера растёт снизу вверх.
-*/
+/* таймлайн: линия и точки рисуются у каждой работы (.experience__item), поэтому не разъезжаются */
 .experience__timeline {
   display: flex;
   flex-direction: column;
-  row-gap: var(--space-l);
+  row-gap: var(--experience-item-gap);
   padding-left: var(--experience-timeline-gap);
-  background-image: linear-gradient(var(--experience-line-color), var(--experience-line-color));
-  background-repeat: no-repeat;
-  /* линия по центру точки: половина точки минус половина толщины линии */
-  background-position: calc((var(--experience-dot-size) - var(--experience-line-width)) / 2) bottom;
-  background-size: var(--experience-line-width) calc(100% - var(--experience-dot-top));
 
-  @media (prefers-reduced-motion: no-preference) {
-    animation: experience-line var(--experience-line-duration) cubic-bezier(0.65, 0, 0.35, 1) var(--experience-line-delay) backwards;
-  }
-
-  /* desktop: скролл внутри таймлайна, панель и заголовок слева остаются на месте */
+  /*
+    desktop: скролл внутри таймлайна, панель и заголовок слева остаются на месте.
+    overflow обрезает всё за краем, поэтому слева и сверху оставляем место под кольцо-пульс точки
+  */
   @media (width >= 1024px) {
     max-height: 100%;
+    padding-top: var(--experience-pulse-size);
     padding-right: var(--space-s);
+    padding-left: calc(var(--experience-timeline-gap) + var(--experience-pulse-size));
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
@@ -78,9 +73,11 @@
 }
 
 .experience__item {
+  /* свой слой: отрезок линии (z-index: -1) ложится под точку, но не уходит под фон панели */
   position: relative;
+  isolation: isolate;
 
-  /* точка на линии: левый край контейнера, центр совпадает с линией */
+  /* точка на линии: левее карточки на ширину отступа */
   &::before {
     content: '';
     position: absolute;
@@ -97,21 +94,54 @@
   }
 
   /*
-    Когда линия доходит до точки: нижняя работа — примерно на середине пути, верхняя — в конце.
+    отрезок линии: от центра своей точки вниз до точки следующей работы (через gap),
+    у последней — до низа карточки; растёт снизу вверх
+  */
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(var(--experience-dot-top) + var(--experience-dot-size) / 2);
+    /* по центру точки: половина точки минус половина толщины линии */
+    left: calc(var(--experience-timeline-gap) * -1 + (var(--experience-dot-size) - var(--experience-line-width)) / 2);
+    z-index: -1;
+    width: var(--experience-line-width);
+    /* от центра своей точки до центра следующей: высота карточки + gap (смещение точки у обеих одинаковое) */
+    height: calc(100% + var(--experience-item-gap));
+    background-color: var(--experience-line-color);
+    transform-origin: bottom;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: experience-line var(--experience-line-segment-duration) var(--experience-line-segment-easing) var(--experience-line-segment-delay) backwards;
+    }
+  }
+
+  &:last-child::after {
+    height: calc(100% - var(--experience-dot-top) - var(--experience-dot-size) / 2);
+  }
+
+  /*
+    Линия идёт снизу вверх одним движением: сначала отрезок последней работы (разгон),
+    потом верхний (торможение). Точка загорается, когда её отрезок дорос до верха.
     Рассчитано на две работы; при добавлении новых поправить доли.
   */
   &:nth-last-child(1) {
+    --experience-line-segment-delay: var(--experience-line-delay);
+    --experience-line-segment-duration: calc(var(--experience-line-duration) * 0.45);
+    --experience-line-segment-easing: ease-in;
     --experience-dot-delay: calc(var(--experience-line-delay) + var(--experience-line-duration) * 0.45);
   }
 
   &:nth-last-child(n + 2) {
-    --experience-dot-delay: calc(var(--experience-line-delay) + var(--experience-line-duration) * 0.95);
+    --experience-line-segment-delay: calc(var(--experience-line-delay) + var(--experience-line-duration) * 0.45);
+    --experience-line-segment-duration: calc(var(--experience-line-duration) * 0.55);
+    --experience-line-segment-easing: ease-out;
+    --experience-dot-delay: calc(var(--experience-line-delay) + var(--experience-line-duration));
   }
 }
 
 @keyframes experience-line {
   from {
-    background-size: var(--experience-line-width) 0;
+    transform: scaleY(0);
   }
 }
 
@@ -127,7 +157,7 @@
   }
 
   100% {
-    box-shadow: 0 0 0 10px transparent;
+    box-shadow: 0 0 0 var(--experience-pulse-size) transparent;
     transform: scale(1);
   }
 }
